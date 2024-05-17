@@ -1,0 +1,85 @@
+//- layout.pug
+include ../config/config
+block config
+doctype html
+html(lang="es" data-bs-theme="dark")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description' content='')
+    meta(name='author' content='')
+    title #{siteName} | #{pageName}
+
+    // Css Bootstrap
+    link(rel="stylesheet" href="css/app.css")
+    link(rel="stylesheet" href="css/prism.css")
+    link(rel="stylesheet" href="css/bootstrapicons.css")
+    link(rel="stylesheet" href="css/custom.css")
+
+    block styles
+  body
+
+    .navbar.navbar-expand-lg.fixed-top.bg-primary(data-bs-theme='dark')
+      .container
+        a.navbar-brand(href='../') PiruUI
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='/') Help
+            li.nav-item
+              a.nav-link(href='/') Blog 
+              
+          ul.navbar-nav.ms-md-auto
+            li.nav-item
+              a.nav-link(target='_blank' rel='noopener' href='https://github.com/pirulug/')
+                i.bi.bi-github
+                span.d-lg-none.ms-2 GitHub
+            li.nav-item
+              a.nav-link(target='_blank' rel='noopener' href='https://x.com/pirulug')
+                i.bi.bi-twitter
+                span.d-lg-none.ms-2 Twitter
+                
+            li.nav-item.py-2.py-lg-1.col-12.col-lg-auto
+              .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
+              hr.d-lg-none.my-2.text-white-50
+
+            li.nav-item(data-bs-theme='light')
+              a.nav-link v5.3
+
+            li.nav-item.py-2.py-lg-1.col-12.col-lg-auto
+              .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
+              hr.d-lg-none.my-2.text-white-50
+
+            li.nav-item.dropdown
+              a#bd-theme.nav-link.py-2.dropdown-toggle.d-flex.align-items-center(type='button' aria-expanded='false' data-bs-toggle='dropdown')
+                span#bd-theme-icon.theme-icon-active.mr-1
+                  i.bi.bi-sun
+                span#bd-theme-text.visually-hidden Toggle theme
+              ul.dropdown-menu.dropdown-menu-end.shadow(aria-labelledby='bd-theme-text')
+                li
+                  button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='light' aria-pressed='false')
+                    i.bi.bi-sun.opacity-50.me-2
+                    | Light
+                    i.pr-check.bi.bi-check-lg.ms-auto.d-none
+                li
+                  button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='dark' aria-pressed='false')
+                    i.bi.bi-moon.opacity-50.me-2
+                    | Dark
+                    i.pr-check.bi.bi-check-lg.ms-auto.d-none
+                li
+                  button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='auto' aria-pressed='true')
+                    i.bi.bi-circle-half.opacity-50.me-2
+                    | Auto
+                    i.pr-check.bi.bi-check-lg.ms-auto.d-none
+    
+    .container
+      block content
+
+    // Js Bootstrap
+    script(src='js/app.js')
+    script(src='js/prism.js')
+    script(src='js/custom.js')
+
+    block scripts 

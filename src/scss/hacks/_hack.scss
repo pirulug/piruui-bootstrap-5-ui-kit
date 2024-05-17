@@ -1,0 +1,11 @@
+body {
+  background: $body-bg-alt;
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    body {
+      background: $body-bg-alt-dark;
+    }
+  }
+}
