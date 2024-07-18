@@ -7,21 +7,16 @@ on:
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git checkout ${{ github.ref }}
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
-        run: |
-          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-          sudo apt-get install -y nodejs
-          node -v
-          npm -v
+        uses: actions/setup-node@v3
+        with:
+          node-version: '>=20.0.0'
 
       - name: Install dependencies and build
         run: |
@@ -29,10 +24,9 @@ jobs:
           npm run build
 
       - name: Deploy to GitHub Pages
-        run: |
-          git clone --branch=docs https://github.com/${{ github.repository }}.git out
-          rsync -av --delete ./dist/ out/demo/
-          cd out
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git push origin docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: docs
+          destination_dir: demo
