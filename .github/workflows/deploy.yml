@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: arch-latest
+    runs-on: debian-latest
 
     steps:
       - name: Checkout code
@@ -18,7 +18,8 @@ jobs:
 
       - name: Setup Node.js
         run: |
-          sudo pacman -Sy --noconfirm nodejs npm
+          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+          sudo apt-get install -y nodejs
           node -v
           npm -v
 
