@@ -25,7 +25,7 @@ html(lang="es")
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarResponsive.collapse.navbar-collapse
-          ul.navbar-nav
+          //-ul.navbar-nav
             li.nav-item
               a.nav-link(href='/') Help
             li.nav-item
@@ -51,28 +51,12 @@ html(lang="es")
             li.nav-item.py-2.py-lg-1.col-12.col-lg-auto
               .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
               hr.d-lg-none.my-2.text-white-50
-
-            li.nav-item.dropdown
-              a#bd-theme.nav-link.py-2.dropdown-toggle.d-flex.align-items-center(type='button' aria-expanded='false' data-bs-toggle='dropdown')
+            li.nav-item
+              button#bd-theme-toggle.nav-link.py-2.d-flex.align-items-center(type='button')
                 span#bd-theme-icon.theme-icon-active.mr-1
+                  // Aquí se actualizará el ícono dinámicamente
                   i.bi.bi-sun
                 span#bd-theme-text.visually-hidden Toggle theme
-              ul.dropdown-menu.dropdown-menu-end.shadow(aria-labelledby='bd-theme-text')
-                li
-                  button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='light' aria-pressed='false')
-                    i.bi.bi-sun.opacity-50.me-2
-                    | Light
-                    i.pr-check.bi.bi-check-lg.ms-auto.d-none
-                li
-                  button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='dark' aria-pressed='false')
-                    i.bi.bi-moon.opacity-50.me-2
-                    | Dark
-                    i.pr-check.bi.bi-check-lg.ms-auto.d-none
-                li
-                  button.dropdown-item.d-flex.align-items-center(type='button' data-bs-theme-value='auto' aria-pressed='true')
-                    i.bi.bi-circle-half.opacity-50.me-2
-                    | Auto
-                    i.pr-check.bi.bi-check-lg.ms-auto.d-none
     
     .container
       block content

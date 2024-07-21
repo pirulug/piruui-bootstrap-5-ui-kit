@@ -675,8 +675,14 @@ $mark-bg: $yellow-100 !default;
 // Navbar
 
 // Dropdowns
+$dropdown-border-color: transparent;
+$dropdown-box-shadow: 0;
 
 // Pagination
+$pagination-border-color: transparent;
+$pagination-hover-border-color: transparent;
+$pagination-active-border-color: transparent;
+$pagination-disabled-border-color: transparent;
 
 // Placeholders
 
@@ -695,8 +701,11 @@ $card-border-color: transparent;
 // Tooltips
 
 // Popovers
+$popover-border-color: transparent;
 
 // Toasts
+$toast-border-color: transparent;
+$toast-box-shadow: 0;
 
 // Badges
 $badge-font-size: 0.8em;
