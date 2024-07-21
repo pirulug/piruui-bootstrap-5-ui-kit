@@ -150,7 +150,7 @@ module.exports = {
       },
       // Load images
       {
-        test: /\.(png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(png|jpg|jpeg|gif|webp)(\?v=\d+\.\d+\.\d+)?$/,
         type: "asset/resource",
         generator: {
           filename: "img/[name][ext]",
