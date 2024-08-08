@@ -45,7 +45,7 @@
     "pirulug-delete-empty-files-webpack-plugin": "^0.0.3",
     "pirulug-prettify-webpack-plugin": "^0.0.5",
     "pirulug-pug-loader": "^0.0.13",
-    "postcss": "^8.4.40",
+    "postcss": "^8.4.41",
     "postcss-loader": "8.1.1",
     "pug": "^3.0.3",
     "sass": "^1.77.8",
