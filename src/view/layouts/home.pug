@@ -16,6 +16,14 @@ html(lang="es")
     link(rel="stylesheet" href="css/bootstrapicons.css")
     link(rel="stylesheet" href="css/custom.css")
 
+    script.
+      (function () {
+        const storedTheme = localStorage.getItem('theme');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = storedTheme || (prefersDarkScheme ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-bs-theme', theme);
+      })();
+
     block styles
   body
 
