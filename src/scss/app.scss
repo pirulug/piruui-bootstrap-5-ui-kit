@@ -7,6 +7,9 @@
 
 @import "~bootstrap/scss/bootstrap";
 
+//mixins
+@import "mixins/tab";
+
 // Utilities
 @import "utilities/mixins";
 
@@ -14,6 +17,7 @@
 @import "components/buttons";
 @import "components/forms";
 @import "components/modals";
+@import "components/tab";
 
 // Additional Styles and Hacks
 @import "hacks/hack";

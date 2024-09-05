@@ -756,3 +756,17 @@ $kbd-bg: var(--#{$prefix}body-color) !default;
 $nested-kbd-font-weight: null !default; // Deprecated in v5.2.0, removing in v6
 
 $pre-color: null !default;
+
+// =======================
+// Styles components
+// =======================
+
+// Tab
+$tab-bg: var(--#{$prefix}body-bg) !default;
+$tab-color: null !default;
+
+$tab-active-bg: var(--#{$prefix}body-bg) !default;
+$tab-active-color: null !default;
+
+$tab-hover-bg: null !default;
+$tab-hover-color: $primary !default;
