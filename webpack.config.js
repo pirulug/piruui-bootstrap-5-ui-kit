@@ -32,6 +32,7 @@ module.exports = {
     bootstrapicons: "./src/plugins/bootstrapicons/bootstrapicons.js",
     fontawesome: "./src/plugins/fontawesome/fontawesome.js",
     feathericons: "./src/plugins/feathericons/feathericons.js",
+    liteyoutube: "./src/plugins/liteyoutube/liteyoutube.js",
   },
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   // devtool: process.env.NODE_ENV === "production" ? "source-map" : "inline-source-map",
