@@ -1,12 +1,4 @@
 .btn {
-  // box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.1);
-  // transition: all 0.3s ease-out;
-
-  // &:hover {
-  //   box-shadow: none;
-  //   transform: translateY(-3px);
-  // }
-
   .feather {
     width: 14px;
     height: 14px;
@@ -25,9 +17,34 @@
 // .btn-{color}
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
-    // box-shadow: 0 10px 20px -10px rgba($value, 0.59);
-    @include button-color($white);
-    @include button-color-hover($white);
+    @if $color == "light" {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
+        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
+        $active-background: shade-color($value, $btn-active-bg-shade-amount),
+        $active-border: shade-color($value, $btn-active-border-shade-amount)
+      );
+    } @else if $color == "dark" {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: tint-color($value, $btn-hover-bg-tint-amount),
+        $hover-border: tint-color($value, $btn-hover-border-tint-amount),
+        $active-background: tint-color($value, $btn-active-bg-tint-amount),
+        $active-border: tint-color($value, $btn-active-border-tint-amount)
+      );
+    } @else if $color == "primary" {
+      @include button-variant(
+        $value,
+        $value,
+        $color: $white,
+        $disabled-color: $white
+      );
+    } @else {
+      @include button-variant($value, $value);
+    }
   }
 }
 
@@ -40,17 +57,35 @@
   }
 }
 
-.btn-light,
-.btn-white {
-  @include button-color($gray-800);
-  @include button-color-hover($gray-800);
-}
+// .btn-light,
+// .btn-white {
+//   @include button-color($gray-800);
+//   @include button-color-hover($gray-800);
+// }
 
 // .btn-outline-{color}
+// @each $color, $value in $theme-colors {
+//   .btn-outline-#{$color} {
+//     @include button-outline-variant($value);
+//     @include button-color-hover($white);
+//   }
+// }
+
+// .btn-outline-light,
+// .btn-outline-white {
+//   @include button-color($gray-800);
+//   @include button-color-hover($gray-800);
+// }
+
+// Outline
+
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
-    @include button-outline-variant($value);
-    @include button-color-hover($white);
+    @if $color == "primary" {
+      @include button-outline-variant($value, $color-hover: $white);
+    } @else {
+      @include button-outline-variant($value);
+    }
   }
 }
 
@@ -91,3 +126,10 @@
     }
   }
 }
+
+.btn-check:checked + .btn {
+  color: #fff;
+}
+// .btn-check + .btn:hover {
+//   color: #f00;
+// }
