@@ -1,6 +1,6 @@
 {
   "name": "piruboilerplatepug",
-  "version": "5.0.0",
+  "version": "1.0.1",
   "description": "PiruBoilerplatePug",
   "keywords": [
     "template",
@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pirulug/PiruBoilerplatePug.git"
+    "url": "git+https://github.com/pirulug/piruui-bootstrap-5-ui-kit.git"
   },
   "devDependencies": {
     "@babel/core": "7.25.2",
