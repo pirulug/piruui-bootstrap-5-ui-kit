@@ -26,7 +26,7 @@ const PAGES = Fs.readdirSync(PAGES_DIR).filter((fileName) =>
 
 module.exports = {
   entry: {
-    app: "./src/js/app.js",
+    piruui: "./src/js/piruui.js",
     prism: "./src/plugins/prism/prism.js",
     custom: "./src/plugins/custom/custom.js",
     bootstrapicons: "./src/plugins/bootstrapicons/bootstrapicons.js",
@@ -55,7 +55,7 @@ module.exports = {
       }),
       new CssMinimizerPlugin({
         minimizerOptions: {
-          preset: ["default", { discardComments: { removeAll: false } }],
+          preset: ["default", { discardComments: { removeAll: true } }],
         },
       }),
     ],
