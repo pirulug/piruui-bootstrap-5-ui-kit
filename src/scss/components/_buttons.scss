@@ -14,7 +14,6 @@
   }
 }
 
-// .btn-{color}
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     @if $color == "light" {
@@ -50,34 +49,15 @@
 
 @each $color, $value in $social-colors {
   .btn-#{$color} {
-    // box-shadow: 0 10px 20px -10px rgba($value, 0.59);
-    @include button-variant($value, $value);
-    @include button-color($white);
-    @include button-color-hover($white);
+    @include button-variant(
+      $value,
+      $value,
+      $color: $white,
+      $disabled-color: $white,
+      $hover-color: $white
+    );
   }
 }
-
-// .btn-light,
-// .btn-white {
-//   @include button-color($gray-800);
-//   @include button-color-hover($gray-800);
-// }
-
-// .btn-outline-{color}
-// @each $color, $value in $theme-colors {
-//   .btn-outline-#{$color} {
-//     @include button-outline-variant($value);
-//     @include button-color-hover($white);
-//   }
-// }
-
-// .btn-outline-light,
-// .btn-outline-white {
-//   @include button-color($gray-800);
-//   @include button-color-hover($gray-800);
-// }
-
-// Outline
 
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
@@ -96,32 +76,30 @@
   }
 }
 
-// .btn-light-{color}
+// LIGHT
+
 @each $color, $value in $theme-colors {
   .btn-light-#{$color} {
-    color: shade-color($value, 80%);
-    background-color: tint-color($value, 80%);
-    border: 1px solid tint-color($value, 80%);
-
-    &:hover {
-      background-color: tint-color($value, 80%);
-      border: 1px solid tint-color($value, 80%);
-      color: shade-colorr($value, 80%);
-    }
+    @include button-variant(
+      $background: tint-color($value, 80%),
+      $border: tint-color($value, 80%),
+      $color: shade-color($value, 80%),
+      $disabled-color: shade-color($value, 80%),
+      $hover-color: shade-color($value, 80%)
+    );
   }
 
   @if $enable-dark-mode {
     @include color-mode(dark) {
       .btn-light-#{$color} {
-        color: tint-color($value, 40%);
-        background-color: shade-color($value, 80%);
-        border: 1px solid shade-color($value, 80%);
-
-        &:hover {
-          background-color: shade-color($value, 80%);
-          border: 1px solid shade-color($value, 80%);
-          color: tint-color($value, 40%);
-        }
+        @include button-variant(
+          $background: shade-color($value, 80%),
+          $border: shade-color($value, 80%),
+          $color: tint-color($value, 40%),
+          $disabled-color: shade-color($value, 50%),
+          $hover-background: shade-color($value, 50%),
+          $hover-color: tint-color($value, 40%)
+        );
       }
     }
   }
@@ -130,6 +108,3 @@
 .btn-check:checked + .btn {
   color: #fff;
 }
-// .btn-check + .btn:hover {
-//   color: #f00;
-// }
