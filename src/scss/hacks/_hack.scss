@@ -9,3 +9,34 @@ body {
     }
   }
 }
+
+// Definimos los valores comunes para las dimensiones
+// En este caso, tenemos 100 y 50 como los valores de altura y anchura
+$values: (100, 50);
+
+// Usamos un loop @each para iterar sobre los valores definidos en $values
+@each $value in $values {
+  // Clase para establecer la altura en unidades de viewport (vh)
+  // Ejemplo: .vh-100 para height: 100vh
+  .vh-#{$value} {
+    height: #{$value}vh;
+  }
+
+  // Clase para establecer la altura en unidades de viewport dinámico (dvh)
+  // Ejemplo: .dvh-100 para height: 100dvh
+  .dvh-#{$value} {
+    height: #{$value}dvh;
+  }
+
+  // Clase para establecer el ancho en unidades de viewport (vw)
+  // Ejemplo: .vw-100 para width: 100vw
+  .vw-#{$value} {
+    width: #{$value}vw;
+  }
+
+  // Clase para establecer el ancho en unidades de viewport dinámico (dvw)
+  // Ejemplo: .dvw-100 para width: 100dvw
+  .dvw-#{$value} {
+    width: #{$value}dvw;
+  }
+}

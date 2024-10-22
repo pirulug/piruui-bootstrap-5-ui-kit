@@ -10,7 +10,14 @@ html(lang="es")
     meta(name='author' content='')
     title #{siteName} | #{pageName}
 
-    // Css Bootstrap
+    // Favicon
+
+    link(rel='apple-touch-icon' sizes='180x180' href='img/favicon/apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='img/favicon/favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='img/favicon/favicon-16x16.png')
+    link(rel='manifest' href='img/favicon/site.webmanifest')
+
+    // Css
     link(rel="stylesheet" href="css/prism.css")
     link(rel="stylesheet" href="css/bootstrapicons.css")
     link(rel="stylesheet" href="css/custom.css")
@@ -35,8 +42,8 @@ html(lang="es")
       include ../includes/footer
 
     // Js Bootstrap
+    script(src='js/piruui.js')
     script(src='js/prism.js')
     script(src='js/custom.js')
-    script(src='js/piruui.js')
 
     block scripts 
