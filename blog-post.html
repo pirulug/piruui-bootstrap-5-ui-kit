@@ -14,7 +14,7 @@
     <!-- Css-->
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/bootstrapicons.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/piruui.css">
     <script>
       (function () {
@@ -27,7 +27,8 @@
     </script>
   </head>
   <body>
-<div class="navbar navbar-expand-lg bg-body fixed-top">
+    <div class="wrapper-sticky">
+<nav class="navbar navbar-expand-lg bg-body fixed-top">
   <div class="container"><a class="navbar-brand" href="index.html">PiruUI</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -37,6 +38,7 @@
             <li><a class="dropdown-item" href="blog-index.html">Blog</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a class="nav-link" href="sticky-footer-navbar.html">Sticky footer navbar</a></li>
       </ul>
       <ul class="navbar-nav ms-md-auto">
         <li class="nav-item"><a class="nav-link" target="_blank" rel="noopener" href="https://github.com/pirulug/"><i class="bi bi-github"></i><span class="d-lg-none ms-2">GitHub</span></a></li>
@@ -56,76 +58,77 @@
       </ul>
     </div>
   </div>
-</div>
-    <div class="container">
-      <div class="row my-3"> 
-        <div class="col-8"> 
-          <!-- Post content-->
-          <article class="card mb-3">
-            <div class="card-body">
-              <!-- Post header-->
-              <header class="mb-4">
-                <!-- Post title-->
-                <h1 class="fw-bolder mb-1">Welcome to Blog Post!</h1>
-                <!-- Post meta content-->
-                <div class="text-muted fst-italic mb-2">Posted on January 1, 2022 by Start Bootstrap</div>
-                <!-- Post categories--><a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a><a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
-              </header>
-              <!-- Preview image figure-->
-              <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..."></figure>
+</nav>
+      <main class="main-content">
+        <div class="container">
+          <div class="row my-3"> 
+            <div class="col-8"> 
               <!-- Post content-->
+              <article class="card mb-3">
+                <div class="card-body">
+                  <!-- Post header-->
+                  <header class="mb-4">
+                    <!-- Post title-->
+                    <h1 class="fw-bolder mb-1">Welcome to Blog Post!</h1>
+                    <!-- Post meta content-->
+                    <div class="text-muted fst-italic mb-2">Posted on January 1, 2022 by Start Bootstrap</div>
+                    <!-- Post categories--><a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a><a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+                  </header>
+                  <!-- Preview image figure-->
+                  <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..."></figure>
+                  <!-- Post content-->
+                  <section class="mb-5">
+                    <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.</p>
+                    <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
+                    <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
+                    <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
+                    <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.</p>
+                    <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
+                  </section>
+                </div>
+              </article>
+              <!-- Comments section-->
               <section class="mb-5">
-                <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.</p>
-                <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-                <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
-                <h2 class="fw-bolder mb-4 mt-5">I have odd cosmic thoughts every day</h2>
-                <p class="fs-5 mb-4">For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.</p>
-                <p class="fs-5 mb-4">Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.</p>
+                <div class="card">
+                  <div class="card-body">
+                    <!-- Comment form-->
+                    <form class="mb-4">
+                      <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
+                    </form>
+                    <!-- Comment with nested comments-->
+                    <div class="d-flex mb-4">
+                      <!-- Parent comment-->
+                      <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
+                      <div class="ms-3">
+                        <div class="fw-bold">Commenter Name</div>If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                        <!-- Child comment 1-->
+                        <div class="d-flex mt-4">
+                          <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
+                          <div class="ms-3">
+                            <div class="fw-bold">Commenter Name</div>And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                          </div>
+                        </div>
+                        <!-- Child comment 2-->
+                        <div class="d-flex mt-4">
+                          <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
+                          <div class="ms-3">
+                            <div class="fw-bold">Commenter Name</div>When you put money directly to a problem, it makes a good headline.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Single comment-->
+                    <div class="d-flex">
+                      <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
+                      <div class="ms-3">
+                        <div class="fw-bold">Commenter Name</div>When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </section>
             </div>
-          </article>
-          <!-- Comments section-->
-          <section class="mb-5">
-            <div class="card">
-              <div class="card-body">
-                <!-- Comment form-->
-                <form class="mb-4">
-                  <textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea>
-                </form>
-                <!-- Comment with nested comments-->
-                <div class="d-flex mb-4">
-                  <!-- Parent comment-->
-                  <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
-                  <div class="ms-3">
-                    <div class="fw-bold">Commenter Name</div>If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                    <!-- Child comment 1-->
-                    <div class="d-flex mt-4">
-                      <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
-                      <div class="ms-3">
-                        <div class="fw-bold">Commenter Name</div>And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                      </div>
-                    </div>
-                    <!-- Child comment 2-->
-                    <div class="d-flex mt-4">
-                      <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
-                      <div class="ms-3">
-                        <div class="fw-bold">Commenter Name</div>When you put money directly to a problem, it makes a good headline.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Single comment-->
-                <div class="d-flex">
-                  <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."></div>
-                  <div class="ms-3">
-                    <div class="fw-bold">Commenter Name</div>When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="col-4">
+            <div class="col-4">
 <!-- Search widget-->
 <div class="card mb-4">
   <div class="card-header">Search</div>
@@ -163,26 +166,27 @@
   <div class="card-header">Side Widget</div>
   <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
 </div>
+            </div>
+          </div>
         </div>
-      </div>
-<footer id="footer">
-  <div class="row">
-    <div class="col-lg-12">
-      <ul class="list-unstyled">
-        <li class="float-end"><a href="#top">Back to top</a></li>
-        <li><a href="https://twitter.com/pirulug">Twitter</a></li>
-        <li><a href="https://github.com/pirulug">GitHub</a></li>
-      </ul>
-      <p>Made by <a href="https://github.com/pirulug">Pirulug</a>.</p>
-      <p>Code released under the <a href="/">MIT License</a>.</p>
-      <p>Based on <a href="https://getbootstrap.com/" rel="nofollow">Bootstrap</a>. Icons from <a href="https://icons.getbootstrap.com/" rel="nofollow">Bootstrap Icons</a></p>
-    </div>
+      </main>
+<footer class="footer bg-body">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center py-3 my-3 border-top">
+    <div class="col-md-4 d-flex align-items-center"><a class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" href="/">
+        <svg class="bi" width="30" height="24">
+          <use xlink:href="#bootstrap"></use>
+        </svg></a><span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 PiruUI, </span></div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fab fa-twitter"></i></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa fa-instagram"></i></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#">
+          <div class="fa fa-facebook"></div></a></li>
+    </ul>
   </div>
 </footer>
     </div>
     <!-- Js Bootstrap-->
     <script src="js/piruui.js"></script>
     <script src="js/prism.js"></script>
-    <script src="js/custom.js"></script>
   </body>
 </html>
