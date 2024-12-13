@@ -1,24 +1,17 @@
-footer#footer
-  .row
-    .col-lg-12
-      ul.list-unstyled
-        li.float-end
-          a(href='#top') Back to top
-        li
-          a(href='https://twitter.com/pirulug') Twitter
-        li
-          a(href='https://github.com/pirulug') GitHub
-
-      p
-        | Made by 
-        a(href='https://github.com/pirulug') Pirulug
-        | .
-      p
-        | Code released under the 
-        a(href='/') MIT License
-        | .
-      p
-        | Based on 
-        a(href='https://getbootstrap.com/' rel='nofollow') Bootstrap
-        | . Icons from 
-        a(href='https://icons.getbootstrap.com/' rel='nofollow') Bootstrap Icons
+footer.footer.bg-body
+  .container.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-3.border-top
+    .col-md-4.d-flex.align-items-center
+      a.mb-3.me-2.mb-md-0.text-body-secondary.text-decoration-none.lh-1(href='/')
+        svg.bi(width='30' height='24')
+          use(xlink:href='#bootstrap')
+      span.mb-3.mb-md-0.text-body-secondary &copy; 2024 PiruUI, 
+    ul.nav.col-md-4.justify-content-end.list-unstyled.d-flex
+      li.ms-3
+        a.text-body-secondary(href='#')
+          i.fab.fa-twitter
+      li.ms-3
+        a.text-body-secondary(href='#')
+          i.fa.fa-instagram
+      li.ms-3
+        a.text-body-secondary(href='#')
+          .fa.fa-facebook

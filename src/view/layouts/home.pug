@@ -20,7 +20,7 @@ html(lang="es")
     // Css
     link(rel="stylesheet" href="css/prism.css")
     link(rel="stylesheet" href="css/bootstrapicons.css")
-    link(rel="stylesheet" href="css/custom.css")
+    link(rel="stylesheet" href="css/fontawesome.css")
     link(rel="stylesheet" href="css/piruui.css")
 
     script.
@@ -33,17 +33,17 @@ html(lang="es")
 
     block styles
   body
-
-    include ../includes/navbar
-    
-    .container
-      block content
+    .wrapper-sticky
+      include ../includes/navbar
+      
+      main.main-content
+        .container
+          block content
 
       include ../includes/footer
 
     // Js Bootstrap
     script(src='js/piruui.js')
     script(src='js/prism.js')
-    script(src='js/custom.js')
 
     block scripts 

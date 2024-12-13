@@ -1,0 +1,70 @@
+extends ../layouts/home
+
+append config
+  -pageName = 'Home'
+
+block styles
+
+block scripts 
+
+block content
+
+//- doctype html
+//- html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Sticky Footer con Navbar Fija
+    style.
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .wrapper-sticky {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        background-color: #000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+
+      .main-content {
+        flex: 1 0 auto;
+        margin-top: 4rem; 
+        padding: 1rem;
+        background: #f00;
+      }
+
+      .footer {
+        margin-top: auto;
+        background-color: rebeccapurple;
+        text-align: center;
+        padding: 1rem;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+  body
+    .wrapper-sticky
+      nav.navbar
+        div Navbar Fija
+      main.main-content
+        div
+          p Contenido del sitio principal.
+          h1 Holadd
+          h1 Holadd
+          h1 Holadd
+          h1 Holadd
+          h1 Holadd
+          h1 Holadd
+          h1 Holadd
+      footer.footer
+        | Footer Pegado al Final
