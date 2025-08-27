@@ -1,0 +1,1 @@
+body,html{overscroll-behavior:none}.wrapper-sticky{display:flex;flex-direction:column;height:100vh}.wrapper-sticky .navbar{padding:1rem 0}.wrapper-sticky .main-content{flex:1 0 auto;margin-top:5.2rem}.wrapper-sticky .footer{margin-top:auto;padding:1rem}
