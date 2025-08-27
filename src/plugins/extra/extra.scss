@@ -1,0 +1,25 @@
+html,
+body {
+  overscroll-behavior: none;
+}
+
+.wrapper-sticky {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .main-content {
+    flex: 1 0 auto;
+    margin-top: 5.2rem;
+    // padding: 1rem;
+  }
+
+  .footer {
+    margin-top: auto;
+    padding: 1rem;
+  }
+}

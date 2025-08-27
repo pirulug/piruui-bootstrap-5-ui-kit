@@ -29,6 +29,7 @@ module.exports = {
     piruui: "./src/js/piruui.js",
     prism: "./src/plugins/prism/prism.js",
     custom: "./src/plugins/custom/custom.js",
+    extra: "./src/plugins/extra/extra.js",
     bootstrapicons: "./src/plugins/bootstrapicons/bootstrapicons.js",
     fontawesome: "./src/plugins/fontawesome/fontawesome.js",
     feathericons: "./src/plugins/feathericons/feathericons.js",

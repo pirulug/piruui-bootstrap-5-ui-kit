@@ -1,7 +1,3 @@
-html, body{
-  overscroll-behavior: none;
-}
-
 body {
   background: $body-bg-alt;
 }
@@ -31,26 +27,5 @@ $values: (100, 50);
 
   .dvw-#{$value} {
     width: #{$value}dvw;
-  }
-}
-
-.wrapper-sticky {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-
-  .navbar {
-    padding: 1rem 0;
-  }
-
-  .main-content {
-    flex: 1 0 auto;
-    margin-top: 5.2rem;
-    // padding: 1rem;
-  }
-
-  .footer {
-    margin-top: auto;
-    padding: 1rem;
   }
 }
