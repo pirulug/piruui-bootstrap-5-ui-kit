@@ -1,0 +1,206 @@
+.bs-docs-section
+  .page-header
+    .row
+      .col-lg-12
+        h1#buttons Buttons
+
+  .row
+    //- COLUMNA IZQUIERDA (Estilos principales)
+    .col-lg-7
+      
+      //- 1. STANDARD BUTTONS
+      .bs-component
+        h3.h5.text-muted.mt-2 Standard Colors
+        //- Agregamos gap para separar botones automáticamente
+        .d-flex.flex-wrap.gap-2 
+          button.btn.btn-primary(type='button') Primary
+          button.btn.btn-secondary(type='button') Secondary
+          button.btn.btn-success(type='button') Success
+          button.btn.btn-info(type='button') Info
+          button.btn.btn-warning(type='button') Warning
+          button.btn.btn-danger(type='button') Danger
+          button.btn.btn-light(type='button') Light
+          button.btn.btn-dark(type='button') Dark
+          button.btn.btn-link(type='button') Link
+
+      //- 2. DISABLED BUTTONS
+      .bs-component
+        h3.h5.text-muted.mt-4 Disabled State
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-primary.disabled(type='button') Primary
+          button.btn.btn-secondary.disabled(type='button') Secondary
+          button.btn.btn-success.disabled(type='button') Success
+          button.btn.btn-info.disabled(type='button') Info
+          button.btn.btn-warning.disabled(type='button') Warning
+          button.btn.btn-danger.disabled(type='button') Danger
+          button.btn.btn-light.disabled(type='button') Light
+          button.btn.btn-dark.disabled(type='button') Dark
+          button.btn.btn-link.disabled(type='button') Link
+
+      //- 3. OUTLINE BUTTONS
+      .bs-component
+        h3.h5.text-muted.mt-4 Outline Styles
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-outline-primary(type='button') Primary
+          button.btn.btn-outline-secondary(type='button') Secondary
+          button.btn.btn-outline-success(type='button') Success
+          button.btn.btn-outline-info(type='button') Info
+          button.btn.btn-outline-warning(type='button') Warning
+          button.btn.btn-outline-danger(type='button') Danger
+          button.btn.btn-outline-light(type='button') Light
+          button.btn.btn-outline-dark(type='button') Dark
+
+      //- 4. PILL BUTTONS (NUEVO)
+      .bs-component
+        h3.h5.text-muted.mt-4 Rounded Pills
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-primary.rounded-pill(type='button') Primary
+          button.btn.btn-secondary.rounded-pill(type='button') Secondary
+          button.btn.btn-success.rounded-pill(type='button') Success
+          button.btn.btn-info.rounded-pill(type='button') Info
+
+      //- 5. BUTTONS WITH ICONS (NUEVO - Requiere Bootstrap Icons)
+      .bs-component
+        h3.h5.text-muted.mt-4 Icon Buttons
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-primary(type='button')
+            i.bi.bi-heart-fill.me-2
+            | Like
+          button.btn.btn-success(type='button')
+            i.bi.bi-check-lg.me-2
+            | Confirm
+          button.btn.btn-danger(type='button')
+            | Delete
+            i.bi.bi-trash.ms-2
+          button.btn.btn-secondary.btn-icon(type='button' aria-label='Settings')
+            i.bi.bi-gear
+
+      //- 6. NESTED DROPDOWNS
+      .bs-component
+        h3.h5.text-muted.mt-4 Nested Dropdowns
+        .d-flex.flex-wrap.gap-2
+          .btn-group(role='group' aria-label='Button group with nested dropdown')
+            button.btn.btn-primary(type='button') Primary
+            .btn-group(role='group')
+              button#btnGroupDrop1.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              .dropdown-menu(aria-labelledby='btnGroupDrop1')
+                a.dropdown-item(href='#') Dropdown link
+                a.dropdown-item(href='#') Dropdown link
+
+          .btn-group(role='group' aria-label='Button group with nested dropdown')
+            button.btn.btn-success(type='button') Success
+            .btn-group(role='group')
+              button#btnGroupDrop2.btn.btn-success.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+              .dropdown-menu(aria-labelledby='btnGroupDrop2')
+                a.dropdown-item(href='#') Dropdown link
+                a.dropdown-item(href='#') Dropdown link
+    
+    //- COLUMNA DERECHA (Funcionalidades y Grupos)
+    .col-lg-5
+      
+      //- 7. SIZES
+      .bs-component
+        h3.h5.text-muted.mt-2 Sizes
+        .d-flex.flex-column.gap-2
+          div
+            button.btn.btn-primary.btn-lg(type='button') Large button
+            button.btn.btn-primary.btn-lg.ms-2(type='button') Large
+          div
+            button.btn.btn-primary(type='button') Default button
+            button.btn.btn-primary.ms-2(type='button') Default
+          div
+            button.btn.btn-primary.btn-sm(type='button') Small button
+            button.btn.btn-primary.btn-sm.ms-2(type='button') Small
+
+      //- 8. BLOCK BUTTONS
+      .bs-component
+        h3.h5.text-muted.mt-4 Block Buttons
+        .d-grid.gap-2
+          button.btn.btn-lg.btn-primary(type='button') Block button
+          button.btn.btn-lg.btn-outline-primary(type='button') Block button
+
+      //- 9. CHECKBOX & RADIO GROUPS
+      .bs-component.mb-3
+        h3.h5.text-muted.mt-4 Toggles (Checkbox & Radio)
+        
+        //- Checkbox
+        .btn-group.mb-2(role='group' aria-label='Basic checkbox toggle button group')
+          input#btncheck1.btn-check(type='checkbox' checked='' autocomplete='off')
+          label.btn.btn-primary(for='btncheck1') Checkbox 1
+          input#btncheck2.btn-check(type='checkbox' autocomplete='off')
+          label.btn.btn-primary(for='btncheck2') Checkbox 2
+          input#btncheck3.btn-check(type='checkbox' autocomplete='off')
+          label.btn.btn-primary(for='btncheck3') Checkbox 3
+        
+        br
+        
+        //- Radio
+        .btn-group(role='group' aria-label='Basic radio toggle button group')
+          input#btnradio1.btn-check(type='radio' name='btnradio' autocomplete='off' checked='')
+          label.btn.btn-outline-primary(for='btnradio1') Radio 1
+          input#btnradio2.btn-check(type='radio' name='btnradio' autocomplete='off' checked='')
+          label.btn.btn-outline-primary(for='btnradio2') Radio 2
+          input#btnradio3.btn-check(type='radio' name='btnradio' autocomplete='off' checked='')
+          label.btn.btn-outline-primary(for='btnradio3') Radio 3
+
+      //- 10. LOADING BUTTONS (NUEVO)
+      .bs-component
+        h3.h5.text-muted.mt-4 Loading State
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-primary(type='button' disabled)
+            span.spinner-border.spinner-border-sm(role='status' aria-hidden='true')
+            span.visually-hidden Loading...
+          button.btn.btn-primary(type='button' disabled)
+            span.spinner-border.spinner-border-sm.me-2(role='status' aria-hidden='true')
+            | Loading...
+          button.btn.btn-primary(type='button' disabled)
+            span.spinner-grow.spinner-grow-sm.me-2(role='status' aria-hidden='true')
+            | Processing...
+
+      //- 11. VERTICAL GROUPS
+      .bs-component
+        h3.h5.text-muted.mt-4 Vertical Group
+        .btn-group-vertical
+          button.btn.btn-primary(type='button') Top
+          button.btn.btn-primary(type='button') Middle
+          button.btn.btn-primary(type='button') Bottom
+          //- Dropdown inside vertical
+          .btn-group(role='group')
+             button#btnGroupVerticalDrop1.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Dropdown
+             .dropdown-menu(aria-labelledby='btnGroupVerticalDrop1')
+               a.dropdown-item(href='#') Link 1
+               a.dropdown-item(href='#') Link 2
+
+      //- 12. TOOLBAR
+      .bs-component.mb-3
+        h3.h5.text-muted.mt-4 Toolbar
+        .btn-toolbar(role='toolbar' aria-label='Toolbar with button groups')
+          .btn-group.me-2(role='group' aria-label='First group')
+            button.btn.btn-secondary(type='button') 1
+            button.btn.btn-secondary(type='button') 2
+            button.btn.btn-secondary(type='button') 3
+            button.btn.btn-secondary(type='button') 4
+          .btn-group.me-2(role='group' aria-label='Second group')
+            button.btn.btn-secondary(type='button') 5
+            button.btn.btn-secondary(type='button') 6
+          .btn-group(role='group' aria-label='Third group')
+            button.btn.btn-secondary(type='button') 8
+
+      //- 13. HTML TAGS VARIATIONS (NUEVO)
+      .bs-component
+        h3.h5.text-muted.mt-4 Tags Variations
+        .d-flex.flex-wrap.gap-2
+          a.btn.btn-primary(href='#' role='button') Link Tag
+          button.btn.btn-primary(type='submit') Button Submit
+          input.btn.btn-primary(type='button' value='Input Button')
+          input.btn.btn-primary(type='submit' value='Input Submit')
+
+      //- 14. CLOSE BUTTON (NUEVO)
+      .bs-component
+        h3.h5.text-muted.mt-4 Close Button
+        .d-flex.flex-wrap.gap-3.p-3.border.rounded
+           button.btn-close(type='button' aria-label='Close')
+           button.btn-close(type='button' aria-label='Close' disabled)
+           .bg-dark.p-2.rounded
+              button.btn-close.btn-close-white(type='button' aria-label='Close')
+              button.btn-close.btn-close-white(type='button' aria-label='Close' disabled)

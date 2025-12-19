@@ -1,0 +1,265 @@
+.bs-docs-section
+  .row
+    .col-lg-12
+      .page-header
+        h1#tables Tables
+
+  //- 1. CONTEXTUAL CLASSES (Tu ejemplo original mejorado con responsive wrapper)
+  .row
+    .col-lg-12
+      .bs-component
+        h3.h5.text-muted.mt-3 Contextual Rows (Hover)
+        .table-responsive
+          table.table.table-hover
+            thead
+              tr
+                th(scope='col') Type
+                th(scope='col') Column heading
+                th(scope='col') Column heading
+                th(scope='col') Column heading
+            tbody
+              tr.table-active
+                th(scope='row') Active
+                td Column content
+                td Column content
+                td Column content
+              tr
+                th(scope='row') Default
+                td Column content
+                td Column content
+                td Column content
+              tr.table-primary
+                th(scope='row') Primary
+                td Column content
+                td Column content
+                td Column content
+              tr.table-secondary
+                th(scope='row') Secondary
+                td Column content
+                td Column content
+                td Column content
+              tr.table-success
+                th(scope='row') Success
+                td Column content
+                td Column content
+                td Column content
+              tr.table-danger
+                th(scope='row') Danger
+                td Column content
+                td Column content
+                td Column content
+              tr.table-warning
+                th(scope='row') Warning
+                td Column content
+                td Column content
+                td Column content
+              tr.table-info
+                th(scope='row') Info
+                td Column content
+                td Column content
+                td Column content
+              tr.table-light
+                th(scope='row') Light
+                td Column content
+                td Column content
+                td Column content
+              tr.table-dark
+                th(scope='row') Dark
+                td Column content
+                td Column content
+                td Column content
+
+  //- 2. STRIPED & BORDERED (Estilo clásico de datos)
+  .row
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted.mt-4 Striped & Bordered
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th #
+              th First
+              th Last
+              th Handle
+          tbody
+            tr
+              td 1
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              td 2
+              td Jacob
+              td Thornton
+              td @fat
+            tr
+              td 3
+              td(colspan='2') Larry the Bird
+              td @twitter
+    
+    //- 3. DARK & SMALL (Compacta para dashboards)
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted.mt-4 Dark & Small (Compact)
+        table.table.table-dark.table-striped.table-sm
+          thead
+            tr
+              th #
+              th First
+              th Last
+              th Handle
+          tbody
+            tr
+              td 1
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              td 2
+              td Jacob
+              td Thornton
+              td @fat
+            tr
+              td 3
+              td(colspan='2') Larry the Bird
+              td @twitter
+
+  //- 4. NEW FEATURES & BORDERLESS
+  .row
+    //- Borderless + Header Colors
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted.mt-4 Borderless & Thead Dark
+        table.table.table-borderless
+          thead.table-dark
+            tr
+              th #
+              th First
+              th Last
+              th Handle
+          tbody
+            tr
+              td 1
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              td 2
+              td Jacob
+              td Thornton
+              td @fat
+
+    //- Striped Columns + Group Divider (Bootstrap 5.2+)
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted.mt-4 Striped Columns & Divider
+        table.table.table-striped-columns
+          thead
+            tr
+              th #
+              th First
+              th Last
+              th Handle
+          tbody.table-group-divider
+            tr
+              td 1
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              td 2
+              td Jacob
+              td Thornton
+              td @fat
+
+  //- 5. CELL VARIATIONS (Color en celdas individuales)
+  .row
+    .col-lg-12
+      .bs-component
+        h3.h5.text-muted.mt-4 Cell Specific Context
+        table.table.table-bordered
+          thead
+            tr
+              th Normal
+              th Primary Cell
+              th Success Cell
+              th Danger Cell
+          tbody
+            tr
+              td Default
+              td.table-primary Main Data
+              td Standard
+              td Standard
+            tr
+              td Default
+              td Standard
+              td.table-success Approved
+              td Standard
+            tr
+              td Default
+              td Standard
+              td Standard
+              td.table-danger Rejected
+
+  //- HOVERABLE ROWS
+  .row
+    .col-lg-12
+      h2.mt-4#tables-hover Hover Rows
+
+    //- 1. LIGHT HOVER (El clásico)
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted Light Hover
+        p.text-muted Mueve el mouse sobre las filas.
+        table.table.table-hover
+          thead
+            tr
+              th(scope='col') #
+              th(scope='col') First
+              th(scope='col') Last
+              th(scope='col') Handle
+          tbody
+            tr
+              th(scope='row') 1
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              th(scope='row') 2
+              td Jacob
+              td Thornton
+              td @fat
+            tr
+              th(scope='row') 3
+              td Larry
+              td the Bird
+              td @twitter
+
+    //- 2. DARK HOVER (Muy usado en dashboards)
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted Dark Hover
+        p.text-muted El efecto hover es más sutil o gris claro.
+        table.table.table-dark.table-hover
+          thead
+            tr
+              th(scope='col') #
+              th(scope='col') First
+              th(scope='col') Last
+              th(scope='col') Handle
+          tbody
+            tr
+              th(scope='row') 1
+              td Mark
+              td Otto
+              td @mdo
+            tr
+              th(scope='row') 2
+              td Jacob
+              td Thornton
+              td @fat
+            tr
+              th(scope='row') 3
+              td Larry
+              td the Bird
+              td @twitter

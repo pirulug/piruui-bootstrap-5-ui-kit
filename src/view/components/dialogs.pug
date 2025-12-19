@@ -1,0 +1,127 @@
+.bs-docs-section
+  .row
+    .col-lg-12
+      .page-header
+        h1#dialogs Dialogs
+
+  .row
+    //- ==========================
+    //- MODALS & OFFCANVAS (Columna Izquierda)
+    //- ==========================
+    .col-lg-6
+      h2 Modals
+      .bs-component
+        //- 1. STATIC MODAL (Para visualización directa)
+        .modal.position-static.d-block(tabindex='-1')
+          .modal-dialog(role='document')
+            .modal-content
+              .modal-header
+                h5.modal-title Modal title
+                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+              .modal-body
+                p Modal body text goes here.
+              .modal-footer
+                button.btn.btn-primary(type='button') Save changes
+                button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+        
+        //- 2. LIVE MODAL TRIGGER
+        .d-grid.gap-2.mt-3
+           button.btn.btn-outline-primary(type='button' data-bs-toggle='modal' data-bs-target='#exampleModalLive') Launch live modal
+
+      h2.mt-4 Offcanvas
+      .bs-component
+        .d-flex.flex-wrap.gap-2
+          //- Link Trigger
+          a.btn.btn-primary(data-bs-toggle='offcanvas' href='#offcanvasExample' role='button' aria-controls='offcanvasExample')
+            | Link with href
+          //- Button Trigger
+          button.btn.btn-primary(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasExample' aria-controls='offcanvasExample')
+            | Button with data-bs-target
+          //- Right Side Trigger (End)
+          button.btn.btn-secondary(type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasRight' aria-controls='offcanvasRight')
+             | Right Side Offcanvas
+
+    //- ==========================
+    //- POPOVERS, TOOLTIPS & TOASTS (Columna Derecha)
+    //- ==========================
+    .col-lg-6
+      //- 1. POPOVERS
+      h2 Popovers
+      .bs-component.mb-5
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-secondary(type='button' title='Popover Title' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='left' data-bs-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.') Left
+          button.btn.btn-secondary(type='button' title='Popover Title' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='top' data-bs-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.') Top
+          button.btn.btn-secondary(type='button' title='Popover Title' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='bottom' data-bs-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.') Bottom
+          button.btn.btn-secondary(type='button' title='Popover Title' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='right' data-bs-content='Vivamus sagittis lacus vel augue laoreet rutrum faucibus.') Right
+          
+          //- Dismissible Popover
+          button.btn.btn-danger(type='button' tabindex='0' data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible
+
+      //- 2. TOOLTIPS
+      h2 Tooltips
+      .bs-component.mb-5
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-secondary(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Tooltip on left') Left
+          button.btn.btn-secondary(type='button' data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Top
+          button.btn.btn-secondary(type='button' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Tooltip on bottom') Bottom
+          button.btn.btn-secondary(type='button' data-bs-toggle='tooltip' data-bs-placement='right' title='Tooltip on right') Right
+
+      //- 3. TOASTS
+      h2 Toasts
+      .bs-component
+        //- Standard Toast
+        .toast.show.mb-3(role='alert' aria-live='assertive' aria-atomic='true')
+          .toast-header
+            strong.me-auto Bootstrap
+            small 11 mins ago
+            button.btn-close.ms-2.mb-1(type='button' data-bs-dismiss='toast' aria-label='Close')
+          .toast-body
+            | Hello, world! This is a toast message.
+        
+        //- Solid Color Toast
+        .toast.show.align-items-center.text-white.bg-primary.border-0(role='alert' aria-live='assertive' aria-atomic='true')
+          .d-flex
+            .toast-body
+              | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button' data-bs-dismiss='toast' aria-label='Close')
+
+//- ==========================
+//- HIDDEN ELEMENTS (Required for Live Triggers to work)
+//- ==========================
+
+//- Live Modal Element
+#exampleModalLive.modal.fade(tabindex='-1' aria-labelledby='exampleModalLiveLabel' aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5#exampleModalLiveLabel.modal-title Modal title
+        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+      .modal-body
+        p Woohoo, you're reading this text in a modal!
+      .modal-footer
+        button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+        button.btn.btn-primary(type='button') Save changes
+
+//- Left Offcanvas Element
+#offcanvasExample.offcanvas.offcanvas-start(tabindex='-1' aria-labelledby='offcanvasExampleLabel')
+  .offcanvas-header
+    h5#offcanvasExampleLabel.offcanvas-title Offcanvas
+    button.btn-close.text-reset(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+  .offcanvas-body
+    div
+      | Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    .dropdown.mt-3
+      button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown')
+        | Dropdown button
+      ul.dropdown-menu(aria-labelledby='dropdownMenuButton')
+        li: a.dropdown-item(href='#') Action
+        li: a.dropdown-item(href='#') Another action
+        li: a.dropdown-item(href='#') Something else here
+
+//- Right Offcanvas Element
+#offcanvasRight.offcanvas.offcanvas-end(tabindex='-1' aria-labelledby='offcanvasRightLabel')
+  .offcanvas-header
+    h5#offcanvasRightLabel.offcanvas-title Offcanvas Right
+    button.btn-close(type='button' data-bs-dismiss='offcanvas' aria-label='Close')
+  .offcanvas-body
+    | ...

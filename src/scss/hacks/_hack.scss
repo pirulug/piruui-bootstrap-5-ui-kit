@@ -1,5 +1,6 @@
 body {
   background: $body-bg-alt;
+  -webkit-font-smoothing: antialiased;
 }
 
 @if $enable-dark-mode {
@@ -10,7 +11,10 @@ body {
   }
 }
 
-$values: (100, 50);
+$values: (
+  100,
+  50
+);
 
 @each $value in $values {
   .vh-#{$value} {
@@ -28,4 +32,36 @@ $values: (100, 50);
   .dvw-#{$value} {
     width: #{$value}dvw;
   }
+}
+
+// Estilo glass
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.nav-link i,
+.footer i {
+  vertical-align: middle;
+}
+
+[data-bs-theme="light"] .brand-logo-dark {
+  display: none !important;
+}
+
+[data-bs-theme="light"] .brand-logo-light {
+  display: block !important;
+}
+
+[data-bs-theme="dark"] .brand-logo-light {
+  display: none !important;
+}
+
+[data-bs-theme="dark"] .brand-logo-dark {
+  display: block !important;
 }

@@ -1,0 +1,228 @@
+.bs-docs-section
+  .row
+    .col-lg-12
+      .page-header
+        h1#navs Navs
+
+  //- ==========================
+  //- TABS (Standard)
+  //- ==========================
+  .row.mb-5
+    .col-lg-6
+      h2#nav-tabs Tabs
+      .bs-component
+        ul.nav.nav-tabs(role='tablist')
+          li.nav-item(role='presentation')
+            a.nav-link.active(data-bs-toggle='tab' href='#home' aria-selected='true' role='tab') Home
+          li.nav-item(role='presentation')
+            a.nav-link(data-bs-toggle='tab' href='#profile' aria-selected='false' role='tab' tabindex='-1') Profile
+          li.nav-item(role='presentation')
+            a.nav-link.disabled(href='#' aria-selected='false' tabindex='-1' role='tab') Disabled
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(data-bs-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false') Dropdown
+            .dropdown-menu
+              h6.dropdown-header Dropdown header
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
+              .dropdown-divider
+              a.dropdown-item(href='#') Separated link
+        
+        //- Contenido de los Tabs
+        #myTabContent.tab-content
+          #home.tab-pane.fade.show.active(role='tabpanel')
+            p.mt-4
+              | Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone.
+          #profile.tab-pane.fade(role='tabpanel')
+            p.mt-4
+              | Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR.
+    
+    //- ==========================
+    //- PILLS (Horizontal & Vertical)
+    //- ==========================
+    .col-lg-6
+      h2#nav-pills Pills
+      
+      //- Horizontal Pills
+      .bs-component.mb-4
+        ul.nav.nav-pills
+          li.nav-item
+            a.nav-link.active(href='#') Active
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(data-bs-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false') Dropdown
+            .dropdown-menu
+              h6.dropdown-header Dropdown header
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
+              .dropdown-divider
+              a.dropdown-item(href='#') Separated link
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link.disabled(href='#') Disabled
+      
+      //- Vertical Pills (Stacked)
+      .bs-component
+        h3.h5.text-muted.mt-4 Vertical (Stacked)
+        ul.nav.nav-pills.flex-column
+          li.nav-item
+            a.nav-link.active(href='#') Active
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link.disabled(href='#') Disabled
+
+  //- ==========================
+  //- FILL & JUSTIFY (NUEVO)
+  //- ==========================
+  .row.mb-5 
+    .col-lg-12 
+      h2#nav-fill Fill and Justify
+      .bs-component
+        p.text-muted.mb-2 .nav-fill (Ocupa el espacio disponible)
+        ul.nav.nav-pills.nav-fill.mb-4
+          li.nav-item
+            a.nav-link.active(href='#') Active
+          li.nav-item
+            a.nav-link(href='#') Much longer nav link
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled
+
+  //- ==========================
+  //- VERTICAL TABS LAYOUT (NUEVO - Estilo Sidebar)
+  //- ==========================
+  .row.mb-5
+    .col-lg-12
+      h2#nav-vertical Vertical Tabs Layout
+      .bs-component
+        .row
+          .col-md-3
+            //- Nav vertical usando pills para el estilo visual
+            #v-pills-tab.nav.flex-column.nav-pills(role='tablist' aria-orientation='vertical')
+              a#v-pills-home-tab.nav-link.active(data-bs-toggle='pill' href='#v-pills-home' role='tab' aria-controls='v-pills-home' aria-selected='true') Home
+              a#v-pills-profile-tab.nav-link(data-bs-toggle='pill' href='#v-pills-profile' role='tab' aria-controls='v-pills-profile' aria-selected='false') Profile
+              a#v-pills-messages-tab.nav-link(data-bs-toggle='pill' href='#v-pills-messages' role='tab' aria-controls='v-pills-messages' aria-selected='false') Messages
+              a#v-pills-settings-tab.nav-link(data-bs-toggle='pill' href='#v-pills-settings' role='tab' aria-controls='v-pills-settings' aria-selected='false') Settings
+          .col-md-9
+            #v-pills-tabContent.tab-content
+              #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab')
+                p Cillum ad ut irure et proident. Cupidatat nulla esse v-pills-home.
+              #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab')
+                p Culpa dolor voluptate do laboris operis. Content for Profile.
+              #v-pills-messages.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-messages-tab')
+                p Fugiat id quis dolor cool v-pills-messages.
+              #v-pills-settings.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-settings-tab')
+                p Eu dolore ea ullamco dolore v-pills-settings.
+
+  //- ==========================
+  //- BREADCRUMBS
+  //- ==========================
+  .row.mb-5
+    .col-lg-6
+      h2#nav-breadcrumbs Breadcrumbs
+      .bs-component
+        ol.breadcrumb
+          li.breadcrumb-item.active Home
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Home
+          li.breadcrumb-item.active Library
+        ol.breadcrumb
+          li.breadcrumb-item
+            a(href='#') Home
+          li.breadcrumb-item
+            a(href='#') Library
+          li.breadcrumb-item.active Data
+    
+    //- ==========================
+    //- PAGINATION
+    //- ==========================
+    .col-lg-6
+      h2#pagination Pagination
+      .bs-component
+        //- Standard
+        div
+          ul.pagination
+            li.page-item.disabled
+              a.page-link(href='#') &laquo;
+            li.page-item.active
+              a.page-link(href='#') 1
+            li.page-item
+              a.page-link(href='#') 2
+            li.page-item
+              a.page-link(href='#') 3
+            li.page-item
+              a.page-link(href='#') 4
+            li.page-item
+              a.page-link(href='#') 5
+            li.page-item
+              a.page-link(href='#') &raquo;
+        
+        //- Large
+        div
+          ul.pagination.pagination-lg
+            li.page-item.disabled
+              a.page-link(href='#') &laquo;
+            li.page-item.active
+              a.page-link(href='#') 1
+            li.page-item
+              a.page-link(href='#') 2
+            li.page-item
+              a.page-link(href='#') 3
+            li.page-item
+              a.page-link(href='#') &raquo;
+        
+        //- Small
+        div
+          ul.pagination.pagination-sm
+            li.page-item.disabled
+              a.page-link(href='#') &laquo;
+            li.page-item.active
+              a.page-link(href='#') 1
+            li.page-item
+              a.page-link(href='#') 2
+            li.page-item
+              a.page-link(href='#') 3
+            li.page-item
+              a.page-link(href='#') 4
+            li.page-item
+              a.page-link(href='#') 5
+            li.page-item
+              a.page-link(href='#') &raquo;
+
+        //- Centered (NUEVO)
+        div.mt-3
+          h6.text-muted Centered
+          ul.pagination.justify-content-center
+            li.page-item.disabled
+              a.page-link(href='#') Previous
+            li.page-item
+              a.page-link(href='#') 1
+            li.page-item
+              a.page-link(href='#') 2
+            li.page-item
+              a.page-link(href='#') 3
+            li.page-item
+              a.page-link(href='#') Next
+
+  //- ==========================
+  //- NAV UNDERLINE (Bootstrap 5.3 feature)
+  //- ==========================
+  .row
+    .col-lg-6
+      h2#nav-underline Underline
+      .bs-component
+        ul.nav.nav-underline
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='#') Active
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link.disabled(aria-disabled='true') Disabled

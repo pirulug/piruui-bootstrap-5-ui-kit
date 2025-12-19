@@ -1,11 +1,8 @@
-import "./custom.scss";
-
-/* globals bootstrap:false, Prism:false */
-
 (function () {
   "use strict";
 
-  //  Helper functions
+  // --- 1. Funciones de Limpieza (Helpers) ---
+
   function escapeHtml(html) {
     return html
       .replace(/×/g, "&times;")
@@ -16,141 +13,112 @@ import "./custom.scss";
   }
 
   function cleanSource(html) {
-    // Escapar HTML y dividir las líneas en un array
+    // Escapar HTML y dividir por líneas
     let lines = escapeHtml(html).split("\n");
 
-    // Filtrar líneas vacías al inicio y final
-    // lines = lines.filter((line) => line.trim() !== "");
+    // Filtrar líneas vacías y ELIMINAR el botón de "Ver código" del string
     lines = lines.filter(
       (line) =>
         line.trim() !== "" &&
-        !line.includes('<button class="source-button btn btn-primary btn-xs"')
+        !line.includes('source-button') // Filtro más robusto
     );
 
-    // Encontrar el tamaño de indentación mínimo
-    const indentSizes = lines.map((line) => line.match(/^\s*/)[0].length);
-    const minIndentSize = Math.min(...indentSizes);
+    // Calcular la indentación mínima (espacios en blanco al inicio)
+    const indentSizes = lines.map((line) => {
+      const match = line.match(/^\s*/);
+      return match ? match[0].length : 0;
+    });
 
-    // Remover la indentación mínima de cada línea
-    lines = lines.map((line) => line.slice(minIndentSize));
+    // Evitar error si el array está vacío
+    if (indentSizes.length > 0) {
+      const minIndentSize = Math.min(...indentSizes);
+      lines = lines.map((line) => line.slice(minIndentSize));
+    }
 
     return lines.join("\n");
   }
 
-  // Add/remove `.navbar-transparent` on scroll; should probably be throttled later
-  function addNavbarTransparentClass() {
-    const navBarElement = document.querySelector("#home > .navbar");
+  // --- 2. Lógica del Modal de Código ---
 
-    if (!navBarElement) {
+  function initSourceModals() {
+    const sourceModalElement = document.getElementById("source-modal");
+
+    // Si no existe el modal en el HTML, salimos para evitar errores
+    if (!sourceModalElement) {
+      console.error("Error: No se encontró el elemento #source-modal en el HTML");
       return;
     }
 
-    window.addEventListener("scroll", () => {
-      const scroll = document.documentElement.scrollTop;
+    // Event delegation para los botones
+    document.body.addEventListener("click", (event) => {
+      // Verificamos si lo que se clickeó es el botón o el ícono dentro del botón
+      const target = event.target.closest(".source-button");
 
-      if (scroll > 50) {
-        navBarElement.classList.remove("navbar-transparent");
+      if (!target) return; // Si no es el botón, no hacemos nada
+
+      // Obtener el contenedor padre (.bs-component)
+      const component = target.closest(".bs-component");
+
+      if (!component) return;
+
+      // Usamos innerHTML del componente
+      let html = component.innerHTML;
+
+      // Limpiamos y resaltamos con Prism
+      html = cleanSource(html);
+
+      if (window.Prism) {
+        html = Prism.highlight(html, Prism.languages.html, "html");
+      }
+
+      // Insertar en el modal (Buscamos 'code', si no existe, buscamos '.modal-body')
+      const codeContainer = sourceModalElement.querySelector("code") || sourceModalElement.querySelector(".modal-body");
+
+      if (codeContainer) {
+        codeContainer.innerHTML = html;
+        // Mostrar Modal
+        const sourceModal = bootstrap.Modal.getOrCreateInstance(sourceModalElement);
+        sourceModal.show();
       } else {
-        navBarElement.classList.add("navbar-transparent");
+        console.error("Error: No se encontró la etiqueta <code> dentro del modal.");
       }
     });
   }
 
-  // Add source modals
-  function addSourceModals() {
-    const sourceModalElement = document.getElementById("source-modal");
+  // --- 3. Inyección de Botones ---
 
-    if (!sourceModalElement) {
-      return;
-    }
+  function injectSourceButtons() {
+    const bsComponents = document.querySelectorAll(".bs-component");
 
-    sourceModalElement
-      .querySelector(".btn-copy")
-      .addEventListener("click", (e) => {
-        if (navigator.clipboard) {
-          const code =
-            sourceModalElement.querySelector(".modal-body pre").innerText;
-          navigator.clipboard.writeText(code);
-        }
+    // Botón simple y directo
+    const buttonHtml = '<button class="source-button btn btn-primary btn-xs" type="button" tabindex="0"><i class="bi bi-code"></i></button>';
 
-        const sourceModal =
-          bootstrap.Modal.getOrCreateInstance(sourceModalElement);
-        sourceModal.hide();
-      });
-
-    document.body.addEventListener(
-      "click",
-      (event) => {
-        if (!event.target.matches(".source-button")) {
-          return;
-        }
-
-        const sourceModal =
-          bootstrap.Modal.getOrCreateInstance(sourceModalElement);
-        let html = event.target.parentNode.innerHTML;
-
-        html = Prism.highlight(cleanSource(html), Prism.languages.html, "html");
-
-        sourceModalElement.querySelector("code").innerHTML = html;
-        sourceModal.show();
-      },
-      false
-    );
-  }
-
-  // Toggle light and dark themes
-  function toggleThemeMenu() {
-    let themeMenu = document.querySelector("#theme-menu");
-
-    if (!themeMenu) return;
-
-    document.querySelectorAll("[data-bs-theme-value]").forEach((value) => {
-      value.addEventListener("click", () => {
-        const theme = value.getAttribute("data-bs-theme-value");
-        document.documentElement.setAttribute("data-bs-theme", theme);
-      });
+    bsComponents.forEach((element) => {
+      // Verificar si ya tiene botón para no duplicar
+      if (!element.querySelector(".source-button")) {
+        element.insertAdjacentHTML("beforeend", buttonHtml);
+      }
     });
   }
 
-  addNavbarTransparentClass();
+  // --- 4. Inicialización ---
 
-  addSourceModals();
+  // Ejecutar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    injectSourceButtons();
+    initSourceModals();
 
-  toggleThemeMenu();
+    // Inicializar Tooltips y Popovers de Bootstrap
+    const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+    popoverTriggerList.map((el) => new bootstrap.Popover(el));
 
-  // Prevent empty `a` elements or `submit` buttons from navigating away
-  const targets = document.querySelectorAll('[href="#"], [type="submit"]');
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map((el) => new bootstrap.Tooltip(el));
 
-  for (const element of targets) {
-    element.addEventListener("click", (event) => {
-      event.preventDefault();
+    // Prevenir saltos en links vacíos
+    document.querySelectorAll('[href="#"]').forEach(el => {
+      el.addEventListener("click", (e) => e.preventDefault());
     });
-  }
+  });
 
-  // Add the "View Source" buttons in each component
-  const bsComponents = document.querySelectorAll(".bs-component");
-
-  for (const element of bsComponents) {
-    const button =
-      '<button class="source-button btn btn-primary btn-xs" type="button" tabindex="0"><i class="bi bi-code"></i></button>';
-    element.insertAdjacentHTML("beforeend", button);
-  }
-
-  // Initialize popovers
-  const popoverElements = document.querySelectorAll(
-    '[data-bs-toggle="popover"]'
-  );
-
-  for (const popover of popoverElements) {
-    new bootstrap.Popover(popover); // eslint-disable-line no-new
-  }
-
-  // Initialize tooltips
-  const tooltipElements = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-  );
-
-  for (const tooltip of tooltipElements) {
-    new bootstrap.Tooltip(tooltip); // eslint-disable-line no-new
-  }
 })();

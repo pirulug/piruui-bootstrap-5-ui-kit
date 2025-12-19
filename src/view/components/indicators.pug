@@ -1,0 +1,149 @@
+.bs-docs-section
+  .row
+    .col-lg-12
+      .page-header
+        h1#indicators Indicators
+
+  //- ==========================
+  //- ALERTS SECTION
+  //- ==========================
+  .row
+    .col-lg-12
+      h2 Alerts
+      
+      //- 1. HEADLINE ALERT (Con contenido extra)
+      .bs-component
+        .alert.alert-dismissible.alert-warning
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          h4.alert-heading Warning!
+          p.mb-0
+            | Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, 
+            a.alert-link(href='#') vel scelerisque nisl consectetur et
+            | .
+
+  //- 2. GRID OF STANDARD ALERTS
+  .row
+    .col-lg-4
+      .bs-component
+        .alert.alert-dismissible.alert-danger
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          strong Oh snap! 
+          a.alert-link(href='#') Change a few things up
+          |  and try submitting again.
+    .col-lg-4
+      .bs-component
+        .alert.alert-dismissible.alert-success
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          strong Well done! 
+          | You successfully read 
+          a.alert-link(href='#') this important alert message
+          | .
+    .col-lg-4
+      .bs-component
+        .alert.alert-dismissible.alert-info
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          strong Heads up! 
+          | This 
+          a.alert-link(href='#') alert needs your attention
+          | , but it's not super important.
+  
+  .row
+    .col-lg-4
+      .bs-component
+        .alert.alert-dismissible.alert-primary
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          strong Primary! 
+          a.alert-link(href='#') Check this link
+          |  it's important.
+    .col-lg-4
+      .bs-component
+        .alert.alert-dismissible.alert-secondary
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          strong Secondary! 
+          | Just a normal message.
+    .col-lg-4
+      .bs-component
+        .alert.alert-dismissible.alert-light
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          strong Light! 
+          | Keep it clean and simple.
+
+  //- 3. ALERTS WITH ICONS (NUEVO - Requiere Bootstrap Icons)
+  .row 
+    .col-lg-12 
+      h3.h5.text-muted.mt-3 Alerts with Icons
+      .bs-component
+        .alert.alert-success.d-flex.align-items-center(role='alert')
+          i.bi.bi-check-circle-fill.me-2
+          div
+            | An example success alert with an icon
+      .bs-component
+        .alert.alert-danger.d-flex.align-items-center(role='alert')
+          i.bi.bi-exclamation-triangle-fill.me-2
+          div
+            | An example danger alert with an icon
+
+  //- ==========================
+  //- BADGES SECTION
+  //- ==========================
+  .row
+    .col-lg-12
+      h2.mt-4 Badges
+
+      //- 4. BASIC BADGES
+      .bs-component.mb-4
+        h3.h5.text-muted Standard
+        .d-flex.flex-wrap.gap-2
+          span.badge.bg-primary Primary
+          span.badge.bg-secondary Secondary
+          span.badge.bg-success Success
+          span.badge.bg-danger Danger
+          span.badge.bg-warning.text-dark Warning
+          span.badge.bg-info.text-dark Info
+          span.badge.bg-light.text-dark Light
+          span.badge.bg-dark Dark
+
+      //- 5. PILL BADGES
+      .bs-component.mb-4
+        h3.h5.text-muted Rounded Pills
+        .d-flex.flex-wrap.gap-2
+          span.badge.rounded-pill.bg-primary Primary
+          span.badge.rounded-pill.bg-secondary Secondary
+          span.badge.rounded-pill.bg-success Success
+          span.badge.rounded-pill.bg-danger Danger
+          span.badge.rounded-pill.bg-warning.text-dark Warning
+          span.badge.rounded-pill.bg-info.text-dark Info
+          span.badge.rounded-pill.bg-light.text-dark Light
+          span.badge.rounded-pill.bg-dark Dark
+
+      //- 6. BADGES INSIDE BUTTONS (NUEVO)
+      .bs-component.mb-4
+        h3.h5.text-muted Badges in Buttons
+        .d-flex.flex-wrap.gap-2
+          button.btn.btn-primary(type='button')
+            | Notifications 
+            span.badge.bg-light.text-dark.ms-1 4
+          
+          button.btn.btn-dark(type='button')
+            | Profile 
+            span.badge.bg-danger.ms-1 99+
+            
+          //- Positioned Badge (Notification dot)
+          button.btn.btn-primary.position-relative(type='button')
+            | Inbox
+            span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-danger
+              | 99+
+              span.visually-hidden unread messages
+
+      //- 7. HEADINGS WITH BADGES (NUEVO)
+      .bs-component
+        h3.h5.text-muted Contextual Sizing
+        h1
+          | Example heading 
+          span.badge.bg-secondary New 
+        h2
+          | Example heading 
+          span.badge.bg-secondary New
+        h3
+          | Example heading 
+          span.badge.bg-secondary New

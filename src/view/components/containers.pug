@@ -1,0 +1,277 @@
+.bs-docs-section
+  .row
+    .col-lg-12
+      .page-header
+        h1#containers Containers
+
+  //- ==========================
+  //- LIST GROUPS
+  //- ==========================
+  .row
+    .col-lg-12
+      h2 List groups
+  
+  .row
+    //- 1. BASIC & BADGES
+    .col-lg-4
+      .bs-component
+        h3.h5.text-muted Basic & Badges
+        ul.list-group
+          li.list-group-item.d-flex.justify-content-between.align-items-center
+            | Cras justo odio
+            span.badge.bg-primary.rounded-pill 14
+          li.list-group-item.d-flex.justify-content-between.align-items-center
+            | Dapibus ac facilisis in
+            span.badge.bg-primary.rounded-pill 2
+          li.list-group-item.d-flex.justify-content-between.align-items-center
+            | Morbi leo risus
+            span.badge.bg-primary.rounded-pill 1
+    
+    //- 2. ACTIVE & ACTIONS
+    .col-lg-4
+      .bs-component
+        h3.h5.text-muted Active & Actions
+        .list-group
+          a.list-group-item.list-group-item-action.active(href='#') Cras justo odio (Active)
+          a.list-group-item.list-group-item-action(href='#') Dapibus ac facilisis in
+          button.list-group-item.list-group-item-action(type='button') Button item
+          a.list-group-item.list-group-item-action.disabled(href='#') Morbi leo risus (Disabled)
+
+    //- 3. FLUSH & NUMBERED (NUEVO)
+    .col-lg-4
+      .bs-component
+        h3.h5.text-muted Flush & Numbered
+        //- Flush: sin bordes externos
+        ul.list-group.list-group-flush.mb-3
+          li.list-group-item An item
+          li.list-group-item A second item
+          li.list-group-item A third item
+        
+        //- Numbered: enumera automáticamente
+        ol.list-group.list-group-numbered
+          li.list-group-item Cras justo odio
+          li.list-group-item Dapibus ac facilisis in
+
+  //- 4. CONTEXTUAL CLASSES (Grid Layout para ahorrar espacio vertical)
+  .row.mt-4
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted Contextual Classes
+        ul.list-group
+          li.list-group-item.list-group-item-primary Primary item
+          li.list-group-item.list-group-item-secondary Secondary item
+          li.list-group-item.list-group-item-success Success item
+          li.list-group-item.list-group-item-danger Danger item
+          li.list-group-item.list-group-item-warning Warning item
+          li.list-group-item.list-group-item-info Info item
+          li.list-group-item.list-group-item-light Light item
+          li.list-group-item.list-group-item-dark Dark item
+
+    //- 5. CUSTOM CONTENT (Complex)
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted Custom Content
+        .list-group
+          a.list-group-item.list-group-item-action.flex-column.align-items-start.active(href='#')
+            .d-flex.w-100.justify-content-between
+              h5.mb-1 List group item heading
+              small 3 days ago
+            p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+            small Donec id elit non mi porta.
+          a.list-group-item.list-group-item-action.flex-column.align-items-start(href='#')
+            .d-flex.w-100.justify-content-between
+              h5.mb-1 List group item heading
+              small.text-muted 3 days ago
+            p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+            small.text-muted Donec id elit non mi porta.
+
+  //- 6. CHECKBOXES AND RADIOS (NUEVO)
+  .row.mt-4 
+    .col-lg-6 
+      .bs-component 
+        h3.h5.text-muted With Checkboxes
+        ul.list-group
+          li.list-group-item
+            input.form-check-input.me-1(type='checkbox' value='' id='firstCheckboxStretched')
+            label.form-check-label.stretched-link(for='firstCheckboxStretched') First checkbox
+          li.list-group-item
+            input.form-check-input.me-1(type='checkbox' value='' id='secondCheckboxStretched')
+            label.form-check-label.stretched-link(for='secondCheckboxStretched') Second checkbox
+
+  //- ==========================
+  //- CARDS
+  //- ==========================
+  .row.mt-5
+    .col-lg-12
+      h2 Cards 
+
+  .row
+    //- 1. KITCHEN SINK (Ejemplo Completo)
+    .col-lg-4
+      .bs-component
+        h3.h5.text-muted Kitchen Sink
+        .card.mb-3
+          h3.card-header Card header
+          .card-body
+            h5.card-title Special title treatment
+            h6.card-subtitle.text-muted Support card subtitle
+          svg.d-block.user-select-none(xmlns='http://www.w3.org/2000/svg' width='100%' height='200' aria-label='Placeholder: Image cap' focusable='false' role='img' preserveaspectratio='xMidYMid slice' viewbox='0 0 318 180' style='font-size:1.125rem;text-anchor:middle')
+            rect(width='100%' height='100%' fill='#868e96')
+            text(x='50%' y='50%' fill='#dee2e6' dy='.3em') Image cap
+          .card-body
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+          ul.list-group.list-group-flush
+            li.list-group-item Cras justo odio
+            li.list-group-item Dapibus ac facilisis in
+            li.list-group-item Vestibulum at eros
+          .card-body
+            a.card-link(href='#') Card link
+            a.card-link(href='#') Another link
+          .card-footer.text-muted 2 days ago
+
+    //- 2. CARD WITH NAVIGATION (NUEVO)
+    .col-lg-4
+      .bs-component
+        h3.h5.text-muted Header Navigation
+        .card.text-center.mb-3
+          .card-header
+            ul.nav.nav-tabs.card-header-tabs
+              li.nav-item
+                a.nav-link.active(href='#') Active
+              li.nav-item
+                a.nav-link(href='#') Link
+              li.nav-item
+                a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled
+          .card-body
+            h5.card-title Special title treatment
+            p.card-text With supporting text below as a natural lead-in to additional content.
+            a.btn.btn-primary(href='#') Go somewhere
+
+        h3.h5.text-muted.mt-4 Image Overlay
+        .card.text-white
+          svg.bd-placeholder-img.card-img(width='100%' height='250' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Card image' preserveAspectRatio='xMidYMid slice' focusable='false')
+             title Placeholder
+             rect(width='100%' height='100%' fill='#868e96')
+             text(x='50%' y='50%' fill='#dee2e6' dy='.3em') Card image
+          .card-img-overlay
+            h5.card-title Card title
+            p.card-text This is a wider card with supporting text below as a natural lead-in to additional content.
+            p.card-text Last updated 3 mins ago
+
+    //- 3. HORIZONTAL CARD (NUEVO)
+    .col-lg-4
+      .bs-component
+        h3.h5.text-muted Horizontal
+        .card.mb-3(style='max-width: 540px;')
+          .row.g-0
+            .col-md-4
+              svg.bd-placeholder-img.img-fluid.rounded-start(width='100%' height='250' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Image' preserveAspectRatio='xMidYMid slice' focusable='false')
+                rect(width='100%' height='100%' fill='#868e96')
+            .col-md-8
+              .card-body
+                h5.card-title Card title
+                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content.
+                p.card-text
+                  small.text-body-secondary Last updated 3 mins ago
+  
+  //- 4. COLORED & BORDERED CARDS (Grid Layout)
+  .row.mt-3
+    h3.h5.text-muted.mb-3 Background & Border Variants
+    .col-lg-12
+      .bs-component
+        .d-flex.flex-wrap.gap-3
+          //- Primary BG
+          .card.text-white.bg-primary(style='max-width: 18rem;')
+            .card-header Header
+            .card-body
+              h4.card-title Primary
+              p.card-text Some quick example text.
+          
+          //- Secondary BG
+          .card.text-white.bg-secondary(style='max-width: 18rem;')
+            .card-header Header
+            .card-body
+              h4.card-title Secondary
+              p.card-text Some quick example text.
+          
+          //- Success Border (Sin fondo)
+          .card.border-success(style='max-width: 18rem;')
+            .card-header Header
+            .card-body.text-success
+              h4.card-title Success Border
+              p.card-text Some quick example text.
+          
+          //- Danger Border (Sin fondo)
+          .card.border-danger(style='max-width: 18rem;')
+            .card-header Header
+            .card-body.text-danger
+              h4.card-title Danger Border
+              p.card-text Some quick example text.
+
+
+  //- ==========================
+  //- ACCORDIONS
+  //- ==========================
+  .row.mt-5
+    .col-lg-12
+      h2 Accordions
+
+  .row
+    //- 1. STANDARD ACCORDION
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted Standard
+        #accordionExample.accordion
+          .accordion-item
+            h2#headingOne.accordion-header
+              button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                | Accordion Item #1
+            #collapseOne.accordion-collapse.collapse.show(aria-labelledby='headingOne' data-bs-parent='#accordionExample')
+              .accordion-body
+                strong This is the first item's accordion body.
+                |  It is shown by default.
+          .accordion-item
+            h2#headingTwo.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+                | Accordion Item #2
+            #collapseTwo.accordion-collapse.collapse(aria-labelledby='headingTwo' data-bs-parent='#accordionExample')
+              .accordion-body
+                strong This is the second item's accordion body.
+                |  It is hidden by default.
+          .accordion-item
+            h2#headingThree.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                | Accordion Item #3
+            #collapseThree.accordion-collapse.collapse(aria-labelledby='headingThree' data-bs-parent='#accordionExample')
+              .accordion-body
+                strong This is the third item's accordion body.
+                |  It is hidden by default.
+
+    //- 2. FLUSH ACCORDION (NUEVO)
+    .col-lg-6
+      .bs-component
+        h3.h5.text-muted Flush (No borders)
+        #accordionFlushExample.accordion.accordion-flush
+          .accordion-item
+            h2#flush-headingOne.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
+                | Accordion Item #1
+            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne' data-bs-parent='#accordionFlushExample')
+              .accordion-body
+                | Placeholder content for this accordion, which is intended to demonstrate the 
+                code .accordion-flush
+                |  class.
+          .accordion-item
+            h2#flush-headingTwo.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo')
+                | Accordion Item #2
+            #flush-collapseTwo.accordion-collapse.collapse(aria-labelledby='flush-headingTwo' data-bs-parent='#accordionFlushExample')
+              .accordion-body
+                | Placeholder content for this accordion.
+          .accordion-item
+            h2#flush-headingThree.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
+                | Accordion Item #3
+            #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
+              .accordion-body
+                | Placeholder content for this accordion.

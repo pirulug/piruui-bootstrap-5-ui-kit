@@ -1,0 +1,173 @@
+.bs-docs-section.clearfix
+  .row
+    .col-lg-12
+      .page-header
+        h1#navbars Navbars
+
+      //- 1. PRIMARY BACKGROUND (Tu ejemplo original)
+      .bs-component
+        h3.h5.text-muted.mt-4 Primary (Dark Theme)
+        nav.navbar.navbar-expand-lg.bg-primary(data-bs-theme='dark')
+          .container-fluid
+            a.navbar-brand(href='#') Navbar
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarColor01.collapse.navbar-collapse
+              ul.navbar-nav.me-auto
+                li.nav-item
+                  a.nav-link.active(href='#') Home
+                    span.visually-hidden (current)
+                li.nav-item
+                  a.nav-link(href='#') Features
+                li.nav-item
+                  a.nav-link(href='#') Pricing
+                li.nav-item
+                  a.nav-link(href='#') About
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle(data-bs-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false') Dropdown
+                  .dropdown-menu
+                    a.dropdown-item(href='#') Action
+                    a.dropdown-item(href='#') Another action
+                    a.dropdown-item(href='#') Something else here
+                    .dropdown-divider
+                    a.dropdown-item(href='#') Separated link
+              form.d-flex
+                input.form-control.me-sm-2(type='search' placeholder='Search')
+                button.btn.btn-secondary.my-2.my-sm-0(type='submit') Search
+
+      //- 2. DARK BACKGROUND
+      .bs-component
+        h3.h5.text-muted.mt-4 Dark
+        nav.navbar.navbar-expand-lg.bg-dark(data-bs-theme='dark')
+          .container-fluid
+            a.navbar-brand(href='#') Navbar
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor02' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarColor02.collapse.navbar-collapse
+              ul.navbar-nav.me-auto
+                li.nav-item
+                  a.nav-link.active(href='#') Home
+                    span.visually-hidden (current)
+                li.nav-item
+                  a.nav-link(href='#') Features
+                li.nav-item
+                  a.nav-link(href='#') Pricing
+                li.nav-item
+                  a.nav-link(href='#') About
+              form.d-flex
+                input.form-control.me-sm-2(type='search' placeholder='Search')
+                button.btn.btn-secondary.my-2.my-sm-0(type='submit') Search
+
+      //- 3. LIGHT BACKGROUND (Teal/Cyan example if using flatly/default, strictly Light here)
+      .bs-component
+        h3.h5.text-muted.mt-4 Light (Lighter background)
+        nav.navbar.navbar-expand-lg.bg-light(data-bs-theme='light')
+          .container-fluid
+            a.navbar-brand(href='#') Navbar
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor03' aria-controls='navbarColor03' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarColor03.collapse.navbar-collapse
+              ul.navbar-nav.me-auto
+                li.nav-item
+                  a.nav-link.active(href='#') Home
+                    span.visually-hidden (current)
+                li.nav-item
+                  a.nav-link(href='#') Features
+                li.nav-item
+                  a.nav-link(href='#') Pricing
+                li.nav-item
+                  a.nav-link(href='#') About
+              form.d-flex
+                input.form-control.me-sm-2(type='search' placeholder='Search')
+                button.btn.btn-secondary.my-2.my-sm-0(type='submit') Search
+
+      //- 4. TRANSPARENT / BODY TERTIARY
+      .bs-component
+        h3.h5.text-muted.mt-4 Body Tertiary (Transparent-ish)
+        nav.navbar.navbar-expand-lg.bg-body-tertiary
+          .container-fluid
+            a.navbar-brand(href='#') Navbar
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor04' aria-controls='navbarColor04' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarColor04.collapse.navbar-collapse
+              ul.navbar-nav.me-auto
+                li.nav-item
+                  a.nav-link.active(href='#') Home
+                    span.visually-hidden (current)
+                li.nav-item
+                  a.nav-link(href='#') Features
+                li.nav-item
+                  a.nav-link(href='#') Pricing
+              form.d-flex
+                input.form-control.me-sm-2(type='search' placeholder='Search')
+                button.btn.btn-outline-primary.my-2.my-sm-0(type='submit') Search
+
+      //- 5. COLORES SEMANTICOS (VARIACION NUEVA)
+      //- Nota: Usamos bg-danger, bg-success, etc. con data-bs-theme='dark' para texto blanco
+      .bs-component
+        h3.h5.text-muted.mt-4 Semantic Colors (Success, Danger, Info)
+        
+        //- Success
+        nav.navbar.navbar-expand-lg.bg-success.mb-3(data-bs-theme='dark')
+          .container-fluid
+            a.navbar-brand(href='#') Success
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSuccess' aria-controls='navbarSuccess' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarSuccess.collapse.navbar-collapse
+              ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                li.nav-item: a.nav-link.active(href='#') Home
+                li.nav-item: a.nav-link(href='#') Link
+
+        //- Danger
+        nav.navbar.navbar-expand-lg.bg-danger.mb-3(data-bs-theme='dark')
+          .container-fluid
+            a.navbar-brand(href='#') Danger
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarDanger' aria-controls='navbarDanger' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarDanger.collapse.navbar-collapse
+              ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                li.nav-item: a.nav-link.active(href='#') Home
+                li.nav-item: a.nav-link(href='#') Link
+                
+        //- Warning (Theme light porque el fondo amarillo requiere texto oscuro)
+        nav.navbar.navbar-expand-lg.bg-warning.mb-3(data-bs-theme='light')
+          .container-fluid
+            a.navbar-brand(href='#') Warning
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarWarning' aria-controls='navbarWarning' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarWarning.collapse.navbar-collapse
+              ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                li.nav-item: a.nav-link.active(href='#') Home
+                li.nav-item: a.nav-link(href='#') Link
+
+      //- 6. ALINEACIÓN DERECHA (Right Aligned Links)
+      .bs-component
+        h3.h5.text-muted.mt-4 Right Aligned Links
+        nav.navbar.navbar-expand-lg.bg-dark(data-bs-theme='dark')
+          .container-fluid
+            a.navbar-brand(href='#') Right Align
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarRight' aria-controls='navbarRight' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarRight.collapse.navbar-collapse
+              //- ms-auto empuja los items a la derecha
+              ul.navbar-nav.ms-auto 
+                li.nav-item
+                  a.nav-link.active(href='#') Home
+                li.nav-item
+                  a.nav-link(href='#') Login
+                li.nav-item
+                  a.btn.btn-primary.btn-sm.ms-2(href='#') Sign Up
+
+      //- 7. CONTENEDOR RESTRINGIDO (No Fluid)
+      .bs-component
+        h3.h5.text-muted.mt-4 Container (Not Fluid)
+        nav.navbar.navbar-expand-lg.bg-primary(data-bs-theme='dark')
+          //- .container centra el contenido y le da un ancho máximo
+          .container 
+            a.navbar-brand(href='#') Centered Container
+            button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarContainer' aria-controls='navbarContainer' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarContainer.collapse.navbar-collapse
+              ul.navbar-nav.me-auto
+                li.nav-item: a.nav-link.active(href='#') Home
+                li.nav-item: a.nav-link(href='#') Link

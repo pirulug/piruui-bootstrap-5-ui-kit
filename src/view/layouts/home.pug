@@ -19,8 +19,8 @@ html(lang="es")
 
     // Css
     link(rel="stylesheet" href="css/prism.css")
-    link(rel="stylesheet" href="css/bootstrapicons.css")
-    link(rel="stylesheet" href="css/fontawesome.css")
+    link(rel="stylesheet" href="css/bootstrapicons.css" media="print" onload="this.media='all'")
+    link(rel="stylesheet" href="css/fontawesome.css" media="print" onload="this.media='all'")
     link(rel="stylesheet" href="css/piruui.css")
     link(rel="stylesheet" href="css/extra.css")
 
@@ -38,8 +38,8 @@ html(lang="es")
       include ../includes/navbar
       
       main.main-content
-        .container
-          block content
+        //- .container
+        block content
 
       include ../includes/footer
 

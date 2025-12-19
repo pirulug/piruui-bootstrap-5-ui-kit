@@ -1,48 +1,68 @@
-nav.navbar.navbar-expand-lg.bg-body.fixed-top
-  .container
-    a.navbar-brand(href='index.html') PiruUI
-    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarResponsive.collapse.navbar-collapse
-      ul.navbar-nav
-        li.nav-item.dropdown
-          a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-            | Pages
-          ul.dropdown-menu
-            li
-              a.dropdown-item(href='blog-index.html') Blog
-            //- li
-              a.dropdown-item(href='#') Another action
-            //- li
-               hr.dropdown-divider
-            //- li
-               a.dropdown-item(href='#') Something else here
-        //-li.nav-item
-          a.nav-link(href='blog-index.html') Blog
-        li.nav-item
-          a.nav-link(href="sticky-footer-navbar.html") Sticky footer navbar
+nav.navbar.navbar-expand-lg.bg-body.fixed-top.py-3
+      .container
+        //- 1. Marca / Logo
+        a.navbar-brand.fw-bold.fs-4(href='index.html') PiruUI
+        
+        //- 2. Botón de Tema (Visible siempre en móvil para mejor UX)
+        //- Lo sacamos del menú colapsable para que esté a mano junto al botón de menú
+        .d-flex.align-items-center.ms-auto.me-2.d-lg-none
+            button#bd-theme-toggle-mobile.nav-link.p-2.d-flex.align-items-center(type='button')
+                span.theme-icon-active
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+
+        //- 3. Botón Toggler (Hamburguesa)
+        button.navbar-toggler.border-0(type='button' data-bs-toggle='offcanvas' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+
+        //- 4. Contenido Offcanvas (Menú lateral en móvil, horizontal en PC)
+        #navbarResponsive.offcanvas-lg.offcanvas-start(tabindex='-1' aria-labelledby='navbarResponsiveLabel')
+          .offcanvas-header.border-bottom
+            h5#navbarResponsiveLabel.offcanvas-title Menú
+            button.btn-close(type='button' data-bs-dismiss='offcanvas' data-bs-target='#navbarResponsive' aria-label='Close')
           
-      ul.navbar-nav.ms-md-auto
-        li.nav-item
-          a.nav-link(target='_blank' rel='noopener' href='https://github.com/pirulug/')
-            i.bi.bi-github
-            span.d-lg-none.ms-2 GitHub
-        li.nav-item
-          a.nav-link(target='_blank' rel='noopener' href='https://x.com/pirulug')
-            i.bi.bi-twitter
-            span.d-lg-none.ms-2 Twitter
-            
-        li.nav-item.py-2.py-lg-1.col-12.col-lg-auto
-          .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
-          hr.d-lg-none.my-2.text-white-50
+          .offcanvas-body
+            //- Lado Izquierdo: Navegación Principal
+            ul.navbar-nav.mb-2.mb-lg-0
+              li.nav-item.dropdown
+                a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false') Pages
+                ul.dropdown-menu.border-0.shadow.mt-2
+                  li
+                    a.dropdown-item(href='blog-index.html') Blog
+                  //- li
+                    a.dropdown-item(href='#') Another action
+              
+              li.nav-item
+                a.nav-link(href="sticky-footer-navbar.html") Sticky footer navbar
 
-        li.nav-item
-          a.nav-link v5.3
+            //- Lado Derecho: Redes Sociales y Utilidades
+            //- Usamos ms-lg-auto para empujar esto a la derecha en Desktop
+            ul.navbar-nav.ms-lg-auto.align-items-lg-center
+              li.nav-item
+                a.nav-link(target='_blank' rel='noopener' href='https://github.com/pirulug/')
+                  i.bi.bi-github
+                  span.d-lg-none.ms-2 GitHub
+              li.nav-item
+                a.nav-link(target='_blank' rel='noopener' href='https://x.com/pirulug')
+                  i.bi.bi-twitter
+                  span.d-lg-none.ms-2 Twitter
+              
+              //- Divisores visuales (Se ocultan en móvil, se ven en desktop)
+              li.nav-item.d-none.d-lg-flex.align-items-center.mx-2
+                .vr.h-50.text-body-secondary
+              
+              //- Divisor horizontal para móvil
+              li.nav-item.d-lg-none
+                hr.my-2.text-white-50
 
-        li.nav-item.py-2.py-lg-1.col-12.col-lg-auto
-          .vr.d-none.d-lg-flex.h-100.mx-lg-2.text-white
-          hr.d-lg-none.my-2.text-white-50
-        li.nav-item
-          button#bd-theme-toggle.nav-link.py-2.d-flex.align-items-center(type='button')
-            span#bd-theme-icon.theme-icon-active.mr-1
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              li.nav-item
+                a.nav-link.fw-semibold.small v5.3
+
+              //- Divisor final Desktop
+              li.nav-item.d-none.d-lg-flex.align-items-center.mx-2
+                .vr.h-50.text-body-secondary
+
+              //- Botón Tema (Versión Desktop)
+              li.nav-item.d-none.d-lg-block
+                button#bd-theme-toggle.nav-link.py-2.d-flex.align-items-center(type='button')
+                    span#bd-theme-icon.theme-icon-active
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>

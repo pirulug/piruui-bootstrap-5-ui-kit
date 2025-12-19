@@ -1,13 +1,23 @@
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   .feather {
     width: 14px;
     height: 14px;
+    margin-right: 0.5rem;
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 
 .btn-group .btn,
 .btn-group-vertical .btn,
 .input-group .btn {
+
   &:hover,
   &:focus {
     transform: none;
@@ -16,58 +26,62 @@
 
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
-    @if $color == "light" {
-      @include button-variant(
-        $value,
+
+    // CASO ESPECIAL: Botón Light (Fondo blanco)
+    // Mantenemos el comportamiento por defecto (texto oscuro) para que sea legible.
+    @if $color =="light" {
+      @include button-variant($value,
         $value,
         $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
-        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
-        $active-background: shade-color($value, $btn-active-bg-shade-amount),
-        $active-border: shade-color($value, $btn-active-border-shade-amount)
-      );
-    } @else if $color == "dark" {
-      @include button-variant(
+        $active-background: shade-color($value, $btn-active-bg-shade-amount));
+    }
+
+    // PARA TODOS LOS DEMÁS COLORES (Primary, Warning, Info, Dark, etc.)
+    // Forzamos el texto blanco en todos los estados.
+    @else {
+      @include button-variant($value,
         $value,
-        $value,
-        $hover-background: tint-color($value, $btn-hover-bg-tint-amount),
-        $hover-border: tint-color($value, $btn-hover-border-tint-amount),
-        $active-background: tint-color($value, $btn-active-bg-tint-amount),
-        $active-border: tint-color($value, $btn-active-border-tint-amount)
-      );
-    } @else if $color == "primary" {
-      @include button-variant(
-        $value,
-        $value,
-        $color: $white,
-        $hover-color: $white,
-        $disabled-color: $white
-      );
-    } @else {
-      @include button-variant(
-        $value,
-        $value,
-        $color: $white,
-        $disabled-color: $white,
-        $hover-color: $white,
-        $active-color: $white
-      );
+        $color: $white, // <--- Texto blanco normal
+        $hover-color: $white, // <--- Texto blanco al pasar el mouse
+        $active-color: $white, // <--- Texto blanco al hacer click
+        $disabled-color: $white, // <--- Texto blanco (con opacidad) si está deshabilitado
+
+        $hover-background: shade-color($value, 10%),
+        $hover-border: shade-color($value, 10%),
+        $active-background: shade-color($value, 20%),
+        $active-border: shade-color($value, 20%));
     }
   }
 }
 
 @each $color, $value in $theme-colors {
   .btn-outline-#{$color} {
-    @if $color == "dark" {
+    --#{$prefix}btn-border-width: 1px;
+
+    @if $color =="light" {
       @include button-outline-variant($value);
-    } @else if $color == "light" {
-      @include button-outline-variant($value);
-    } @else {
-      @include button-outline-variant(
-        $value,
-        $color-hover: $white,
-        $active-color: $white
-      );
     }
+
+    @else {
+      @include button-outline-variant($value,
+        $color-hover: $white,
+        $active-color: $white );
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-light-#{$color} {
+    --#{$prefix}btn-border-width: 0;
+
+    @include button-variant($background: tint-color($value, 85%),
+      $border: transparent,
+      $color: shade-color($value, 60%),
+      $hover-background: tint-color($value, 70%),
+      $hover-border: transparent,
+      $hover-color: shade-color($value, 80%),
+      $active-background: tint-color($value, 60%),
+      $active-border: transparent);
   }
 }
 
@@ -93,35 +107,31 @@
 
 @each $color, $value in $theme-colors {
   .btn-light-#{$color} {
-    @include button-variant(
-      $background: tint-color($value, 80%),
+    @include button-variant($background: tint-color($value, 80%),
       $border: tint-color($value, 80%),
       $color: shade-color($value, 80%),
       $disabled-color: shade-color($value, 80%),
       $hover-color: shade-color($value, 80%),
-      $active-background: shade-color($value, 80%)
-    );
+      $active-background: shade-color($value, 80%));
   }
 
   @if $enable-dark-mode {
     @include color-mode(dark) {
       .btn-light-#{$color} {
-        @include button-variant(
-          $background: shade-color($value, 80%),
+        @include button-variant($background: shade-color($value, 80%),
           $border: shade-color($value, 80%),
           $color: tint-color($value, 40%),
           $disabled-color: shade-color($value, 50%),
           $hover-background: shade-color($value, 50%),
           $hover-color: tint-color($value, 40%),
           $active-background: shade-color($value, 50%),
-          $active-color: tint-color($value, 40%)
-        );
+          $active-color: tint-color($value, 40%));
       }
     }
   }
 }
 
-.btn-check:checked + .btn {
+.btn-check:checked+.btn {
   color: #fff;
 }
 
