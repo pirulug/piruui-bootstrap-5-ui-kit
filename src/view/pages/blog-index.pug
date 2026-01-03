@@ -8,90 +8,116 @@ block styles
 block scripts 
 
 block content
+  .container
+    //- Header
+    header.py-5.mb-5.bg-body-tertiary.rounded-3
+      .container
+        .text-center.my-5
+          h1.fw-bolder.display-5 Welcome to Blog Home!
+          p.lead.mb-0.text-body-secondary A Bootstrap 5 starter layout for your next blog homepage
 
-  // Page header with logo and tagline
-  header.py-5.border-bottom.mb-4
-    .container
-      .text-center.my-5
-        h1.fw-bolder Welcome to Blog Home!
-        p.lead.mb-0 A Bootstrap 5 starter layout for your next blog homepage
+    .row.gx-5
+      //- Main Content Column
+      .col-lg-8
+        
+        //- FEATURED POST (Diseño Horizontal para destacar)
+        //- Usamos .overflow-hidden para que la imagen no se salga de las esquinas redondeadas
+        .card.mb-5.overflow-hidden
+          .row.g-0
+            .col-md-6
+              //- h-100 y object-fit-cover (BS 5.3) aseguran que la imagen llene el espacio sin deformarse
+              img.img-fluid.h-100.w-100(src='https://dummyimage.com/850x850/dee2e6/6c757d.jpg', alt='...' style="object-fit: cover; min-height: 300px;")
+            .col-md-6
+              .card-body.d-flex.flex-column.justify-content-center.p-4.h-100
+                .small.text-body-secondary.text-uppercase.mb-2 
+                    i.me-1(data-feather="calendar") 
+                    | January 1, 2022
+                h2.card-title.h2.fw-bold Featured Post Title
+                p.card-text.text-truncate(style="max-lines: 3")
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta.
+                .mt-auto
+                    //- stretched-link hace que toda la tarjeta sea clicable
+                    a.btn.btn-primary.stretched-link(href='blog-post.html') Read more
 
-  .row 
-    .col-8
-      // Featured blog post
-      .card.mb-4
-        a(href='blog-post.html')
-          img.card-img-top(src='https://dummyimage.com/850x350/dee2e6/6c757d.jpg', alt='...')
-        .card-body
-          .small.text-muted January 1, 2022
-          h2.card-title Featured Post Title
-          p.card-text
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!
-          a.btn.btn-primary(href='blog-post.html') Read more →
+        //- Nested row for non-featured blog posts
+        .row.gx-5.gy-4
 
-      // Nested row for non-featured blog posts
-      .row
+          //- Left Column
+          .col-lg-6.d-flex.align-items-stretch
+            // Blog post 1
+            //- h-100 hace que la tarjeta ocupe toda la altura disponible
+            .card.mb-4.h-100
+              a(href='blog-post.html')
+                img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
+              .card-body.d-flex.flex-column
+                .small.text-body-secondary.mb-2 January 1, 2022
+                h2.card-title.h4.fw-bold Post Title
+                p.card-text.mb-4
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.
+                //- mt-auto empuja el botón al fondo siempre
+                .mt-auto
+                    a.btn.btn-outline-primary.btn-sm.stretched-link(href='blog-post.html') Read more
+            
+          //- Right Column (Moví el loop aquí para que sea consistente, usando d-flex también)
+          .col-lg-6.d-flex.align-items-stretch
+            // Blog post 2
+            .card.mb-4.h-100
+              a(href='blog-post.html')
+                img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
+              .card-body.d-flex.flex-column
+                .small.text-body-secondary.mb-2 January 1, 2022
+                h2.card-title.h4.fw-bold Post Title
+                p.card-text.mb-4
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.
+                .mt-auto
+                    a.btn.btn-outline-primary.btn-sm.stretched-link(href='blog-post.html') Read more
 
-        .col-lg-6
-          // Blog post
-          .card.mb-4
-            a(href='blog-post.html')
-              img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
-            .card-body
-              .small.text-muted January 1, 2022
-              h2.card-title.h4 Post Title
-              p.card-text
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.
-              a.btn.btn-primary(href='blog-post.html') Read more →
-          // Blog post
-          .card.mb-4
-            a(href='blog-post.html')
-              img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
-            .card-body
-              .small.text-muted January 1, 2022
-              h2.card-title.h4 Post Title
-              p.card-text
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.
-              a.btn.btn-primary(href='blog-post.html') Read more →
-        .col-lg-6
-          // Blog post
-          .card.mb-4
-            a(href='blog-post.html')
-              img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
-            .card-body
-              .small.text-muted January 1, 2022
-              h2.card-title.h4 Post Title
-              p.card-text
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.
-              a.btn.btn-primary(href='blog-post.html') Read more →
-          // Blog post
-          .card.mb-4
-            a(href='blog-post.html')
-              img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
-            .card-body
-              .small.text-muted January 1, 2022
-              h2.card-title.h4 Post Title
-              p.card-text
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.
-              a.btn.btn-primary(href='blog-post.html') Read more →
+          //- Fila 2 de posts
+          .col-lg-6.d-flex.align-items-stretch
+            // Blog post 3
+            .card.mb-4.h-100
+              a(href='blog-post.html')
+                img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
+              .card-body.d-flex.flex-column
+                .small.text-body-secondary.mb-2 January 1, 2022
+                h2.card-title.h4.fw-bold Post Title
+                p.card-text.mb-4
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.
+                .mt-auto
+                    a.btn.btn-outline-primary.btn-sm.stretched-link(href='blog-post.html') Read more
 
-      // Pagination
-      nav(aria-label='Pagination')
-        hr.my-0
-        ul.pagination.justify-content-center.my-4
-          li.page-item.disabled
-            a.page-link(href='#', tabindex='-1', aria-disabled='true') Newer
-          li.page-item.active(aria-current='page')
-            a.page-link(href='#') 1
-          li.page-item
-            a.page-link(href='#') 2
-          li.page-item
-            a.page-link(href='#') 3
-          li.page-item.disabled
-            a.page-link(href='#') ...
-          li.page-item
-            a.page-link(href='#') 15
-          li.page-item
-            a.page-link(href='#') Older
-    .col-4
-      include ../includes/blog-aside
+          .col-lg-6.d-flex.align-items-stretch
+            // Blog post 4
+            .card.mb-4.h-100
+              a(href='blog-post.html')
+                img.card-img-top(src='https://dummyimage.com/700x350/dee2e6/6c757d.jpg', alt='...')
+              .card-body.d-flex.flex-column
+                .small.text-body-secondary.mb-2 January 1, 2022
+                h2.card-title.h4.fw-bold Post Title
+                p.card-text.mb-4
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta.
+                .mt-auto
+                    a.btn.btn-outline-primary.btn-sm.stretched-link(href='blog-post.html') Read more
+
+        //- Pagination
+        nav.my-5(aria-label='Pagination')
+          hr.my-4
+          ul.pagination.justify-content-center
+            li.page-item.disabled
+              a.page-link(href='#', tabindex='-1', aria-disabled='true') Newer
+            li.page-item.active(aria-current='page')
+              a.page-link(href='#') 1
+            li.page-item
+              a.page-link(href='#') 2
+            li.page-item
+              a.page-link(href='#') 3
+            li.page-item.disabled
+              a.page-link(href='#') ...
+            li.page-item
+              a.page-link(href='#') 15
+            li.page-item
+              a.page-link(href='#') Older
+
+      //- Sidebar Column
+      .col-lg-4
+        include ../includes/blog-aside

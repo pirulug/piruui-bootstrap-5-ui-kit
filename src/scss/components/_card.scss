@@ -1,7 +1,4 @@
-// Estilos base de la tarjeta con soporte para Glassmorphism
-
 .card {
-  // Las variables CSS se alimentan de las variables SCSS definidas arriba
   --#{$prefix}card-spacer-y: #{$card-spacer-y};
   --#{$prefix}card-spacer-x: #{$card-spacer-x};
   --#{$prefix}card-title-spacer-y: #{$card-title-spacer-y};
@@ -24,20 +21,16 @@
   height: $card-height;
   word-wrap: break-word;
 
-  // Propiedades clave para el efecto Glass
   background-color: var(--#{$prefix}card-bg);
   background-clip: border-box;
   border: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
   border-radius: var(--#{$prefix}card-border-radius);
   box-shadow: var(--#{$prefix}card-box-shadow);
 
-  // El desenfoque del fondo (La magia del glassmorphism)
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  // Mejora visual: borde superior un poco más brillante para simular luz
-  border-top: 1px solid rgba($white, 0.6);
-  border-left: 1px solid rgba($white, 0.6);
+  border-top: none;
 
   >hr {
     margin-right: 0;
@@ -59,8 +52,6 @@
     }
   }
 
-  // Asegura que el texto sea legible si el fondo de la web es oscuro
-  // Si tu web es clara, puedes omitir esto.
   color: var(--#{$prefix}body-color);
 }
 
@@ -77,7 +68,7 @@
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  width: 100%; 
 }
 
 .card-img,
@@ -92,7 +83,7 @@
 
 .card-header {
   padding: var(--#{$prefix}card-cap-padding-y) var(--#{$prefix}card-cap-padding-x);
-  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  margin-bottom: 0;
   color: var(--#{$prefix}card-cap-color);
   background-color: var(--#{$prefix}card-cap-bg);
   border-bottom: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
@@ -124,7 +115,7 @@
 }
 
 .card-subtitle {
-  margin-top: calc(-.5 * var(--#{$prefix}card-title-spacer-y)); // stylelint-disable-line function-disallowed-list
+  margin-top: calc(-.5 * var(--#{$prefix}card-title-spacer-y)); 
   margin-bottom: 0;
 }
 
@@ -139,9 +130,9 @@
 }
 
 .card-header-tabs {
-  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
-  margin-bottom: calc(-1 * var(--#{$prefix}card-cap-padding-y)); // stylelint-disable-line function-disallowed-list
-  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
+  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); 
+  margin-bottom: calc(-1 * var(--#{$prefix}card-cap-padding-y)); 
+  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); 
   border-bottom: 0;
 
   .nav-link.active {
@@ -151,12 +142,12 @@
 }
 
 .card-header-pills {
-  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
-  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); // stylelint-disable-line function-disallowed-list
+  margin-right: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); 
+  margin-left: calc(-.5 * var(--#{$prefix}card-cap-padding-x)); 
 }
 
 .card-img-overlay {
-  background-color: rgba($white, 0.15); // Ligero overlay para legibilidad sobre imágenes
-  backdrop-filter: blur(4px); // Desenfoque extra sobre imágenes
+  background-color: rgba($white, 0.15); 
+  backdrop-filter: blur(4px); 
   @include border-radius(var(--#{$prefix}card-inner-border-radius));
 }

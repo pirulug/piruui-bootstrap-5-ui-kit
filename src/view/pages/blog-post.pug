@@ -8,81 +8,104 @@ block styles
 block scripts 
 
 block content
-  .row.my-3 
-    .col-8 
+  .container
+    //- Breadcrumb para mejor navegación (UX)
+    nav.my-4(aria-label="breadcrumb")
+      ol.breadcrumb
+        li.breadcrumb-item
+          a.text-decoration-none(href='index.html') Blog
+        li.breadcrumb-item.active(aria-current='page') Welcome to Blog Post!
 
-      // Post content
-      article.card.mb-3
-        .card-body
-          // Post header
-          header.mb-4
+    .row.gx-5
+      .col-lg-8 
 
-            // Post title
-            h1.fw-bolder.mb-1 Welcome to Blog Post!
+        // Post content
+        //- Usamos la tarjeta estándar de Bootstrap (tiene borde gris suave por defecto)
+        article.card.mb-5
+          .card-body.p-4.p-md-5
+            // Post header
+            header.mb-4
+              // Post categories
+              .mb-2
+                a.badge.bg-primary.text-decoration-none.link-light.rounded-pill.me-1(href='#!') Web Design
+                a.badge.bg-secondary.text-decoration-none.link-light.rounded-pill(href='#!') Freebies
 
-            // Post meta content
-            .text-muted.fst-italic.mb-2 Posted on January 1, 2022 by Start Bootstrap
+              // Post title
+              h1.fw-bolder.mb-3.display-5 Welcome to Blog Post!
 
-            // Post categories
-            a.badge.bg-secondary.text-decoration-none.link-light(href='#!') Web Design
-            a.badge.bg-secondary.text-decoration-none.link-light(href='#!') Freebies
+              // Post meta content
+              .text-body-secondary.fst-italic.mb-2.d-flex.align-items-center
+                i.me-2(data-feather="calendar" style="width: 16px; height: 16px;")
+                span Posted on January 1, 2022 by Start Bootstrap
 
-          // Preview image figure
-          figure.mb-4
-            img.img-fluid.rounded(src='https://dummyimage.com/900x400/ced4da/6c757d.jpg', alt='...')
+            // Preview image figure
+            figure.mb-4
+              img.img-fluid.rounded-3.w-100(src='https://dummyimage.com/900x400/ced4da/6c757d.jpg', alt='...')
 
-          // Post content
-          section.mb-5
+            // Post content
+            //- lh-lg aumenta el espaciado entre líneas para mejor lectura
+            section.mb-5.lh-lg
+              p.fs-5.mb-4 Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.
+              p.fs-5.mb-4 The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.
+              p.fs-5.mb-4 If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.
+              
+              h2.fw-bolder.mb-4.mt-5 I have odd cosmic thoughts every day
+              
+              p.fs-5.mb-4 For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.
+              p.fs-5.mb-4 Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.
 
-            p.fs-5.mb-4 Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe.
-            p.fs-5.mb-4 The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.
-            p.fs-5.mb-4 If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.
-            h2.fw-bolder.mb-4.mt-5 I have odd cosmic thoughts every day
-            p.fs-5.mb-4 For me, the most fascinating interface is Twitter. I have odd cosmic thoughts every day and I realized I could hold them to myself or share them with people who might be interested.
-            p.fs-5.mb-4 Venus has a runaway greenhouse effect. I kind of want to know what happened there because we're twirling knobs here on Earth without knowing the consequences of it. Mars once had running water. It's bone dry today. Something bad happened there as well.
+        // Comments section
+        section.mb-5
+          //- bg-body-tertiary da un contraste suave para separar comentarios del articulo
+          .card.bg-body-tertiary
+            .card-body.p-4
 
-      // Comments section
-      section.mb-5
-        .card
-          .card-body
+              h4.fw-bold.mb-4 Comments
 
-            // Comment form
-            form.mb-4
-              textarea.form-control(rows='3', placeholder='Join the discussion and leave a comment!')
+              // Comment form
+              form.mb-4
+                .form-floating.mb-3
+                    textarea.form-control(placeholder='Leave a comment here' id='floatingTextarea2' style='height: 100px')
+                    label(for='floatingTextarea2') Join the discussion and leave a comment!
+                button.btn.btn-primary.rounded-pill(type="button") Post Comment
 
-            // Comment with nested comments
-            .d-flex.mb-4
+              // Comment with nested comments
+              .d-flex.mb-4
+                // Parent comment
+                .flex-shrink-0
+                  img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
+                .ms-3
+                  .fw-bold Commenter Name
+                  p.mb-2 If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                  //- Botón pequeño de responder (UX)
+                  a.text-decoration-none.small(href="#!") Reply
 
-              // Parent comment
-              .flex-shrink-0
-                img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
-              .ms-3
-                .fw-bold Commenter Name
-                | If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                  // Child comment 1
+                  .d-flex.mt-4
+                    .flex-shrink-0
+                      img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
+                    .ms-3
+                      .fw-bold Commenter Name
+                      p.mb-2 And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                      a.text-decoration-none.small(href="#!") Reply
 
-                // Child comment 1
-                .d-flex.mt-4
-                  .flex-shrink-0
-                    img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
-                  .ms-3
-                    .fw-bold Commenter Name
-                    | And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                  // Child comment 2
+                  .d-flex.mt-4
+                    .flex-shrink-0
+                      img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
+                    .ms-3
+                      .fw-bold Commenter Name
+                      p.mb-2 When you put money directly to a problem, it makes a good headline.
+                      a.text-decoration-none.small(href="#!") Reply
 
-                // Child comment 2
-                .d-flex.mt-4
-                  .flex-shrink-0
-                    img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
-                  .ms-3
-                    .fw-bold Commenter Name
-                    | When you put money directly to a problem, it makes a good headline.
+              // Single comment
+              .d-flex
+                .flex-shrink-0
+                  img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
+                .ms-3
+                  .fw-bold Commenter Name
+                  p.mb-2 When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                  a.text-decoration-none.small(href="#!") Reply
 
-            // Single comment
-            .d-flex
-              .flex-shrink-0
-                img.rounded-circle(src='https://dummyimage.com/50x50/ced4da/6c757d.jpg', alt='...')
-              .ms-3
-                .fw-bold Commenter Name
-                | When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-
-    .col-4
-      include ../includes/blog-aside
+      .col-lg-4
+        include ../includes/blog-aside
