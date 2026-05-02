@@ -1,6 +1,6 @@
 {
   "name": "piruboilerplatepug",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "PiruBoilerplatePug",
   "keywords": [
     "template",
@@ -17,7 +17,10 @@
     "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --progress",
     "watch": "webpack NODE_ENV=development --config webpack.config.js --watch --progress",
     "start": "webpack serve --config webpack.config.js --progress",
-    "prepublishOnly": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js"
+    "prepublishOnly": "cross-env NODE_ENV=production webpack --progress --config webpack.config.js",
+    "deploy": "gh-pages -d dist",
+    "zip": "powershell -Command \"$version = (Get-Content package.json | ConvertFrom-Json).version; Compress-Archive -Path dist\\* -DestinationPath piruui-v$version.zip -Force\"",
+    "release": "pnpm run zip && powershell -Command \"$v = (Get-Content package.json | ConvertFrom-Json).version; gh-release --assets piruui-v$v.zip\""
   },
   "author": "Pirulug",
   "license": "MIT",
@@ -41,6 +44,7 @@
     "eslint": "10.3.0",
     "file-loader": "6.2.0",
     "gh-pages": "^6.3.0",
+    "gh-release": "^7.0.2",
     "html-webpack-plugin": "^5.6.7",
     "mini-css-extract-plugin": "2.10.2",
     "pirulug-delete-empty-files-webpack-plugin": "^0.0.3",

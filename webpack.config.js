@@ -46,6 +46,7 @@ module.exports = {
     custom: "./src/plugins/custom/custom.js",
   },
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  target: "web",
   // devtool: process.env.NODE_ENV === "production" ? "source-map" : "inline-source-map",
   devtool: false,
   output: {
@@ -126,9 +127,6 @@ module.exports = {
       singleQuote: true,
       htmlWhitespaceSensitivity: "ignore",
       endOfLine: "auto",
-      htmlWhitespaceSensitivity: "css",
-      jsxBracketSameLine: false,
-      htmlWhitespaceSensitivity: "ignore",
       proseWrap: "always",
     }),
     // Eliminar archivos vacios
@@ -238,6 +236,7 @@ module.exports = {
     compress: true,
     port: 8989,
     open: true,
+    hot: false,
     liveReload: true,
   },
   stats: {
