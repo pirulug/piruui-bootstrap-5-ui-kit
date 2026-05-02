@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>PiruUI | Series Details</title>
+    <!-- Favicon-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/img/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/img/favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest" />
+    <!-- Css-->
+    <link rel="stylesheet" href="../assets/css/prism.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/bootstrapicons.css"
+      media="print"
+      onload="this.media = 'all'" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/fontawesome.css"
+      media="print"
+      onload="this.media = 'all'" />
+    <link rel="stylesheet" href="../assets/css/piruui.css" />
+    <link rel="stylesheet" href="../assets/css/extra.css" />
+    <script>
+      (function () {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDarkScheme = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = storedTheme || (prefersDarkScheme ? "dark" : "light");
+        document.documentElement.setAttribute("data-bs-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="piru-wrapper">
+      <div class="piru-nav-topbar">
+        <div class="piru-nav-container">
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="d-flex gap-3">
+              <a class="top-link" href="mailto:hello@pirulug.com">
+                <i class="bi bi-envelope me-1"></i>
+                <span>hello@pirulug.com</span>
+              </a>
+              <a class="top-link" href="#">
+                <i class="bi bi-telephone me-1"></i>
+                <span>+51 999 888 777</span>
+              </a>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <a class="top-link" href="#">Terms & Conditions</a>
+              <div
+                class="vr bg-body-secondary"
+                style="height: 12px; width: 1px"></div>
+              <div class="d-flex gap-2">
+                <a class="top-social" href="#" title="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a class="top-social" href="#" title="Twitter">
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+                <a class="top-social" href="#" title="Instagram">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a class="top-social" href="#" title="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="piru-nav-main">
+        <div class="piru-nav-container">
+          <a class="piru-nav-brand" href="../index.html">
+            <!--
+      <div class="piru-nav-logo-images"><img class="piru-logo logo-light" src="../assets/img/logo/piruui-dark-logo.png" alt="PiruUI"><img class="piru-logo logo-dark" src="../assets/img/logo/piruui-white-logo.png" alt="PiruUI"></div>-->
+            <!--
+      <div class="piru-nav-logo-image-title"><img class="piru-logo logo-light" src="../assets/img/logo/logo-dark.png" alt="PiruUI"><img class="piru-logo logo-dark" src="../assets/img/logo/logo-light.png" alt="PiruUI"><span>PiruUI</span></div>-->
+            <div class="piru-nav-logo-text">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <span>PiruUI</span>
+            </div>
+          </a>
+          <ul class="piru-nav-menu">
+            <li class="piru-nav-dropdown has-megamenu">
+              <a class="piru-nav-link">
+                <i class="bi bi-grid-1x2"></i>
+                <span>Explore</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <div class="piru-dropdown-panel piru-megamenu">
+                <div class="piru-megamenu-grid">
+                  <div class="piru-megamenu-column">
+                    <h6>Media & Content</h6>
+                    <a class="piru-dropdown-item" href="../movies/movies.html">
+                      <i class="bi bi-film"></i>
+                      <span>Movies</span>
+                    </a>
+                    <a
+                      class="piru-dropdown-item"
+                      href="../movies/series-details.html">
+                      <i class="bi bi-tv"></i>
+                      <span>Series</span>
+                    </a>
+                    <a class="piru-dropdown-item" href="../blog/blog.html">
+                      <i class="bi bi-newspaper"></i>
+                      <span>Blog</span>
+                    </a>
+                    <a class="piru-dropdown-item" href="../colors.html">
+                      <i class="bi bi-palette"></i>
+                      <span>Color Palette</span>
+                    </a>
+                  </div>
+                  <div class="piru-megamenu-column">
+                    <h6>UI Components</h6>
+                    <a class="piru-dropdown-item" href="../index.html#buttons">
+                      <i class="bi bi-toggle-on"></i>
+                      <span>Buttons</span>
+                    </a>
+                    <a class="piru-dropdown-item" href="../index.html#forms">
+                      <i class="bi bi-input-cursor-text"></i>
+                      <span>Forms</span>
+                    </a>
+                    <a class="piru-dropdown-item" href="#">
+                      <i class="bi bi-window-stack"></i>
+                      <span>Modals & Tabs</span>
+                    </a>
+                    <a class="piru-dropdown-item" href="#">
+                      <i class="bi bi-exclamation-triangle"></i>
+                      <span>Alerts & Badges</span>
+                    </a>
+                  </div>
+                  <div class="piru-megamenu-column">
+                    <h6>Resources & Shop</h6>
+                    <a class="piru-dropdown-item" href="#">
+                      <i class="bi bi-book"></i>
+                      <span>Documentation</span>
+                    </a>
+                    <a class="piru-dropdown-item" href="#">
+                      <i class="bi bi-patch-check"></i>
+                      <span>License</span>
+                    </a>
+                    <hr class="my-3 opacity-10" />
+                    <a
+                      class="piru-dropdown-item featured-item"
+                      href="../shop/index.html">
+                      <div class="d-flex flex-column">
+                        <div class="fw-bold mb-1">Visit Our Shop</div>
+                        <div class="small opacity-75">
+                          Premium templates & UI kits
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="piru-nav-dropdown">
+              <a class="piru-nav-link">
+                <i class="bi bi-bag"></i>
+                <span>Shop</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+              <div class="piru-dropdown-panel">
+                <a class="piru-dropdown-item" href="../shop/index.html">
+                  <i class="bi bi-grid"></i>
+                  <span>Catalog</span>
+                </a>
+                <a class="piru-dropdown-item" href="../shop/cart.html">
+                  <i class="bi bi-cart"></i>
+                  <span>Cart</span>
+                </a>
+                <a class="piru-dropdown-item" href="../shop/checkout.html">
+                  <i class="bi bi-credit-card"></i>
+                  <span>Checkout</span>
+                </a>
+              </div>
+            </li>
+            <li>
+              <a class="piru-nav-link" href="../colors.html">
+                <i class="bi bi-palette"></i>
+                <span>Colors</span>
+              </a>
+            </li>
+            <li class="piru-mobile-auth">
+              <div class="d-grid gap-2">
+                <a
+                  class="btn btn-primary py-3 fw-bold"
+                  href="../auth/signup.html">
+                  Get Started
+                </a>
+                <a
+                  class="btn btn-link text-body fw-bold"
+                  href="../auth/signin.html">
+                  Login
+                </a>
+              </div>
+            </li>
+          </ul>
+          <div class="piru-nav-actions">
+            <button
+              class="piru-action-btn"
+              id="openSearch"
+              type="button"
+              title="Search">
+              <i class="bi bi-search"></i>
+            </button>
+            <button
+              class="piru-action-btn desktop-only"
+              id="bd-theme-toggle"
+              type="button"
+              title="Theme">
+              <span class="theme-icon-active"><i class="bi bi-sun"></i></span>
+            </button>
+            <div class="desktop-auth">
+              <a
+                class="btn btn-sm btn-link text-body text-decoration-none fw-bold"
+                href="../auth/signin.html">
+                Login
+              </a>
+              <a
+                class="btn btn-sm btn-primary px-3 fw-bold"
+                href="../auth/signup.html">
+                Sign Up
+              </a>
+            </div>
+            <button
+              class="piru-action-btn mobile-only"
+              id="bd-theme-toggle-mobile"
+              type="button">
+              <span class="theme-icon-active"><i class="bi bi-sun"></i></span>
+            </button>
+            <button class="piru-nav-toggle" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+        <div class="piru-search-overlay" id="piruSearchOverlay">
+          <div class="piru-nav-container">
+            <div class="d-flex align-items-center gap-3 w-100">
+              <i class="bi bi-search text-primary h4 mb-0"></i>
+              <input
+                class="form-control form-control-lg bg-transparent border-0 ps-0 shadow-none"
+                id="piruSearchInput"
+                type="text"
+                placeholder="Search..." />
+              <button class="btn btn-link text-body p-0" id="closeSearch">
+                <i class="bi bi-x-lg h4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main class="piru-main-content">
+        <section
+          class="position-relative overflow-hidden py-5 bg-dark text-white"
+          style="
+            min-height: 500px;
+            background:
+              linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url(&quot;../assets/img/serie/backdrop.webp&quot;) center/cover
+                no-repeat;
+          ">
+          <div class="container py-lg-5">
+            <div class="row align-items-center gy-4">
+              <div class="col-lg-3 col-md-4">
+                <img
+                  class="img-fluid rounded"
+                  src="../assets/img/serie/poster.webp"
+                  alt="Poster" />
+              </div>
+              <div class="col-lg-9 col-md-8">
+                <div class="badge bg-success mb-3">HBO Original</div>
+                <h1 class="fw-bold display-3 mb-2">The Last of Us</h1>
+                <div class="d-flex align-items-center gap-3 mb-4 text-white-50">
+                  <span class="d-flex align-items-center gap-1">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    9.1 / 10
+                  </span>
+                  <span class="vr"></span>
+                  <span>1 Season</span>
+                  <span class="vr"></span>
+                  <span>Drama, Sci-Fi</span>
+                  <span class="vr"></span>
+                  <span>2023</span>
+                </div>
+                <p class="lead mb-5 opacity-75">
+                  Twenty years after modern civilization has been destroyed,
+                  Joel, a hardened survivor, is hired to smuggle Ellie, a
+                  14-year-old girl, out of an oppressive quarantine zone. What
+                  starts as a small job soon becomes a brutal journey.
+                </p>
+                <div class="d-flex gap-3">
+                  <button class="btn btn-primary btn-lg px-4">
+                    <i class="bi bi-play-fill me-2"></i>
+                    Watch Latest Episode
+                  </button>
+                  <button class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-list-ul me-2"></i>
+                    Episode List
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="container py-5">
+          <div class="row gy-5">
+            <div class="col-lg-8">
+              <div
+                class="d-flex align-items-center justify-content-between mb-4">
+                <h3 class="fw-bold mb-0">Episodes</h3>
+                <div class="piru-series-tabs">
+                  <ul class="nav nav-pills p-1" id="seasonTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active px-3"
+                        id="t1-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#season-1"
+                        type="button"
+                        role="tab">
+                        Season 1
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link px-3"
+                        id="t2-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#season-2"
+                        type="button"
+                        role="tab">
+                        Season 2
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <hr class="my-4 opacity-10" />
+              <div class="tab-content" id="seasonTabsContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="season-1"
+                  role="tabpanel">
+                  <h5 class="fw-bold mb-3">Season 1 (2023)</h5>
+                  <div class="d-grid gap-3">
+                    <div class="card overflow-hidden">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <img
+                            class="img-fluid"
+                            src="../assets/img/serie/backdrop.webp"
+                            alt="When You're Lost in the Darkness"
+                            style="aspect-ratio: 16/9; object-fit: cover" />
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div
+                              class="d-flex justify-content-between align-items-start">
+                              <div>
+                                <div class="fw-bold mb-1">
+                                  When You're Lost in the Darkness
+                                </div>
+                                <div class="text-muted small">
+                                  55 min • Jan 15, 2023
+                                </div>
+                              </div>
+                              <button
+                                class="btn btn-sm btn-primary rounded-circle"
+                                style="width: 32px; height: 32px; padding: 0">
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card overflow-hidden">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <img
+                            class="img-fluid"
+                            src="../assets/img/serie/backdrop.webp"
+                            alt="Infected"
+                            style="aspect-ratio: 16/9; object-fit: cover" />
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div
+                              class="d-flex justify-content-between align-items-start">
+                              <div>
+                                <div class="fw-bold mb-1">Infected</div>
+                                <div class="text-muted small">
+                                  55 min • Jan 15, 2023
+                                </div>
+                              </div>
+                              <button
+                                class="btn btn-sm btn-primary rounded-circle"
+                                style="width: 32px; height: 32px; padding: 0">
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card overflow-hidden">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <img
+                            class="img-fluid"
+                            src="../assets/img/serie/backdrop.webp"
+                            alt="Long, Long Time"
+                            style="aspect-ratio: 16/9; object-fit: cover" />
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div
+                              class="d-flex justify-content-between align-items-start">
+                              <div>
+                                <div class="fw-bold mb-1">Long, Long Time</div>
+                                <div class="text-muted small">
+                                  55 min • Jan 15, 2023
+                                </div>
+                              </div>
+                              <button
+                                class="btn btn-sm btn-primary rounded-circle"
+                                style="width: 32px; height: 32px; padding: 0">
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card overflow-hidden">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <img
+                            class="img-fluid"
+                            src="../assets/img/serie/backdrop.webp"
+                            alt="Please Hold to My Hand"
+                            style="aspect-ratio: 16/9; object-fit: cover" />
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div
+                              class="d-flex justify-content-between align-items-start">
+                              <div>
+                                <div class="fw-bold mb-1">
+                                  Please Hold to My Hand
+                                </div>
+                                <div class="text-muted small">
+                                  55 min • Jan 15, 2023
+                                </div>
+                              </div>
+                              <button
+                                class="btn btn-sm btn-primary rounded-circle"
+                                style="width: 32px; height: 32px; padding: 0">
+                                <i class="bi bi-play-fill"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="season-2" role="tabpanel">
+                  <h5 class="fw-bold mb-3">Season 2 (Coming Soon)</h5>
+                  <div class="d-grid gap-3">
+                    <div class="card overflow-hidden opacity-75">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <div
+                            class="bg-secondary bg-opacity-25 d-flex align-items-center justify-content-center"
+                            style="aspect-ratio: 16/9">
+                            <i class="bi bi-image text-muted"></i>
+                          </div>
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div class="fw-bold mb-1">Episode 01</div>
+                            <div class="text-muted small">
+                              60 min • Date Pending
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card overflow-hidden opacity-75">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <div
+                            class="bg-secondary bg-opacity-25 d-flex align-items-center justify-content-center"
+                            style="aspect-ratio: 16/9">
+                            <i class="bi bi-image text-muted"></i>
+                          </div>
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div class="fw-bold mb-1">Episode 02</div>
+                            <div class="text-muted small">
+                              60 min • Date Pending
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card overflow-hidden opacity-75">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <div
+                            class="bg-secondary bg-opacity-25 d-flex align-items-center justify-content-center"
+                            style="aspect-ratio: 16/9">
+                            <i class="bi bi-image text-muted"></i>
+                          </div>
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div class="fw-bold mb-1">Episode 03</div>
+                            <div class="text-muted small">
+                              60 min • Date Pending
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card overflow-hidden opacity-75">
+                      <div class="row g-0 align-items-center">
+                        <div class="col-4 col-md-3">
+                          <div
+                            class="bg-secondary bg-opacity-25 d-flex align-items-center justify-content-center"
+                            style="aspect-ratio: 16/9">
+                            <i class="bi bi-image text-muted"></i>
+                          </div>
+                        </div>
+                        <div class="col-8 col-md-9">
+                          <div class="card-body p-3">
+                            <div class="fw-bold mb-1">Episode 04</div>
+                            <div class="text-muted small">
+                              60 min • Date Pending
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-5 opacity-10" />
+              <h3 class="fw-bold mb-4">Main Cast</h3>
+              <div class="row g-3">
+                <div class="col-6 col-md-4">
+                  <div
+                    class="d-flex align-items-center gap-3 p-2 rounded bg-body">
+                    <div
+                      class="avatar rounded-circle bg-secondary"
+                      style="width: 48px; height: 48px"></div>
+                    <div>
+                      <div class="fw-bold small">Pedro Pascal</div>
+                      <div class="text-muted x-small">Joel / Ellie</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div
+                    class="d-flex align-items-center gap-3 p-2 rounded bg-body">
+                    <div
+                      class="avatar rounded-circle bg-secondary"
+                      style="width: 48px; height: 48px"></div>
+                    <div>
+                      <div class="fw-bold small">Bella Ramsey</div>
+                      <div class="text-muted x-small">Joel / Ellie</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div
+                    class="d-flex align-items-center gap-3 p-2 rounded bg-body">
+                    <div
+                      class="avatar rounded-circle bg-secondary"
+                      style="width: 48px; height: 48px"></div>
+                    <div>
+                      <div class="fw-bold small">Anna Torv</div>
+                      <div class="text-muted x-small">Joel / Ellie</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div
+                    class="d-flex align-items-center gap-3 p-2 rounded bg-body">
+                    <div
+                      class="avatar rounded-circle bg-secondary"
+                      style="width: 48px; height: 48px"></div>
+                    <div>
+                      <div class="fw-bold small">Gabriel Luna</div>
+                      <div class="text-muted x-small">Joel / Ellie</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div
+                    class="d-flex align-items-center gap-3 p-2 rounded bg-body">
+                    <div
+                      class="avatar rounded-circle bg-secondary"
+                      style="width: 48px; height: 48px"></div>
+                    <div>
+                      <div class="fw-bold small">Nick Offerman</div>
+                      <div class="text-muted x-small">Joel / Ellie</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div
+                    class="d-flex align-items-center gap-3 p-2 rounded bg-body">
+                    <div
+                      class="avatar rounded-circle bg-secondary"
+                      style="width: 48px; height: 48px"></div>
+                    <div>
+                      <div class="fw-bold small">Murray Bartlett</div>
+                      <div class="text-muted x-small">Joel / Ellie</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card p-4">
+                <h5 class="fw-bold mb-4">Information</h5>
+                <ul class="list-unstyled d-grid gap-3 mb-0">
+                  <li class="d-flex justify-content-between small">
+                    <span class="text-muted">Creators</span>
+                    <span class="fw-medium">Craig Mazin, Neil Druckmann</span>
+                  </li>
+                  <li class="d-flex justify-content-between small">
+                    <span class="text-muted">Network</span>
+                    <span class="fw-medium">HBO</span>
+                  </li>
+                  <li class="d-flex justify-content-between small">
+                    <span class="text-muted">Seasons</span>
+                    <span class="fw-medium">2</span>
+                  </li>
+                  <li class="d-flex justify-content-between small">
+                    <span class="text-muted">Episodes</span>
+                    <span class="fw-medium">18</span>
+                  </li>
+                  <li class="d-flex justify-content-between small">
+                    <span class="text-muted">Status</span>
+                    <span class="badge bg-primary fw-normal">Renewed</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr class="my-5 opacity-10" />
+          <h3 class="fw-bold mb-4">Similar Series</h3>
+          <div class="row g-4">
+            <div class="col-6 col-md-3">
+              <a class="text-decoration-none" href="#">
+                <div class="card overflow-hidden">
+                  <img
+                    class="card-img-top"
+                    src="../assets/img/serie/poster.webp"
+                    alt="Chernobyl"
+                    style="aspect-ratio: 2/3; object-fit: cover" />
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-0 text-body">Chernobyl</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a class="text-decoration-none" href="#">
+                <div class="card overflow-hidden">
+                  <img
+                    class="card-img-top"
+                    src="../assets/img/serie/poster.webp"
+                    alt="Succession"
+                    style="aspect-ratio: 2/3; object-fit: cover" />
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-0 text-body">Succession</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a class="text-decoration-none" href="#">
+                <div class="card overflow-hidden">
+                  <img
+                    class="card-img-top"
+                    src="../assets/img/serie/poster.webp"
+                    alt="House of the Dragon"
+                    style="aspect-ratio: 2/3; object-fit: cover" />
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-0 text-body">House of the Dragon</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-md-3">
+              <a class="text-decoration-none" href="#">
+                <div class="card overflow-hidden">
+                  <img
+                    class="card-img-top"
+                    src="../assets/img/serie/poster.webp"
+                    alt="The White Lotus"
+                    style="aspect-ratio: 2/3; object-fit: cover" />
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-0 text-body">The White Lotus</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer py-5 mt-3 bg-body">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4">
+              <a
+                class="d-flex align-items-center mb-3 text-body text-decoration-none fw-bold fs-4"
+                href="../index.html">
+                PiruUI
+              </a>
+              <p class="text-body-secondary small pe-lg-5">
+                A professional Bootstrap 5 UI Kit for building modern and
+                responsive web applications with Pug and Webpack.
+              </p>
+              <div class="d-flex gap-3 mt-4">
+                <a
+                  class="text-body-secondary"
+                  href="https://github.com/pirulug/"
+                  target="_blank">
+                  <i class="bi bi-github fs-5"></i>
+                </a>
+                <a
+                  class="text-body-secondary"
+                  href="https://x.com/pirulug"
+                  target="_blank">
+                  <i class="bi bi-twitter-x fs-5"></i>
+                </a>
+                <a class="text-body-secondary" href="#!">
+                  <i class="bi bi-instagram fs-5"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+              <h6 class="fw-bold mb-3">Shortcuts</h6>
+              <ul class="list-unstyled small d-grid gap-2">
+                <li>
+                  <a
+                    class="text-body-secondary text-decoration-none"
+                    href="../index.html">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-body-secondary text-decoration-none"
+                    href="../blog/blog.html">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-body-secondary text-decoration-none"
+                    href="../blog/post.html">
+                    Demo Post
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+              <h6 class="fw-bold mb-3">Resources</h6>
+              <ul class="list-unstyled small d-grid gap-2">
+                <li>
+                  <a
+                    class="text-body-secondary text-decoration-none"
+                    href="../pages/sticky-footer-navbar.html">
+                    Layouts
+                  </a>
+                </li>
+                <li>
+                  <a class="text-body-secondary text-decoration-none" href="#!">
+                    Documentation
+                  </a>
+                </li>
+                <li>
+                  <a class="text-body-secondary text-decoration-none" href="#!">
+                    Changelog
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+              <h6 class="fw-bold mb-3">Legal</h6>
+              <ul class="list-unstyled small d-grid gap-2">
+                <li>
+                  <a class="text-body-secondary text-decoration-none" href="#!">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a class="text-body-secondary text-decoration-none" href="#!">
+                    Terms
+                  </a>
+                </li>
+                <li>
+                  <a class="text-body-secondary text-decoration-none" href="#!">
+                    License
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row align-items-center gy-3 mt-5">
+            <div class="col-md-6 text-center text-md-start">
+              <p class="mb-0 small text-body-secondary">
+                &copy; 2026 PiruUI. Designed by
+                <a
+                  class="text-body-secondary fw-medium"
+                  href="https://github.com/pirulug/"
+                  target="_blank">
+                  Pirulug.
+                </a>
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <span
+                class="badge bg-body-secondary text-body-secondary fw-normal">
+                v5.3.8
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Js Bootstrap-->
+    <script src="../assets/js/piruui.js"></script>
+    <script src="../assets/js/extra.js"></script>
+    <script src="../assets/js/prism.js"></script>
+  </body>
+</html>

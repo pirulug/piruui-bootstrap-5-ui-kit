@@ -1,0 +1,119 @@
+(() => {
+  "use strict";
+  function e(e) {
+    return (
+      (function (e) {
+        if (Array.isArray(e)) return t(e);
+      })(e) ||
+      (function (e) {
+        if (
+          ("undefined" != typeof Symbol && null != e[Symbol.iterator]) ||
+          null != e["@@iterator"]
+        )
+          return Array.from(e);
+      })(e) ||
+      (function (e, r) {
+        if (e) {
+          if ("string" == typeof e) return t(e, r);
+          var n = {}.toString.call(e).slice(8, -1);
+          return (
+            "Object" === n && e.constructor && (n = e.constructor.name),
+            "Map" === n || "Set" === n
+              ? Array.from(e)
+              : "Arguments" === n ||
+                  /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
+                ? t(e, r)
+                : void 0
+          );
+        }
+      })(e) ||
+      (function () {
+        throw new TypeError(
+          "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.",
+        );
+      })()
+    );
+  }
+  function t(e, t) {
+    (null == t || t > e.length) && (t = e.length);
+    for (var r = 0, n = Array(t); r < t; r++) n[r] = e[r];
+    return n;
+  }
+  !(function () {
+    function t() {
+      var t = document.getElementById("source-modal");
+      t
+        ? document.body.addEventListener("click", function (r) {
+            var n = r.target.closest(".source-button");
+            if (n) {
+              var o = n.closest(".bs-component");
+              if (o) {
+                var a = o.innerHTML;
+                ((a = (function (t) {
+                  var r = (function (e) {
+                      return e
+                        .replace(/×/g, "&times;")
+                        .replace(/«/g, "&laquo;")
+                        .replace(/»/g, "&raquo;")
+                        .replace(/←/g, "&larr;")
+                        .replace(/→/g, "&rarr;");
+                    })(t).split("\n"),
+                    n = (r = r.filter(function (e) {
+                      return "" !== e.trim() && !e.includes("source-button");
+                    })).map(function (e) {
+                      var t = e.match(/^\s*/);
+                      return t ? t[0].length : 0;
+                    });
+                  if (n.length > 0) {
+                    var o = Math.min.apply(Math, e(n));
+                    r = r.map(function (e) {
+                      return e.slice(o);
+                    });
+                  }
+                  return r.join("\n");
+                })(a)),
+                  window.Prism &&
+                    (a = Prism.highlight(a, Prism.languages.html, "html")));
+                var c =
+                  t.querySelector("code") || t.querySelector(".modal-body");
+                if (c)
+                  ((c.innerHTML = a),
+                    bootstrap.Modal.getOrCreateInstance(t).show());
+                else
+                  console.error(
+                    "Error: No se encontró la etiqueta <code> dentro del modal.",
+                  );
+              }
+            }
+          })
+        : console.error(
+            "Error: No se encontró el elemento #source-modal en el HTML",
+          );
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      (document.querySelectorAll(".bs-component").forEach(function (e) {
+        e.querySelector(".source-button") ||
+          e.insertAdjacentHTML(
+            "beforeend",
+            '<button class="source-button btn btn-primary btn-xs" type="button" tabindex="0"><i class="bi bi-code"></i></button>',
+          );
+      }),
+        t(),
+        [].slice
+          .call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+          .map(function (e) {
+            return new bootstrap.Popover(e);
+          }),
+        [].slice
+          .call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+          .map(function (e) {
+            return new bootstrap.Tooltip(e);
+          }),
+        document.querySelectorAll('[href="#"]').forEach(function (e) {
+          e.addEventListener("click", function (e) {
+            return e.preventDefault();
+          });
+        }));
+    });
+  })();
+})();

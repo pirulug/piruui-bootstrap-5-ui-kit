@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>PiruUI | Sign Up</title>
+    <!-- Favicon-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/img/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/img/favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/img/favicon/favicon-16x16.png" />
+    <!-- Css-->
+    <link
+      rel="stylesheet"
+      href="../assets/css/bootstrapicons.css"
+      media="print"
+      onload="this.media = 'all'" />
+    <link rel="stylesheet" href="../assets/css/piruui.css" />
+    <link rel="stylesheet" href="../assets/css/extra.css" />
+    <script>
+      (function () {
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDarkScheme = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = storedTheme || (prefersDarkScheme ? "dark" : "light");
+        document.documentElement.setAttribute("data-bs-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="piru-wrapper">
+      <div class="position-fixed top-0 end-0 p-4" style="z-index: 1050">
+        <button
+          class="btn btn-link text-body p-2 text-decoration-none"
+          id="bd-theme-toggle"
+          type="button"
+          title="Toggle Theme">
+          <span class="theme-icon-active">
+            <i class="bi bi-sun h4 mb-0"></i>
+          </span>
+        </button>
+      </div>
+      <main
+        class="piru-main-content d-flex align-items-center justify-content-center min-vh-100 p-3">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card p-4 p-lg-5">
+                <div class="text-center mb-5">
+                  <a class="d-inline-block mb-4" href="../index.html">
+                    <i
+                      class="bi bi-lightning-charge-fill text-primary display-4"></i>
+                  </a>
+                  <h2 class="fw-bold">Create Account</h2>
+                  <p class="text-body-secondary small">
+                    Join thousands of creators using PiruUI
+                  </p>
+                </div>
+                <form class="d-grid gap-4">
+                  <div>
+                    <label class="form-label" for="fullName">Full Name</label>
+                    <input
+                      class="form-control"
+                      id="fullName"
+                      type="text"
+                      placeholder="John Doe"
+                      required />
+                  </div>
+                  <div>
+                    <label class="form-label" for="email">Email Address</label>
+                    <input
+                      class="form-control"
+                      id="email"
+                      type="email"
+                      placeholder="name@example.com"
+                      required />
+                  </div>
+                  <div>
+                    <label class="form-label" for="password">Password</label>
+                    <div class="input-group">
+                      <input
+                        class="form-control"
+                        id="password"
+                        type="password"
+                        placeholder="••••••••"
+                        required />
+                      <button
+                        class="btn btn-link text-body text-decoration-none bg-body-secondary px-3"
+                        type="button"
+                        data-pr-toggle-password="password">
+                        <i class="bi bi-eye"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-check small">
+                    <input
+                      class="form-check-input"
+                      id="terms"
+                      type="checkbox"
+                      required />
+                    <label
+                      class="form-check-label text-body-secondary"
+                      for="terms">
+                      I agree to the
+                      <a class="text-decoration-none" href="#">Terms</a>
+                      and
+                      <a class="text-decoration-none" href="#">
+                        Privacy Policy
+                      </a>
+                    </label>
+                  </div>
+                  <button
+                    class="btn btn-primary btn-lg fw-bold py-3"
+                    type="submit">
+                    Create Account
+                  </button>
+                </form>
+                <div class="text-center my-5">
+                  <span
+                    class="small text-body-secondary px-3 position-relative"
+                    style="z-index: 1">
+                    Or sign up with
+                  </span>
+                  <hr class="mt-n3 text-body-secondary opacity-25" />
+                </div>
+                <div class="row g-3">
+                  <div class="col-6">
+                    <button
+                      class="btn btn-outline-body w-100 d-flex align-items-center justify-content-center gap-2 py-3 fw-medium"
+                      type="button">
+                      <i class="bi bi-google"></i>
+                      <span>Google</span>
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <button
+                      class="btn btn-outline-body w-100 d-flex align-items-center justify-content-center gap-2 py-3 fw-medium"
+                      type="button">
+                      <i class="bi bi-github"></i>
+                      <span>GitHub</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="text-center mt-5">
+                  <p class="small text-body-secondary mb-0">
+                    Already have an account?
+                    <a
+                      class="fw-bold text-decoration-none"
+                      href="../auth/signin.html">
+                      Sign In
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Js Bootstrap-->
+    <script src="../assets/js/piruui.js"></script>
+    <script src="../assets/js/extra.js"></script>
+  </body>
+</html>
