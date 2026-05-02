@@ -1,0 +1,54 @@
+extends ../../layouts/home
+
+append config
+  -pageName = 'Carrito de Compras'
+
+block content
+  .container.py-5
+    h1.fw-bold.mb-5 Tu Carrito (2 Artículos)
+
+    .row.gy-5.gx-lg-5
+      //- Items List
+      .col-lg-8
+        .d-grid.gap-3
+          each item in [{name: 'Smartphone Pro', price: 999, color: 'Space Gray'}, {name: 'Auriculares Wireless', price: 199, color: 'Blanco'}]
+            .card.p-3
+              .row.align-items-center.g-3
+                .col-4.col-md-2
+                    img.img-fluid.rounded(src=`https://dummyimage.com/200x200/181818/ffffff&text=${item.name}` alt=item.name)
+                .col-8.col-md-5
+                    h6.fw-bold.mb-1= item.name
+                    p.small.text-muted.mb-0= `Color: ${item.color}`
+                .col-6.col-md-3
+                    .d-flex.align-items-center.gap-3
+                        button.btn.btn-sm.btn-outline-secondary.rounded-circle.p-0.d-flex.align-items-center.justify-content-center(style="width: 28px; height: 28px;") -
+                        span.fw-bold 1
+                        button.btn.btn-sm.btn-outline-secondary.rounded-circle.p-0.d-flex.align-items-center.justify-content-center(style="width: 28px; height: 28px;") +
+                .col-6.col-md-2.text-end
+                    .fw-bold.text-primary= `$${item.price}.00`
+                    button.btn.btn-link.text-danger.p-0.x-small Eliminar
+
+      //- Order Summary Sidebar
+      .col-lg-4
+        .card.p-4
+          h5.fw-bold.mb-4 Resumen del Pedido
+          
+          ul.list-unstyled.d-grid.gap-3.pb-4.border-bottom.border-secondary.border-opacity-10.mb-4
+            li.d-flex.justify-content-between.small
+                span.text-muted Subtotal
+                span.fw-medium $1,198.00
+            li.d-flex.justify-content-between.small
+                span.text-muted Envío
+                span.text-success Gratis
+            li.d-flex.justify-content-between.small
+                span.text-muted Impuestos (16%)
+                span.fw-medium $191.68
+
+          .d-flex.justify-content-between.h5.fw-bold.mb-5
+            span Total
+            span $1,389.68
+
+          a.btn.btn-primary.btn-lg.w-100(href=`${baseUrl}shop/checkout.html`) Finalizar Compra
+          p.text-center.text-muted.x-small.mt-4 Pago seguro procesado por PiruGate
+
+

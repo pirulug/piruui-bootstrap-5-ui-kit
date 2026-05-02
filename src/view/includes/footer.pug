@@ -1,17 +1,49 @@
-footer.footer.bg-body
-  .container.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-3.border-top
-    .col-md-4.d-flex.align-items-center
-      a.mb-3.me-2.mb-md-0.text-body-secondary.text-decoration-none.lh-1(href='/')
-        svg.bi(width='30' height='24')
-          use(xlink:href='#bootstrap')
-      span.mb-3.mb-md-0.text-body-secondary &copy; 2024 PiruUI, 
-    ul.nav.col-md-4.justify-content-end.list-unstyled.d-flex
-      li.ms-3
-        a.text-body-secondary(href='#')
-          i.fab.fa-twitter
-      li.ms-3
-        a.text-body-secondary(href='#')
-          i.fa.fa-instagram
-      li.ms-3
-        a.text-body-secondary(href='#')
-          .fa.fa-facebook
+footer.footer.py-5.mt-3.bg-body
+  .container
+    .row.gy-4
+      //- Brand / About
+      .col-lg-4
+        a.d-flex.align-items-center.mb-3.text-body.text-decoration-none.fw-bold.fs-4(href=`${baseUrl}index.html`)
+          | PiruUI
+        p.text-body-secondary.small.pe-lg-5
+          | A professional Bootstrap 5 UI Kit for building modern and responsive web applications with Pug and Webpack.
+        .d-flex.gap-3.mt-4
+          a.text-body-secondary(href='https://github.com/pirulug/' target="_blank")
+            i.bi.bi-github.fs-5
+          a.text-body-secondary(href='https://x.com/pirulug' target="_blank")
+            i.bi.bi-twitter-x.fs-5
+          a.text-body-secondary(href='#!')
+            i.bi.bi-instagram.fs-5
+
+      //- Shortcuts
+      .col-6.col-md-3.col-lg-2
+        h6.fw-bold.mb-3 Shortcuts
+        ul.list-unstyled.small.d-grid.gap-2
+          li: a.text-body-secondary.text-decoration-none(href=`${baseUrl}index.html`) Home
+          li: a.text-body-secondary.text-decoration-none(href=`${baseUrl}blog/blog.html`) Blog
+          li: a.text-body-secondary.text-decoration-none(href=`${baseUrl}blog/post.html`) Demo Post
+
+      //- Components / Links
+      .col-6.col-md-3.col-lg-2
+        h6.fw-bold.mb-3 Resources
+        ul.list-unstyled.small.d-grid.gap-2
+          li: a.text-body-secondary.text-decoration-none(href=`${baseUrl}pages/sticky-footer-navbar.html`) Layouts
+          li: a.text-body-secondary.text-decoration-none(href='#!') Documentation
+          li: a.text-body-secondary.text-decoration-none(href='#!') Changelog
+
+      //- Legal
+      .col-6.col-md-3.col-lg-2
+        h6.fw-bold.mb-3 Legal
+        ul.list-unstyled.small.d-grid.gap-2
+          li: a.text-body-secondary.text-decoration-none(href='#!') Privacy Policy
+          li: a.text-body-secondary.text-decoration-none(href='#!') Terms
+          li: a.text-body-secondary.text-decoration-none(href='#!') License
+
+    .row.align-items-center.gy-3.mt-5
+      .col-md-6.text-center.text-md-start
+        p.mb-0.small.text-body-secondary
+          | &copy; 2026 PiruUI. Designed by 
+          a.text-body-secondary.fw-medium(href="https://github.com/pirulug/" target="_blank") Pirulug.
+      .col-md-6.text-center.text-md-end
+        span.badge.bg-body-secondary.text-body-secondary.fw-normal
+          | v5.3.8 

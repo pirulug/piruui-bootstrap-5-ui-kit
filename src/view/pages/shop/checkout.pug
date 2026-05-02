@@ -1,0 +1,82 @@
+extends ../../layouts/home
+
+append config
+  -pageName = 'Finalizar Compra'
+
+block content
+  .container.py-5
+    h1.fw-bold.mb-5 Finalizar Pedido
+
+    .row.gy-5.gx-lg-5
+      //- Shipping and Payment Forms
+      .col-lg-8
+        form.d-grid.gap-5
+            //- Shipping Info Section
+            section
+                h4.fw-bold.mb-4 Datos de Envío
+                .row.g-3
+                    .col-md-6
+                        label.form-label.small.text-muted(for="firstName") Nombre
+                        input#firstName.form-control.bg-body.px-4(type="text" placeholder="Ej: Juan")
+                    .col-md-6
+                        label.form-label.small.text-muted(for="lastName") Apellido
+                        input#lastName.form-control.bg-body.px-4(type="text" placeholder="Ej: Pérez")
+                    .col-12
+                        label.form-label.small.text-muted(for="email") Email
+                        input#email.form-control.bg-body.px-4(type="email" placeholder="juan@ejemplo.com")
+                    .col-12
+                        label.form-label.small.text-muted(for="address") Dirección
+                        input#address.form-control.bg-body.px-4(type="text" placeholder="Ej: Calle 123, Ciudad")
+            
+            //- Payment Gateway (Pasarella)
+            section.p-4.p-md-5.bg-body.rounded
+                .d-flex.justify-content-between.align-items-center.mb-4
+                    h4.fw-bold.mb-0 Pasarela de Pago
+                    .d-flex.gap-2.h4
+                        i.bi.bi-credit-card-2-back.text-primary
+                        i.bi.bi-shield-check.text-success
+                
+                .card.bg-dark.text-white.p-4.mb-4
+                    .d-flex.justify-content-between.mb-4
+                        i.bi.bi-cpu.h3.text-warning
+                        span.fw-bold.small PiruGate Secure
+                    .mb-4.h4.tracking-widest **** **** **** 4242
+                    .d-flex.justify-content-between.x-small.opacity-75
+                        span Juan Pérez
+                        span 12 / 28
+
+                .row.g-3
+                    .col-12
+                        label.form-label.small.text-muted(for="cardNumber") Número de Tarjeta
+                        input#cardNumber.form-control.bg-body.bg-opacity-10.px-4(type="text" placeholder="0000 0000 0000 0000")
+                    .col-md-6
+                        label.form-label.small.text-muted(for="expDate") Expiración
+                        input#expDate.form-control.bg-body.bg-opacity-10.px-4(type="text" placeholder="MM / YY")
+                    .col-md-6
+                        label.form-label.small.text-muted(for="cvv") CVV
+                        input#cvv.form-control.bg-body.bg-opacity-10.px-4(type="password" placeholder="***")
+                
+                .mt-4.d-flex.align-items-center.gap-2.x-small.text-muted
+                    i.bi.bi-lock-fill.text-success
+                    span Tu pago está encriptado con tecnología de grado bancario.
+
+      //- Order Summary Sticky Sidebar
+      .col-lg-4
+        .sticky-top(style="top: 100px;")
+            .card.p-4
+                h5.fw-bold.mb-4 Mi Pedido
+                
+                .d-grid.gap-3.mb-5
+                    each item in ['Smartphone Pro', 'Auriculares Wireless']
+                        .d-flex.justify-content-between.small
+                            span.text-muted= `1x ${item}`
+                            span.fw-bold= item === 'Smartphone Pro' ? '$999.00' : '$199.00'
+
+                .d-flex.justify-content-between.h4.fw-bold.mb-5
+                    span Total Final
+                    span $1,198.00
+
+                button.btn.btn-primary.btn-lg.w-100 Pagar Ahora
+                p.text-center.text-muted.x-small.mt-4 Al pagar, aceptas nuestros términos y condiciones.
+
+

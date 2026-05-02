@@ -2,15 +2,12 @@ const Webpack = require("webpack");
 const Path = require("path");
 const Fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 const PrettifyWebpackPlugin = require("pirulug-prettify-webpack-plugin");
-
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
 const DeleteEmptyFilesPlugin = require("pirulug-delete-empty-files-webpack-plugin");
 
 const opts = {
@@ -20,29 +17,42 @@ const opts = {
 
 // PUG
 const PAGES_DIR = `${Path.resolve(__dirname, "src")}/view/pages`;
-const PAGES = Fs.readdirSync(PAGES_DIR).filter((fileName) =>
-  fileName.endsWith(".pug")
-);
 
+function getFiles(dir, allFiles) {
+  const files = Fs.readdirSync(dir);
+  allFiles = allFiles || [];
+  files.forEach(function (file) {
+    const name = Path.join(dir, file);
+    if (Fs.statSync(name).isDirectory()) {
+      allFiles = getFiles(name, allFiles);
+    } else if (file.endsWith(".pug")) {
+      allFiles.push(Path.relative(PAGES_DIR, name).replace(/\\/g, "/"));
+    }
+  });
+  return allFiles;
+}
+
+const PAGES = getFiles(PAGES_DIR);
+const jsonData = {};
 module.exports = {
   entry: {
     piruui: "./src/js/piruui.js",
-    prism: "./src/plugins/prism/prism.js",
-    custom: "./src/plugins/custom/custom.js",
     extra: "./src/plugins/extra/extra.js",
     bootstrapicons: "./src/plugins/bootstrapicons/bootstrapicons.js",
-    fontawesome: "./src/plugins/fontawesome/fontawesome.js",
     feathericons: "./src/plugins/feathericons/feathericons.js",
+    fontawesome: "./src/plugins/fontawesome/fontawesome.js",
     liteyoutube: "./src/plugins/liteyoutube/liteyoutube.js",
+    prism: "./src/plugins/prism/prism.js",
+    custom: "./src/plugins/custom/custom.js",
   },
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   // devtool: process.env.NODE_ENV === "production" ? "source-map" : "inline-source-map",
-  devtool: process.env.NODE_ENV === "development" ? "source-map" : false,
+  devtool: false,
   output: {
     path: Path.join(opts.rootDir, "dist"),
     pathinfo: opts.devBuild,
-    filename: "js/[name].js",
-    chunkFilename: "js/[name].js",
+    filename: "assets/js/[name].js",
+    chunkFilename: "assets/js/[name].js",
   },
   performance: { hints: false },
   optimization: {
@@ -50,7 +60,7 @@ module.exports = {
       new TerserPlugin({
         parallel: true,
         terserOptions: {
-          ecma: 7,
+          ecma: 6,
         },
         extractComments: false,
       }),
@@ -67,35 +77,45 @@ module.exports = {
     new CleanWebpackPlugin(),
     // Extract css files to seperate bundle
     new MiniCssExtractPlugin({
-      filename: "css/[name].css",
-      chunkFilename: "css/[name].css",
+      filename: "assets/css/[name].css",
+      chunkFilename: "assets/css/[name].css",
     }),
     // Copy fonts and images to dist
     new CopyWebpackPlugin({
       patterns: [
-        { from: "src/fonts", to: "fonts" },
-        { from: "src/img", to: "img" },
+        { from: "src/fonts", to: "assets/fonts" },
+        { from: "src/img", to: "assets/img" },
       ],
     }),
     // Cargar paginas de .pug
-    ...PAGES.map(
-      (page) =>
-        new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/, ".html")}`,
-          minify: {
-            collapseWhitespace: false,
-            keepClosingSlash: false,
-            removeComments: false,
-            removeRedundantAttributes: false,
-            removeScriptTypeAttributes: false,
-            removeStyleLinkTypeAttributes: false,
-            useShortDoctype: false,
-            preventAttributesEscaping: false,
-          },
-          inject: false,
-        })
-    ),
+    ...PAGES.map((page) => {
+      const name = page.replace(".pug", "");
+      const level = (name.match(/[\\\/]/g) || []).length;
+      const baseUrl = level > 0 ? "../".repeat(level) : "./";
+
+      return new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/${page}`,
+        filename: `./${page.replace(/\.pug/, ".html")}`,
+        templateParameters: {
+          baseUrl: baseUrl,
+          assets: baseUrl + "assets/",
+          ...jsonData,
+        },
+
+        minify: {
+          collapseWhitespace: false,
+          keepClosingSlash: false,
+          removeComments: false,
+          removeRedundantAttributes: false,
+          removeScriptTypeAttributes: false,
+          removeStyleLinkTypeAttributes: false,
+          useShortDoctype: false,
+          preventAttributesEscaping: false,
+        },
+        inject: false,
+      });
+    }),
+
     // Beautify
     new PrettifyWebpackPlugin({
       printWidth: 100,
@@ -109,7 +129,7 @@ module.exports = {
       htmlWhitespaceSensitivity: "ignore",
       proseWrap: "always",
     }),
-    //
+    // Eliminar archivos vacios
     new DeleteEmptyFilesPlugin(__dirname, "dist"),
   ],
   module: {
@@ -137,6 +157,7 @@ module.exports = {
             options: {
               sassOptions: {
                 quietDeps: true,
+                loadPaths: [Path.resolve(__dirname, "node_modules")],
               },
             },
           },
@@ -144,18 +165,18 @@ module.exports = {
       },
       // Load fonts
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         type: "asset/resource",
         generator: {
-          filename: "fonts/[name][ext]",
+          filename: "assets/fonts/[name][ext]",
         },
       },
-      // Load images
+      // Load images (including svg)
       {
-        test: /\.(png|jpg|jpeg|gif|webp)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(png|jpg|jpeg|gif|webp|svg)(\?v=\d+\.\d+\.\d+)?$/,
         type: "asset/resource",
         generator: {
-          filename: "img/[name][ext]",
+          filename: "assets/img/[name][ext]",
         },
       },
       // Pug
@@ -170,36 +191,58 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.json$/,
+        type: "javascript/auto",
+        use: [
+          {
+            loader: "json-loader",
+          },
+        ],
+      },
     ],
   },
-
   ignoreWarnings: [
     (warning) =>
       /Global built-in functions are deprecated/.test(warning.message) ||
       /Sass @import rules are deprecated/.test(warning.message) ||
       /deprecation warnings omitted/.test(warning.message),
   ],
-
   resolve: {
     extensions: [".js", ".scss"],
     modules: ["node_modules"],
     alias: {
       request$: "xhr",
+      "~": Path.resolve(__dirname, "./src"),
+      "../webfonts": Path.resolve(
+        __dirname,
+        "node_modules/@fortawesome/fontawesome-free/webfonts"
+      ),
     },
+  },
+  cache: {
+    type: "filesystem",
   },
   devServer: {
     static: {
       directory: Path.join(__dirname, "dist"),
     },
-    watchFiles: ["src/**/*"],
+    watchFiles: [
+      "src/data/**/*.json",
+      "src/js/**/*.js",
+      "src/scss/**/*.scss",
+      "src/view/**/*.pug",
+    ],
     compress: true,
-    port: 3001,
-    // open: {
-    //   app: {
-    //     name: "firefox",
-    //   },
-    // },
+    port: 8989,
     open: true,
     liveReload: true,
+  },
+  stats: {
+    assets: true,
+    builtAt: true,
+    colors: true,
+    modules: false,
+    children: false,
   },
 };

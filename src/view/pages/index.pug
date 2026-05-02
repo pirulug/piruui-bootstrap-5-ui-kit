@@ -4,37 +4,48 @@ append config
   -pageName = 'Home'
 
 block styles
-  link(rel="stylesheet" href="css/custom.css")
-  script(src="js/liteyoutube.js") 
+  link(rel="stylesheet" href=`${assets}css/custom.css`)
+  script(src=`${assets}js/liteyoutube.js`) 
 
 block scripts 
-  script(src='js/custom.js')
+  script(src=`${assets}js/custom.js`)
 
 block content
-  header.dvh-100.d-flex.justify-content-center.align-items-center.text-white(style="background: linear-gradient(135deg, #375ee3 0%, #6543e0 100%);")
-    .container.text-center
-      //- Logo o Icono (opcional)
-      .mb-4
-        i.bi.bi-palette2.display-3
-      
-      //- Título con peso visual
-      h1.display-1.fw-bold.mb-3 PiruUI
-      
-      //- Subtítulo más legible
-      p.lead.mb-5.fs-3 Un sistema de diseño moderno creado por Pirulug.
-      
-      //- Botones de acción (Call to Actions)
-      .d-flex.justify-content-center.gap-3
-        a.btn.btn-light.btn-lg.rounded-pill.px-5(href='#buttons')
-          i.bi.bi-play-fill.me-2
-          | Comenzar
-        a.btn.btn-outline-light.btn-lg.rounded-pill.px-5(href='https://github.com' target='_blank')
-          i.bi.bi-github.me-2
-          | GitHub
+  header.piru-hero.position-relative.overflow-hidden.text-white
+    //- Background Image with Overlay
+    .piru-hero-bg(style=`background-image: url('${assets}img/hero-bg.png');`)
+    .piru-hero-overlay
 
-      //- Indicador de Scroll (opcional)
-      .position-absolute.bottom-0.start-50.translate-middle-x.mb-4.d-none.d-md-block
-        i.bi.bi-chevron-down.fs-1.animate-bounce
+    .container.position-relative.z-index-1.py-5.py-lg-10
+      .row.justify-content-center
+        .col-lg-8.text-center
+          //- Glass Badge
+          .d-inline-flex.align-items-center.gap-2.px-3.py-1.bg-white.bg-opacity-10.border.border-white.border-opacity-10.mb-4.backdrop-blur-sm
+            span.badge.bg-primary v2.0
+            span.small.fw-medium New version available
+          
+          //- Main Title
+          h1.display-1.fw-black.mb-3.ls-tight
+            | Design the future with 
+            span.text-gradient-primary PiruUI
+          
+          //- Description
+          p.lead.mb-5.text-white-50.fs-4.mx-auto(style="max-width: 600px;")
+            | A premium UI kit based on Bootstrap 5 for creating modern, fast, and fully customizable interfaces.
+          
+          //- CTAs
+          .d-flex.flex-column.flex-sm-row.justify-content-center.gap-3
+            a.btn.btn-primary.btn-lg.px-5.py-3.fw-bold.shadow-lg-primary(href='#buttons')
+              i.bi.bi-rocket-takeoff-fill.me-2
+              | Get Started
+            a.btn.btn-outline-white.btn-lg.px-5.py-3.fw-bold.backdrop-blur-sm(href='https://github.com' target='_blank')
+              i.bi.bi-github.me-2
+              | View on GitHub
+
+      //- Floating Scroll Indicator
+      .piru-scroll-indicator.d-none.d-md-flex
+        i.bi.bi-mouse.fs-4.mb-2
+        .piru-scroll-dot
 
   .container
     //
@@ -113,4 +124,5 @@ block content
 
         
                 
+
 

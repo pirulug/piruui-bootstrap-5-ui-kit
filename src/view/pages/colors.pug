@@ -1,0 +1,66 @@
+extends ../layouts/home
+
+append config
+  -pageName = 'Color Palette'
+
+block content
+  header.py-5.bg-body.mb-5
+    .container
+      h1.display-4.fw-bold Color Palette
+      p.lead Base colors and utilities for PiruUI based on Bootstrap 5.
+
+  .container.pb-5
+    //- Theme Colors
+    section.mb-5
+      h2.h4.fw-bold.mb-4 Theme Colors
+      .row.g-4
+        each color in ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark']
+          .col-md-3.col-6
+            .card.h-100.overflow-hidden
+              .p-5(class=`bg-${color}`)
+              .card-body.p-3
+                .fw-bold.text-capitalize= color
+                .small.text-muted= `bg-${color}`
+    
+    //- Grays
+    section.mb-5
+      h2.h4.fw-bold.mb-4 Grayscale
+      .row.g-4
+        each gray in [100, 200, 300, 400, 500, 600, 700, 800, 900]
+          .col-md-2.col-4
+            .card.h-100.overflow-hidden
+              div(style=`height: 80px; background-color: var(--pr-gray-${gray});`)
+              .card-body.p-2.text-center
+                .small.fw-medium= `Gray ${gray}`
+
+    //- Backgrounds & Tones
+    section.mb-5
+      h2.h4.fw-bold.mb-4 Backgrounds & Tones
+      .row.g-4
+        .col-md-4
+          .p-4.rounded.bg-body.border.mb-3
+            .fw-bold .bg-body
+            .small Primary application background
+        .col-md-4
+          .p-4.rounded.bg-body-secondary.mb-3
+            .fw-bold .bg-body-secondary
+            .small Secondary background
+        .col-md-4
+          .p-4.rounded.bg-primary.bg-opacity-10.text-primary.mb-3
+            .fw-bold .bg-primary.bg-opacity-10
+            .small Subtle primary tone
+
+    //- Text Colors
+    section.mb-5
+      h2.h4.fw-bold.mb-4 Text Colors
+      .p-4.bg-body.rounded
+        .row.gy-3
+          .col-md-6
+            p.text-primary .text-primary - Primary text color
+            p.text-secondary .text-secondary - Secondary text
+            p.text-success .text-success - Success indicator
+          .col-md-6
+            p.text-body .text-body - Default body color
+            p.text-body-secondary .text-body-secondary - Supporting text (muted)
+            p.text-danger .text-danger - Error indicator
+

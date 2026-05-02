@@ -38,9 +38,17 @@
     const activeTheme = document.documentElement.getAttribute("data-bs-theme");
     const newTheme = activeTheme === "light" ? "dark" : "light";
 
+    // Disable transitions temporarily to prevent color-lag across the entire UI
+    document.body.classList.add("piru-theme-switching");
+
     localStorage.setItem("theme", newTheme);
     setTheme(newTheme);
     updateThemeIcon(newTheme);
+
+    // Re-enable transitions after the browser has applied the new colors
+    window.setTimeout(() => {
+      document.body.classList.remove("piru-theme-switching");
+    }, 50);
   };
 
   window.addEventListener("DOMContentLoaded", () => {

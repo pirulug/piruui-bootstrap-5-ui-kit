@@ -1,0 +1,111 @@
+extends ../../layouts/home
+
+append config
+  -pageName = 'Blog'
+
+block content
+  .container.py-5
+    //- Hero Section
+    header.py-5.mb-5.text-center
+        span.badge.bg-primary.bg-opacity-10.text-primary.px-3.mb-3 Updates
+        h1.fw-bold.display-3.mb-3 News & Insights
+        p.text-body-secondary.lead.mx-auto(style="max-width: 600px;") Stay up to date with the latest design trends, tutorials, and the PiruUI ecosystem.
+
+    .row.gx-lg-5
+      //- Main Content Column
+      .col-lg-8
+        
+        //- FEATURED POST
+        .card.overflow-hidden.mb-5
+          .row.g-0
+            .col-md-6
+              a(href=`${baseUrl}blog/post.html`)
+                img.img-fluid.h-100.w-100(src='https://dummyimage.com/850x850/181818/f8f9fa&text=Featured+Article' alt='Featured' style="object-fit: cover; min-height: 400px;")
+            .col-md-6
+              .card-body.p-4.p-lg-5.d-flex.flex-column.justify-content-center
+                .d-flex.gap-2.mb-3
+                  span.badge.bg-primary.bg-opacity-10.text-primary.px-2.fw-bold Featured
+                  span.small.text-body-secondary • 5 min read
+                h2.card-title.fw-bold.h1.mb-3 Welcome to the Future of UI
+                p.text-body-secondary.mb-4 Learn how to build modern interfaces without borders or unnecessary shadows, focusing on spacing and typography.
+                .mt-auto
+                    a.btn.btn-primary.px-4.fw-bold(href=`${baseUrl}blog/post.html`) Read Full Article
+
+        //- Recent Posts Grid
+        .row.g-4
+          //- Blog post 1
+          .col-md-6
+            .card.h-100
+              a.overflow-hidden(href=`${baseUrl}blog/post.html`)
+                img.card-img-top(src='https://dummyimage.com/700x450/181818/f8f9fa&text=Web+Design' alt='Post' style="transition: transform 0.3s ease;")
+              .card-body.p-4.d-flex.flex-column
+                .d-flex.align-items-center.gap-2.mb-3
+                    span.badge.bg-secondary.bg-opacity-10.text-secondary.px-2 Design
+                    span.small.text-body-secondary • Jan 1
+                h4.fw-bold.mb-3 Web Design Trends
+                p.text-body-secondary.small.mb-4 Exploring the new minimalist trends in contemporary web design.
+                .mt-auto
+                    a.text-primary.text-decoration-none.fw-bold.small.stretched-link(href=`${baseUrl}blog/post.html`) 
+                      | Read more 
+                      i.bi.bi-arrow-right.ms-1
+            
+          //- Blog post 2
+          .col-md-6
+            .card.h-100
+              a.overflow-hidden(href=`${baseUrl}blog/post.html`)
+                img.card-img-top(src='https://dummyimage.com/700x450/181818/f8f9fa&text=JavaScript' alt='Post')
+              .card-body.p-4.d-flex.flex-column
+                .d-flex.align-items-center.gap-2.mb-3
+                    span.badge.bg-secondary.bg-opacity-10.text-secondary.px-2 Dev
+                    span.small.text-body-secondary • Jan 2
+                h4.fw-bold.mb-3 Modern JavaScript
+                p.text-body-secondary.small.mb-4 Best practices for writing clean and efficient code in 2024.
+                .mt-auto
+                    a.text-primary.text-decoration-none.fw-bold.small.stretched-link(href=`${baseUrl}blog/post.html`) 
+                      | Read more 
+                      i.bi.bi-arrow-right.ms-1
+
+          //- Blog post 3
+          .col-md-6
+            .card.h-100
+              a.overflow-hidden(href=`${baseUrl}blog/post.html`)
+                img.card-img-top(src='https://dummyimage.com/700x450/181818/f8f9fa&text=SASS' alt='Post')
+              .card-body.p-4.d-flex.flex-column
+                .d-flex.align-items-center.gap-2.mb-3
+                    span.badge.bg-secondary.bg-opacity-10.text-secondary.px-2 CSS
+                    span.small.text-body-secondary • Jan 3
+                h4.fw-bold.mb-3 Advanced SASS
+                p.text-body-secondary.small.mb-4 Master the most powerful preprocessor for your CSS styles.
+                .mt-auto
+                    a.text-primary.text-decoration-none.fw-bold.small.stretched-link(href=`${baseUrl}blog/post.html`) 
+                      | Read more 
+                      i.bi.bi-arrow-right.ms-1
+
+          //- Blog post 4
+          .col-md-6
+            .card.h-100
+              a.overflow-hidden(href=`${baseUrl}blog/post.html`)
+                img.card-img-top(src='https://dummyimage.com/700x450/181818/f8f9fa&text=Pug' alt='Post')
+              .card-body.p-4.d-flex.flex-column
+                .d-flex.align-items-center.gap-2.mb-3
+                    span.badge.bg-secondary.bg-opacity-10.text-secondary.px-2 HTML
+                    span.small.text-body-secondary • Jan 4
+                h4.fw-bold.mb-3 Pug Templates
+                p.text-body-secondary.small.mb-4 How Pug can revolutionize your front-end development workflow.
+                .mt-auto
+                    a.text-primary.text-decoration-none.fw-bold.small.stretched-link(href=`${baseUrl}blog/post.html`) 
+                      | Read more 
+                      i.bi.bi-arrow-right.ms-1
+
+        //- Pagination
+        nav.my-5(aria-label='Pagination')
+          ul.pagination.pagination-sm.justify-content-center.gap-2
+            li.page-item.disabled: a.page-link.px-3.border-0.bg-body(href='#') Previous
+            li.page-item.active: a.page-link.px-3.border-0(href='#') 1
+            li.page-item: a.page-link.px-3.border-0.bg-body(href='#') 2
+            li.page-item: a.page-link.px-3.border-0.bg-body(href='#') 3
+            li.page-item: a.page-link.px-3.border-0.bg-body(href='#') Next
+
+      //- Sidebar Column
+      .col-lg-4
+        include ../../includes/blog-aside

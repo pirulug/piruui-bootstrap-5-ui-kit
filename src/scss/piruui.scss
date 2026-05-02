@@ -14,6 +14,12 @@
 // Utilities
 @import "utilities/mixins";
 
+// Layouts
+@import "layouts/wrapper";
+@import "layouts/main-content";
+@import "layouts/footer";
+@import "layouts/navbar";
+
 // Components
 @import "components/alert";
 @import "components/buttons";
@@ -21,6 +27,9 @@
 @import "components/forms";
 @import "components/modals";
 @import "components/tab";
+
+// Pages
+@import "pages/index";
 
 // Additional Styles and Hacks
 @import "hacks/hack";

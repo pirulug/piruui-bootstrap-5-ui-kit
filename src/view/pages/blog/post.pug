@@ -1,0 +1,104 @@
+extends ../../layouts/home
+
+append config
+  -pageName = 'Article'
+
+block content
+  .container.py-5
+    //- Breadcrumb
+    nav.mb-5(aria-label="breadcrumb")
+      ol.breadcrumb.small
+        li.breadcrumb-item: a.text-decoration-none.text-body-secondary(href=`${baseUrl}blog/blog.html`) Blog
+        li.breadcrumb-item.active(aria-current='page') Modern UI Design
+
+    .row.gx-lg-5
+      //- Main Content Column
+      .col-lg-8 
+
+        // Post Article
+        article.mb-5
+            // Post header
+            header.mb-5
+              .mb-4.d-flex.flex-wrap.gap-2
+                a.badge.bg-primary.bg-opacity-10.text-primary.text-decoration-none.px-3.py-2(href='#!') Design
+                a.badge.bg-secondary.bg-opacity-10.text-secondary.text-decoration-none.px-3.py-2(href='#!') UI/UX
+
+              h1.fw-bold.display-4.mb-4 Designing without Borders and Shadows
+              
+              .d-flex.align-items-center.gap-3.pb-4.border-bottom.border-body-secondary
+                .avatar.rounded-circle.bg-primary.bg-opacity-10.text-primary.d-flex.align-items-center.justify-content-center.fw-bold(style="width: 48px; height: 48px;") PL
+                div
+                    .fw-bold.text-body PiruLUG
+                    .small.text-body-secondary Published on Jan 1, 2024 • 5 min read
+
+            //- Main Image
+            figure.mb-5.rounded.overflow-hidden
+              img.img-fluid.w-100(src='https://dummyimage.com/1200x600/181818/f8f9fa&text=Modern+UI+Design' alt='Modern UI' style="max-height: 500px; object-fit: cover;")
+
+            // Post content
+            section.lh-lg.fs-5.text-body-secondary
+              p.mb-4.lead.text-body The evolution of web design has led us to cleaner and more streamlined interfaces. The current trend moves away from hard borders and heavy shadows, seeking a visual hierarchy based on negative spacing and subtle background tone shifts.
+              
+              p.mb-4 By removing borders, we allow the content to breathe. Elements are logically grouped through the intelligent use of padding, creating a much more fluid and professional reading experience.
+              
+              blockquote.blockquote.my-5.p-4.p-md-5.bg-body.rounded.border-start.border-primary.border-5
+                p.mb-3.fw-medium.text-body.fst-italic "Design is not just what it looks like and feels like. Design is how it works. And functional minimalism is the key to user retention."
+                footer.blockquote-footer.small Adapted from Steve Jobs
+              
+              h2.fw-bold.text-body.mt-5.mb-4 Why Borderless Works
+              
+              p.mb-4 
+                strong 1. Less visual fatigue: 
+                | Without hard lines to process, the eye focuses on what really matters: the content.
+              p.mb-4 
+                strong 2. Modernity: 
+                | Reflects a sophisticated and contemporary design language.
+              p.mb-4 
+                strong 3. Adaptability: 
+                | Works exceptionally well in both light and dark themes.
+
+        //- Share & CTA
+        section.py-5.border-top.border-bottom.border-body-secondary.mb-5
+          .row.align-items-center.gy-4
+            .col-md-6
+               h5.fw-bold.mb-0 Did you like this post?
+               p.text-body-secondary.small.mb-0 Share it with your network.
+            .col-md-6.text-md-end
+               .d-flex.gap-2.justify-content-md-end
+                  a.btn.btn-sm.bg-body.px-3(href="#"): i.bi.bi-facebook
+                  a.btn.btn-sm.bg-body.px-3(href="#"): i.bi.bi-twitter-x
+                  a.btn.btn-sm.bg-body.px-3(href="#"): i.bi.bi-linkedin
+        
+        //- Comments section
+        section.py-5
+          h4.fw-bold.mb-5 Comments (3)
+          
+          .d-grid.gap-4
+            // Comment 1
+            .d-flex.gap-3.p-4.bg-body.rounded
+              .avatar.rounded-circle.bg-secondary.bg-opacity-10.text-secondary.flex-shrink-0.d-flex.align-items-center.justify-content-center.fw-bold(style="width: 48px; height: 48px;") AN
+              div
+                  .d-flex.justify-content-between.align-items-center.mb-1
+                      .fw-bold Anonymous User
+                      .text-muted.x-small 2 hours ago
+                  p.text-body-secondary.small.mb-0 Incredible article. I've been applying the borderless style in my latest projects and the difference in visual cleanliness is abysmal.
+            
+            // Comment 2
+            .d-flex.gap-3.p-4.bg-body.rounded
+              .avatar.rounded-circle.bg-primary.bg-opacity-10.text-primary.flex-shrink-0.d-flex.align-items-center.justify-content-center.fw-bold(style="width: 48px; height: 48px;") MG
+              div
+                  .d-flex.justify-content-between.align-items-center.mb-1
+                      .fw-bold Maria Gomez
+                      .text-muted.x-small 5 hours ago
+                  p.text-body-secondary.small.mb-0 I love the use of hierarchies by background color. Very inspiring.
+          
+          //- Action CTA
+          .mt-5.p-5.bg-body.rounded.text-center
+            h5.fw-bold Leave your opinion
+            p.text-body-secondary.mb-4 Join the conversation and share your thoughts.
+            button.btn.btn-primary.px-5.fw-bold Login to comment
+
+      //- Sidebar Column
+      .col-lg-4
+        include ../../includes/blog-aside
+

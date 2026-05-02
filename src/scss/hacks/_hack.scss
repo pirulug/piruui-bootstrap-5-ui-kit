@@ -8,31 +8,37 @@ body {
     body {
       background: $body-bg-alt-dark;
     }
+
+    // Map vibrant dark theme colors and base backgrounds
+    --#{$prefix}body-color: #{$body-color-dark};
+    --#{$prefix}body-color-rgb: #{to-rgb($body-color-dark)};
+    --#{$prefix}secondary-color: #{$body-color-secondary-dark};
+    --#{$prefix}secondary-color-rgb: #{to-rgb($body-color-secondary-dark)};
+    --#{$prefix}tertiary-color: #{$body-color-tertiary-dark};
+    --#{$prefix}tertiary-color-rgb: #{to-rgb($body-color-tertiary-dark)};
+
+    --#{$prefix}body-bg: #{$body-bg-dark};
+    --#{$prefix}body-bg-rgb: #{to-rgb($body-bg-dark)};
+    --#{$prefix}secondary-bg: #{$body-secondary-bg-dark};
+    --#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg-dark)};
+    
+    @each $color, $value in $theme-colors-dark {
+      --#{$prefix}#{$color}: #{$value};
+      --#{$prefix}#{$color}-rgb: #{to-rgb($value)};
+      --#{$prefix}#{$color}-text-emphasis: #{scale-color($value, $lightness: 30%)};
+      --#{$prefix}#{$color}-bg-subtle: #{rgba($value, 0.1)};
+      --#{$prefix}#{$color}-border-subtle: #{rgba($value, 0.2)};
+    }
   }
 }
 
-$values: (
-  100,
-  50
-);
-
-@each $value in $values {
-  .vh-#{$value} {
-    height: #{$value}vh;
-  }
-
-  .dvh-#{$value} {
-    height: #{$value}dvh;
-  }
-
-  .vw-#{$value} {
-    width: #{$value}vw;
-  }
-
-  .dvw-#{$value} {
-    width: #{$value}dvw;
+// Export Grays to Root (Used in colors.pug)
+:root {
+  @each $level, $value in $grays {
+    --#{$prefix}gray-#{$level}: #{$value};
   }
 }
+
 
 // Estilo glass
 
@@ -65,3 +71,28 @@ $values: (
 [data-bs-theme="dark"] .brand-logo-dark {
   display: block !important;
 }
+
+// Disable all transitions temporarily during theme toggle
+// This prevents color-fading lag without permanently breaking hover animations
+.piru-theme-switching,
+.piru-theme-switching *,
+.piru-theme-switching *::before,
+.piru-theme-switching *::after {
+  transition: none !important;
+}
+// Responsive Typography
+.display-1 {
+  @media (max-width: 768px) {
+    font-size: calc(1.625rem + 4.5vw);
+  }
+  @media (max-width: 576px) {
+    font-size: 3rem;
+  }
+}
+
+.fs-3 {
+  @media (max-width: 576px) {
+    font-size: 1.5rem !important;
+  }
+}
+

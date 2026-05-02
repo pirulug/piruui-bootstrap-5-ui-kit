@@ -13,22 +13,22 @@
   
   .row
     //- 1. BASIC & BADGES
-    .col-lg-4
+    .col-md-6.col-lg-4
       .bs-component
         h3.h5.text-muted Basic & Badges
         ul.list-group
           li.list-group-item.d-flex.justify-content-between.align-items-center
             | Cras justo odio
-            span.badge.bg-primary.rounded-pill 14
+            span.badge.bg-primary 14
           li.list-group-item.d-flex.justify-content-between.align-items-center
             | Dapibus ac facilisis in
-            span.badge.bg-primary.rounded-pill 2
+            span.badge.bg-primary 2
           li.list-group-item.d-flex.justify-content-between.align-items-center
             | Morbi leo risus
-            span.badge.bg-primary.rounded-pill 1
+            span.badge.bg-primary 1
     
     //- 2. ACTIVE & ACTIONS
-    .col-lg-4
+    .col-md-6.col-lg-4
       .bs-component
         h3.h5.text-muted Active & Actions
         .list-group
@@ -38,7 +38,7 @@
           a.list-group-item.list-group-item-action.disabled(href='#') Morbi leo risus (Disabled)
 
     //- 3. FLUSH & NUMBERED (NUEVO)
-    .col-lg-4
+    .col-md-6.col-lg-4
       .bs-component
         h3.h5.text-muted Flush & Numbered
         //- Flush: sin bordes externos
@@ -107,7 +107,7 @@
 
   .row
     //- 1. KITCHEN SINK (Ejemplo Completo)
-    .col-lg-4
+    .col-md-6.col-lg-4
       .bs-component
         h3.h5.text-muted Kitchen Sink
         .card.mb-3
@@ -130,7 +130,7 @@
           .card-footer.text-muted 2 days ago
 
     //- 2. CARD WITH NAVIGATION (NUEVO)
-    .col-lg-4
+    .col-md-6.col-lg-4
       .bs-component
         h3.h5.text-muted Header Navigation
         .card.text-center.mb-3
@@ -159,7 +159,7 @@
             p.card-text Last updated 3 mins ago
 
     //- 3. HORIZONTAL CARD (NUEVO)
-    .col-lg-4
+    .col-md-6.col-lg-4
       .bs-component
         h3.h5.text-muted Horizontal
         .card.mb-3(style='max-width: 540px;')
@@ -195,17 +195,17 @@
               p.card-text Some quick example text.
           
           //- Success Border (Sin fondo)
-          .card.border-success(style='max-width: 18rem;')
-            .card-header Header
+          .card(style='max-width: 18rem;')
+            .card-header.bg-success.bg-opacity-10.text-success Header
             .card-body.text-success
-              h4.card-title Success Border
+              h4.card-title Success Style
               p.card-text Some quick example text.
           
           //- Danger Border (Sin fondo)
-          .card.border-danger(style='max-width: 18rem;')
-            .card-header Header
+          .card(style='max-width: 18rem;')
+            .card-header.bg-danger.bg-opacity-10.text-danger Header
             .card-body.text-danger
-              h4.card-title Danger Border
+              h4.card-title Danger Style
               p.card-text Some quick example text.
 
 

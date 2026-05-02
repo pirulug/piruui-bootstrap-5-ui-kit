@@ -1,3 +1,5 @@
+import "./custom.scss";
+
 (function () {
   "use strict";
 

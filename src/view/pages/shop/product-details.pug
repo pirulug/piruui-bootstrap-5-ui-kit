@@ -1,0 +1,101 @@
+extends ../../layouts/home
+
+append config
+  -pageName = 'Detalles de Producto'
+
+block content
+  .container.py-5
+    //- Breadcrumb
+    nav.mb-4(aria-label="breadcrumb")
+      ol.breadcrumb.small
+        li.breadcrumb-item: a.text-decoration-none(href=`${baseUrl}shop/index.html`) Tienda
+        li.breadcrumb-item.active(aria-current='page') Smartphone Pro
+
+    .row.gy-5.gx-lg-5
+        //- Gallery Column
+        .col-lg-6
+            .card.overflow-hidden.mb-3
+                img.img-fluid(src='https://dummyimage.com/800x800/181818/ffffff&text=Main+Product+Image' alt='Main')
+            .row.g-2
+                each i in [1, 2, 3, 4]
+                    .col-3
+                        .card.overflow-hidden
+                            img.img-fluid(src=`https://dummyimage.com/400x400/181818/ffffff&text=Thumb+${i}` alt='Thumb')
+
+        //- Info Column
+        .col-lg-6
+            header.mb-4
+                .badge.bg-primary.bg-opacity-10.text-primary.px-3.mb-3 Electrónica
+                h1.fw-bold.display-5.mb-2 Smartphone Pro 5G
+                .d-flex.align-items-center.gap-2.text-warning.small.mb-3
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-fill
+                    i.bi.bi-star-half
+                    span.text-muted.ms-2 (48 reviews)
+                
+                .h3.fw-bold.text-primary.mb-4 $999.00
+            
+            p.text-body-secondary.lh-lg.mb-5 El nuevo Smartphone Pro redefine la potencia y el diseño. Con su procesador de última generación y sistema de cámaras profesional, llevarás tu productividad y creatividad al siguiente nivel.
+
+            //- Options Form
+            form.d-grid.gap-4
+                //- Color Selector
+                div
+                    h6.fw-bold.mb-3 Color
+                    .d-flex.gap-2
+                        button.btn.btn-outline-primary.x-small Space Gray
+                        button.btn.btn-outline-secondary.x-small Silver
+                        button.btn.btn-outline-secondary.x-small Midnight
+                
+                //- Quantity
+                div
+                    h6.fw-bold.mb-3 Cantidad
+                    select.form-select.w-auto.bg-body.px-4
+                        option 1
+                        option 2
+                        option 3
+                
+                //- Action Buttons
+                .d-flex.gap-3.pt-3
+                    a.btn.btn-primary.btn-lg.w-100(href=`${baseUrl}shop/cart.html`)
+                        i.bi.bi-cart-plus.me-2
+                        | Añadir al Carrito
+                    button.btn.btn-outline-light.btn-lg.px-4
+                        i.bi.bi-heart
+
+            hr.my-5.opacity-10
+
+            //- Specs List (Minimalist)
+            h6.fw-bold.mb-4 Especificaciones Clave
+            .row.g-3.small.text-body-secondary
+                .col-6
+                    .d-flex.align-items-center.gap-2
+                        i.bi.bi-cpu.text-primary
+                        span Chip A17 Bionic
+                .col-6
+                    .d-flex.align-items-center.gap-2
+                        i.bi.bi-display.text-primary
+                        span OLED 6.7" Super Retina
+                .col-6
+                    .d-flex.align-items-center.gap-2
+                        i.bi.bi-camera.text-primary
+                        span Sistema Triple 48MP
+                .col-6
+                    .d-flex.align-items-center.gap-2
+                        i.bi.bi-battery-charging.text-primary
+                        span Hasta 24h de Batería
+
+    //- Recommended section (Reusing loop)
+    section.py-5.mt-5
+        h3.fw-bold.mb-4 También te podría gustar
+        .row.g-4
+            each p in ['Auriculares Pro', 'Reloj Series S', 'Cargador Mag', 'Funda de Cuero']
+                .col-6.col-md-3
+                    .card.h-100.overflow-hidden.small
+                        img.card-img-top(src=`https://dummyimage.com/600x600/181818/ffffff&text=${p}` alt=p)
+                        .card-body.p-3
+                             h6.fw-bold.mb-0= p
+
+

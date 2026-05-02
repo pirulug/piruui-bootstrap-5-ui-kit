@@ -1,58 +1,103 @@
-nav.navbar.navbar-expand-lg.bg-body.fixed-top.py-3
-      .container
+//- Top Bar (Scrolls away)
+.piru-nav-topbar
+  .piru-nav-container
+    .d-flex.justify-content-between.align-items-center.w-100
+      .d-flex.gap-3
+        a.top-link(href="mailto:hello@pirulug.com")
+          i.bi.bi-envelope.me-1
+          span hello@pirulug.com
+        a.top-link(href="#")
+          i.bi.bi-telephone.me-1
+          span +51 999 888 777
+      
+      .d-flex.align-items-center.gap-3
+        a.top-link(href="#") Terms & Conditions
+        .vr.bg-body-secondary(style="height: 12px; width: 1px;")
+        .d-flex.gap-2
+          a.top-social(href="#" title="Facebook"): i.bi.bi-facebook
+          a.top-social(href="#" title="Twitter"): i.bi.bi-twitter-x
+          a.top-social(href="#" title="Instagram"): i.bi.bi-instagram
+          a.top-social(href="#" title="LinkedIn"): i.bi.bi-linkedin
 
-        a.navbar-brand.fw-bold.fs-4(href='index.html') PiruUI
-        
-        .d-flex.align-items-center.ms-auto.me-2.d-lg-none
-            button#bd-theme-toggle-mobile.nav-link.p-2.d-flex.align-items-center(type='button')
-                span.theme-icon-active
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+//- Main Navigation (Sticky)
+nav.piru-nav-main
+  .piru-nav-container
+    //- Logo
+    a.piru-nav-brand(href=`${baseUrl}index.html`)
+      i.bi.bi-lightning-charge-fill
+      span PiruUI
 
-        button.navbar-toggler.border-0(type='button' data-bs-toggle='offcanvas' data-bs-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation')
-          span.navbar-toggler-icon
+    //- Main Menu
+    ul.piru-nav-menu
+      li.piru-nav-dropdown
+        a.piru-nav-link
+          i.bi.bi-grid-1x2
+          span Explore
+          i.bi.bi-chevron-down
+        .piru-dropdown-panel
+          a.piru-dropdown-item(href=`${baseUrl}movies/movies.html`)
+            i.bi.bi-film
+            span Movies
+          a.piru-dropdown-item(href=`${baseUrl}movies/series-details.html`)
+            i.bi.bi-tv
+            span Series
+          a.piru-dropdown-item(href=`${baseUrl}blog/blog.html`)
+            i.bi.bi-newspaper
+            span Blog
+      
+      li.piru-nav-dropdown
+        a.piru-nav-link
+          i.bi.bi-bag
+          span Shop
+          i.bi.bi-chevron-down
+        .piru-dropdown-panel
+          a.piru-dropdown-item(href=`${baseUrl}shop/index.html`)
+            i.bi.bi-grid
+            span Catalog
+          a.piru-dropdown-item(href=`${baseUrl}shop/cart.html`)
+            i.bi.bi-cart
+            span Cart
+          a.piru-dropdown-item(href=`${baseUrl}shop/checkout.html`)
+            i.bi.bi-credit-card
+            span Checkout
 
-        #navbarResponsive.offcanvas-lg.offcanvas-start(tabindex='-1' aria-labelledby='navbarResponsiveLabel')
-          .offcanvas-header.border-bottom
-            h5#navbarResponsiveLabel.offcanvas-title Menú
-            button.btn-close(type='button' data-bs-dismiss='offcanvas' data-bs-target='#navbarResponsive' aria-label='Close')
-          
-          .offcanvas-body
-            ul.navbar-nav.mb-2.mb-lg-0
-              li.nav-item.dropdown
-                a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false') Pages
-                ul.dropdown-menu.border-0.mt-2
-                  li
-                    a.dropdown-item(href='blog-index.html') Blog
-                  //- li
-                    a.dropdown-item(href='#') Another action
-              
-              li.nav-item
-                a.nav-link(href="sticky-footer-navbar.html") Sticky footer navbar
+      li
+        a.piru-nav-link(href=`${baseUrl}colors.html`)
+          i.bi.bi-palette
+          span Colors
 
+      li.piru-mobile-auth
+        .d-grid.gap-2
+          a.btn.btn-primary.py-3.fw-bold(href=`${baseUrl}auth/signup.html`) Get Started
+          a.btn.btn-link.text-body.fw-bold(href=`${baseUrl}auth/signin.html`) Login
 
-            ul.navbar-nav.ms-lg-auto.align-items-lg-center
-              li.nav-item
-                a.nav-link(target='_blank' rel='noopener' href='https://github.com/pirulug/')
-                  i.bi.bi-github
-                  span.d-lg-none.ms-2 GitHub
-              li.nav-item
-                a.nav-link(target='_blank' rel='noopener' href='https://x.com/pirulug')
-                  i.bi.bi-twitter
-                  span.d-lg-none.ms-2 Twitter
-              
-              li.nav-item.d-none.d-lg-flex.align-items-center.mx-2
-                .vr.h-50.text-body-secondary
-              
-              li.nav-item.d-lg-none
-                hr.my-2.text-white-50
+    //- Actions
+    .piru-nav-actions
+      button#openSearch.piru-action-btn(type="button" title="Search")
+        i.bi.bi-search
 
-              li.nav-item
-                a.nav-link.fw-semibold.small v5.3
+      button#bd-theme-toggle.piru-action-btn.desktop-only(type="button" title="Theme")
+        span.theme-icon-active
+          i.bi.bi-sun
 
-              li.nav-item.d-none.d-lg-flex.align-items-center.mx-2
-                .vr.h-50.text-body-secondary
+      .desktop-auth
+        a.btn.btn-sm.btn-link.text-body.text-decoration-none.fw-bold(href=`${baseUrl}auth/signin.html`) Login
+        a.btn.btn-sm.btn-primary.px-3.fw-bold(href=`${baseUrl}auth/signup.html`) Sign Up
 
-              li.nav-item.d-none.d-lg-block
-                button#bd-theme-toggle.nav-link.py-2.d-flex.align-items-center(type='button')
-                    span#bd-theme-icon.theme-icon-active
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      button#bd-theme-toggle-mobile.piru-action-btn.mobile-only(type="button")
+        span.theme-icon-active
+          i.bi.bi-sun
+      
+      button.piru-nav-toggle(aria-label="Menu")
+        span
+        span
+        span
+
+  //- Search Overlay
+  #piruSearchOverlay.piru-search-overlay
+    .piru-nav-container
+      .d-flex.align-items-center.gap-3.w-100
+        i.bi.bi-search.text-primary.h4.mb-0
+        input#piruSearchInput.form-control.form-control-lg.bg-transparent.border-0.ps-0.shadow-none(type="text" placeholder="Search...")
+        button#closeSearch.btn.btn-link.text-body.p-0
+          i.bi.bi-x-lg.h4

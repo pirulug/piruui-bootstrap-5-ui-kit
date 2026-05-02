@@ -1,0 +1,62 @@
+extends ../../layouts/home
+
+append config
+  -pageName = 'Tienda'
+
+block content
+  .container.py-5
+    header.mb-5
+        h1.fw-bold.display-4 Colección 2024
+        p.text-body-secondary.lead Descubre productos exclusivos con un diseño minimalista y funcional.
+
+    .row.g-4
+      //- Sidebar Filters
+      .col-lg-3
+        .d-grid.gap-4
+            //- Category Filter
+            div
+                h6.fw-bold.mb-3 Categorías
+                ul.nav.flex-column.gap-2
+                    li: a.nav-link.p-0.text-primary.small(href="#") Todos los productos
+                    li: a.nav-link.p-0.text-body-secondary.small(href="#") Electrónica
+                    li: a.nav-link.p-0.text-body-secondary.small(href="#") Ropa y Moda
+                    li: a.nav-link.p-0.text-body-secondary.small(href="#") Hogar y Decoración
+            
+            //- Price Filter
+            div
+                h6.fw-bold.mb-3 Rango de Precio
+                input.form-range(type="range" min="0" max="1000" step="10")
+                .d-flex.justify-content-between.small.text-muted
+                    span $0
+                    span $1000
+
+      //- Product Grid
+      .col-lg-9
+        .row.g-4
+          each product, index in ['Smartphone Pro', 'Auriculares Wireless', 'Reloj Inteligente', 'Cámara 4K', 'Laptop Air', 'Altavoz Bluetooth', 'Tablet Ultra', 'Consola NextGen']
+            .col-sm-6.col-md-4
+              .card.h-100.overflow-hidden
+                .position-relative
+                    a(href=`${baseUrl}shop/product-details.html`)
+                        img.card-img-top(src=`https://dummyimage.com/600x600/181818/ffffff&text=${product}` alt=product)
+                    .position-absolute.top-0.end-0.m-3
+                        span.badge.bg-primary.fw-normal Nuevo
+                
+                .card-body.p-4.d-flex.flex-column
+                    a.text-decoration-none.text-body(href=`${baseUrl}shop/product-details.html`)
+                        h6.fw-bold.mb-1= product
+                    p.text-body-secondary.small.mb-3 Gadget • Tecnología
+                    
+                    .mt-auto.d-flex.justify-content-between.align-items-center
+                        span.fw-bold.text-primary= `$${(index + 1) * 99}.00`
+                        button.btn.btn-sm.btn-outline-primary.px-3
+                            i.bi.bi-cart-plus.me-1
+                            | Añadir
+
+        //- Pagination
+        nav.mt-5(aria-label='Shop Pagination')
+          ul.pagination.pagination-sm.justify-content-center.gap-2
+            li.page-item.active: a.page-link.rounded-circle.p-0.d-flex.align-items-center.justify-content-center(href='#' style="width: 32px; height: 32px;") 1
+            li.page-item: a.page-link.rounded-circle.p-0.d-flex.align-items-center.justify-content-center(href='#' style="width: 32px; height: 32px;") 2
+            li.page-item: a.page-link.rounded-circle.p-0.d-flex.align-items-center.justify-content-center(href='#' style="width: 32px; height: 32px;") 3
+

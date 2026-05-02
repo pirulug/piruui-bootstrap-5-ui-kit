@@ -1,4 +1,4 @@
-//- layout.pug
+//- auth layout
 include ../config/config
 block config
 doctype html
@@ -15,12 +15,8 @@ html(lang="en")
     link(rel='icon' type='image/png' sizes='32x32' href=`${assets}img/favicon/favicon-32x32.png`)
     link(rel='icon' type='image/png' sizes='16x16' href=`${assets}img/favicon/favicon-16x16.png`)
 
-    link(rel='manifest' href=`${assets}img/favicon/site.webmanifest`)
-
     // Css
-    link(rel="stylesheet" href=`${assets}css/prism.css`)
     link(rel="stylesheet" href=`${assets}css/bootstrapicons.css` media="print" onload="this.media='all'")
-    link(rel="stylesheet" href=`${assets}css/fontawesome.css` media="print" onload="this.media='all'")
     link(rel="stylesheet" href=`${assets}css/piruui.css`)
     link(rel="stylesheet" href=`${assets}css/extra.css`)
 
@@ -35,16 +31,17 @@ html(lang="en")
     block styles
   body
     .piru-wrapper
-      include ../includes/navbar
-      
-      main.piru-main-content
-        block content
+      //- Floating Theme Toggle
+      .position-fixed.top-0.end-0.p-4(style="z-index: 1050;")
+        button#bd-theme-toggle.btn.btn-link.text-body.p-2.text-decoration-none(type="button" title="Toggle Theme")
+            span.theme-icon-active
+              i.bi.bi-sun.h4.mb-0
 
-      include ../includes/footer
+      main.piru-main-content.d-flex.align-items-center.justify-content-center.min-vh-100.p-3
+        block content
 
     // Js Bootstrap
     script(src=`${assets}js/piruui.js`)
     script(src=`${assets}js/extra.js`)
-    script(src=`${assets}js/prism.js`)
 
     block scripts 

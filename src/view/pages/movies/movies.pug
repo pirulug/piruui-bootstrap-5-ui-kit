@@ -1,0 +1,147 @@
+extends ../../layouts/home
+
+append config
+  -pageName = 'Movies'
+
+block content
+  .container.py-5
+    header.mb-5
+        h1.fw-bold.display-4 Featured Movies
+        p.text-body-secondary.lead Explore the latest trending movies and premium UI components.
+    
+    .row.g-4
+      //- Movie Card 1
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=Oppenheimer" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge 4K
+                  h5.fw-bold.text-white.mb-1 Oppenheimer
+                  .piru-movie-meta
+                    span 2023
+                    span •
+                    span 3h 0min
+              .py-3
+                h6.fw-bold.mb-1.text-body Oppenheimer
+                p.small.text-muted.mb-0 Drama, History
+      
+      //- Movie Card 2
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=Barbie" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge HD
+                  h5.fw-bold.text-white.mb-1 Barbie
+                  .piru-movie-meta
+                    span 2023
+                    span •
+                    span 1h 54min
+              .py-3
+                h6.fw-bold.mb-1.text-body Barbie
+                p.small.text-muted.mb-0 Comedy, Fantasy
+
+      //- Movie Card 3
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=Spider-Man" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge 4K
+                  h5.fw-bold.text-white.mb-1 Spider-Verse
+                  .piru-movie-meta
+                    span 2023
+                    span •
+                    span 2h 20min
+              .py-3
+                h6.fw-bold.mb-1.text-body Across the Spider-Verse
+                p.small.text-muted.mb-0 Animation, Action
+
+      //- Movie Card 4
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=Dune+2" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge IMAX
+                  h5.fw-bold.text-white.mb-1 Dune: Part Two
+                  .piru-movie-meta
+                    span 2024
+                    span •
+                    span 2h 46min
+              .py-3
+                h6.fw-bold.mb-1.text-body Dune: Part Two
+                p.small.text-muted.mb-0 Sci-Fi, Adventure
+
+      //- Movie Card 5
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=The+Batman" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge 4K
+                  h5.fw-bold.text-white.mb-1 The Batman
+                  .piru-movie-meta
+                    span 2022
+                    span •
+                    span 2h 56min
+              .py-3
+                h6.fw-bold.mb-1.text-body The Batman
+                p.small.text-muted.mb-0 Action, Crime
+
+      //- Movie Card 6
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=John+Wick+4" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge HD
+                  h5.fw-bold.text-white.mb-1 John Wick 4
+                  .piru-movie-meta
+                    span 2023
+                    span •
+                    span 2h 49min
+              .py-3
+                h6.fw-bold.mb-1.text-body John Wick: Chapter 4
+                p.small.text-muted.mb-0 Action, Thriller
+
+      //- Movie Card 7
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=Avatar+2" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge 4K
+                  h5.fw-bold.text-white.mb-1 Avatar 2
+                  .piru-movie-meta
+                    span 2022
+                    span •
+                    span 3h 12min
+              .py-3
+                h6.fw-bold.mb-1.text-body Avatar: The Way of Water
+                p.small.text-muted.mb-0 Sci-Fi, Action
+
+      //- Movie Card 8
+      .col-sm-6.col-md-4.col-lg-3
+        a.text-decoration-none(href=`${baseUrl}movies/movie-details.html`)
+            .piru-movie-card.rounded.overflow-hidden
+              .piru-movie-poster-wrapper
+                img.img-fluid.w-100(src="https://dummyimage.com/600x900/181818/ffffff&text=Top+Gun" alt="Movie")
+                .piru-movie-overlay
+                  .piru-movie-badge 4K
+                  h5.fw-bold.text-white.mb-1 Top Gun
+                  .piru-movie-meta
+                    span 2022
+                    span •
+                    span 2h 10min
+              .py-3
+                h6.fw-bold.mb-1.text-body Top Gun: Maverick
+                p.small.text-muted.mb-0 Action, Drama

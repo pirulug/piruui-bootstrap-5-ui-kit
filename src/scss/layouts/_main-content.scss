@@ -1,0 +1,9 @@
+.piru-main-content {
+  flex: 1 0 auto;
+
+  @media (max-width: 991px) {
+    // Calculamos la altura basándonos en el padding y el tamaño del brand
+    // (Aproximamos el line-height del brand a 1.2)
+    margin-top: calc((var(--piru-nav-mobile-py) * 2) + (var(--piru-nav-mobile-brand) * 1.2)); 
+  }
+}

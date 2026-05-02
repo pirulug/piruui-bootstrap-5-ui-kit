@@ -1,0 +1,61 @@
+extends ../../layouts/auth
+
+append config
+  -pageName = 'Sign Up'
+
+block content
+  .container
+    .row.justify-content-center
+      .col-md-8.col-lg-6
+        //- Card container (borderless & shadowless by rules)
+        .card.p-4.p-lg-5
+          .text-center.mb-5
+            a.d-inline-block.mb-4(href=`${baseUrl}index.html`)
+              i.bi.bi-lightning-charge-fill.text-primary.display-4
+            h2.fw-bold Create Account
+            p.text-body-secondary.small Join thousands of creators using PiruUI
+
+          form.d-grid.gap-4
+            div
+              label.form-label(for='fullName') Full Name
+              input#fullName.form-control(type='text' placeholder='John Doe' required)
+
+            div
+              label.form-label(for='email') Email Address
+              input#email.form-control(type='email' placeholder='name@example.com' required)
+            
+            div
+              label.form-label(for='password') Password
+              .input-group
+                input#password.form-control(type='password' placeholder='••••••••' required)
+                button.btn.btn-link.text-body.text-decoration-none.bg-body-secondary.px-3(type="button" data-pr-toggle-password="password")
+                  i.bi.bi-eye
+
+            .form-check.small
+              input#terms.form-check-input(type='checkbox' required)
+              label.form-check-label.text-body-secondary(for='terms') 
+                | I agree to the 
+                a.text-decoration-none(href="#") Terms
+                |  and 
+                a.text-decoration-none(href="#") Privacy Policy
+
+            button.btn.btn-primary.btn-lg.fw-bold.py-3(type='submit') Create Account
+
+          .text-center.my-5
+            span.small.text-body-secondary.px-3.position-relative(style="z-index: 1;") Or sign up with
+            hr.mt-n3.text-body-secondary.opacity-25
+
+          .row.g-3
+            .col-6
+              button.btn.btn-outline-body.w-100.d-flex.align-items-center.justify-content-center.gap-2.py-3.fw-medium(type="button")
+                i.bi.bi-google
+                span Google
+            .col-6
+              button.btn.btn-outline-body.w-100.d-flex.align-items-center.justify-content-center.gap-2.py-3.fw-medium(type="button")
+                i.bi.bi-github
+                span GitHub
+
+          .text-center.mt-5
+            p.small.text-body-secondary.mb-0
+              | Already have an account? 
+              a.fw-bold.text-decoration-none(href=`${baseUrl}auth/signin.html`) Sign In
