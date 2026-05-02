@@ -24,8 +24,43 @@ nav.piru-nav-main
   .piru-nav-container
     //- Logo
     a.piru-nav-brand(href=`${baseUrl}index.html`)
-      i.bi.bi-lightning-charge-fill
-      span PiruUI
+      //- 1. Images logo
+      if navLogoStyle === 'image'
+        .piru-nav-logo-images
+          img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
+          img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
+      else
+        | <!--
+        .piru-nav-logo-images
+          img.piru-logo.logo-light(src=`${assets}img/logo/piruui-dark-logo.png` alt=siteName)
+          img.piru-logo.logo-dark(src=`${assets}img/logo/piruui-white-logo.png` alt=siteName)
+        | -->
+
+      //- 2. Images with title
+      if navLogoStyle === 'image-title'
+        .piru-nav-logo-image-title
+          img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
+          img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
+          span= siteName
+      else
+        | <!--
+        .piru-nav-logo-image-title
+          img.piru-logo.logo-light(src=`${assets}img/logo/logo-dark.png` alt=siteName)
+          img.piru-logo.logo-dark(src=`${assets}img/logo/logo-light.png` alt=siteName)
+          span #{siteName}
+        | -->
+      
+      //- 3. Default logo (Text/Icon)
+      if navLogoStyle === 'text' || !navLogoStyle
+        .piru-nav-logo-text
+          i.bi.bi-lightning-charge-fill
+          span= siteName
+      else
+        | <!--
+        .piru-nav-logo-text
+          i.bi.bi-lightning-charge-fill
+          span #{siteName}
+        | -->
 
     //- Main Menu
     ul.piru-nav-menu

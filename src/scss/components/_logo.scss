@@ -1,0 +1,66 @@
+.piru-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+
+  &.logo-light {
+    display: block;
+    [data-bs-theme="dark"] & {
+      display: none;
+    }
+  }
+
+  &.logo-dark {
+    display: none;
+    [data-bs-theme="dark"] & {
+      display: block;
+    }
+  }
+
+  &.piru-logo-lg {
+    height: 64px;
+    
+    @media (max-width: 768px) {
+      height: 48px;
+    }
+  }
+}
+
+// Brand Style Variants
+.piru-nav-logo-images,
+.piru-nav-logo-image-title,
+.piru-nav-logo-text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.piru-nav-logo-text,
+.piru-nav-logo-image-title {
+  span {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    
+    @media (max-width: 380px) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.piru-nav-logo-text {
+  i {
+    color: var(--#{$prefix}primary);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

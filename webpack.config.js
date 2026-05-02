@@ -99,6 +99,8 @@ module.exports = {
         templateParameters: {
           baseUrl: baseUrl,
           assets: baseUrl + "assets/",
+          siteName: "PiruUI",
+          navLogoStyle: "text",
           ...jsonData,
         },
 

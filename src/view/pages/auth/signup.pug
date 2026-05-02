@@ -11,7 +11,13 @@ block content
         .card.p-4.p-lg-5
           .text-center.mb-5
             a.d-inline-block.mb-4(href=`${baseUrl}index.html`)
-              i.bi.bi-lightning-charge-fill.text-primary.display-4
+              if logoLight && logoDark
+                img.piru-logo.piru-logo-lg.logo-light(src=`${assets}${logoLight}` alt=siteName)
+                img.piru-logo.piru-logo-lg.logo-dark(src=`${assets}${logoDark}` alt=siteName)
+              else if logoLight
+                img.piru-logo.piru-logo-lg(src=`${assets}${logoLight}` alt=siteName)
+              else
+                i.bi.bi-lightning-charge-fill.text-primary.display-4
             h2.fw-bold Create Account
             p.text-body-secondary.small Join thousands of creators using PiruUI
 

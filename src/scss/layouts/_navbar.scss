@@ -88,26 +88,11 @@
 
   // --- BRAND ---
   .piru-nav-brand {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--#{$prefix}body-color);
     text-decoration: none;
+    color: var(--#{$prefix}body-color);
     display: flex;
     align-items: center;
-    gap: 0.6rem;
     z-index: 1100;
-
-    @media (max-width: 380px) {
-      font-size: 1.3rem;
-    }
-
-    i {
-      color: var(--#{$prefix}primary);
-      font-size: 1.8rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
   }
 
   // --- MENU ---
