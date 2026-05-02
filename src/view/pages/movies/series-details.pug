@@ -1,52 +1,53 @@
 extends ../../layouts/home
 
 append config
-  -pageName = 'Detalles de Serie'
+  -pageName = 'Series Details'
 
 block content
   //- Hero Section with Backdrop
-  section.position-relative.overflow-hidden.py-5.bg-dark.text-white(style="min-height: 500px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://dummyimage.com/1920x1080/181818/ffffff&text=The+Last+of+Us+Backdrop') center/cover no-repeat;")
+  section.position-relative.overflow-hidden.py-5.bg-dark.text-white(style=`min-height: 500px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${assets}img/serie/backdrop.webp') center/cover no-repeat;`)
     .container.py-lg-5
       .row.align-items-center.gy-4
         .col-lg-3.col-md-4
-            img.img-fluid.rounded(src="https://dummyimage.com/600x900/181818/ffffff&text=The+Last+of+Us" alt="Poster")
+            img.img-fluid.rounded(src=`${assets}img/serie/poster.webp` alt="Poster")
         
         .col-lg-9.col-md-8
-            .badge.bg-success.mb-3 Original de HBO
+            .badge.bg-success.mb-3 HBO Original
             h1.fw-bold.display-3.mb-2 The Last of Us
             .d-flex.align-items-center.gap-3.mb-4.text-white-50
                 span.d-flex.align-items-center.gap-1
                     i.bi.bi-star-fill.text-warning
                     | 9.1 / 10
                 span.vr
-                span 1 Temporada
+                span 1 Season
                 span.vr
                 span Drama, Sci-Fi
                 span.vr
                 span 2023
             
-            p.lead.mb-5.opacity-75 Veinte años después de la destrucción de la civilización moderna, Joel, un superviviente endurecido, es contratado para sacar a Ellie, una niña de 14 años, de una opresiva zona de cuarentena. Lo que comienza como un pequeño trabajo pronto se convierte en un viaje brutal.
+            p.lead.mb-5.opacity-75 Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal journey.
             
             .d-flex.gap-3
                 button.btn.btn-primary.btn-lg.px-4
                     i.bi.bi-play-fill.me-2
-                    | Ver Último Episodio
+                    | Watch Latest Episode
                 button.btn.btn-outline-light.btn-lg.px-4
                     i.bi.bi-list-ul.me-2
-                    | Lista de Episodios
+                    | Episode List
 
   //- Details Section
   .container.py-5
     .row.gy-5
       .col-lg-8
         .d-flex.align-items-center.justify-content-between.mb-4
-            h3.fw-bold.mb-0 Episodios
-            //- Bootstrap Nav Tabs for Seasons
-            ul#seasonTabs.nav.nav-pills.bg-body.p-1(role="tablist")
-                li.nav-item(role="presentation")
-                    button#t1-tab.nav-link.active.px-3(data-bs-toggle="pill" data-bs-target="#season-1" type="button" role="tab") Temporada 1
-                li.nav-item(role="presentation")
-                    button#t2-tab.nav-link.px-3(data-bs-toggle="pill" data-bs-target="#season-2" type="button" role="tab") Temporada 2
+            h3.fw-bold.mb-0 Episodes
+            //- Custom Series Tabs
+            .piru-series-tabs
+              ul#seasonTabs.nav.nav-pills.p-1(role="tablist")
+                  li.nav-item(role="presentation")
+                      button#t1-tab.nav-link.active.px-3(data-bs-toggle="pill" data-bs-target="#season-1" type="button" role="tab") Season 1
+                  li.nav-item(role="presentation")
+                      button#t2-tab.nav-link.px-3(data-bs-toggle="pill" data-bs-target="#season-2" type="button" role="tab") Season 2
 
         hr.my-4.opacity-10
         
@@ -54,27 +55,28 @@ block content
         .tab-content#seasonTabsContent
             //- Season 1 Content
             .tab-pane.fade.show.active#season-1(role="tabpanel")
-                h5.fw-bold.mb-3 Temporada 1 (2023)
+                h5.fw-bold.mb-3 Season 1 (2023)
                 .d-grid.gap-3
-                    each ep, index in ['Cuando te pierdas en la oscuridad', 'Infectados', 'Mucho mucho tiempo', 'Por favor, no me sueltes la mano']
+                    each ep, index in ['When You\'re Lost in the Darkness', 'Infected', 'Long, Long Time', 'Please Hold to My Hand']
                         .card.overflow-hidden
                             .row.g-0.align-items-center
                                 .col-4.col-md-3
-                                    img.img-fluid(src=`https://dummyimage.com/400x225/181818/ffffff&text=S01E0${index+1}` alt=ep)
+                                    img.img-fluid(src=`${assets}img/serie/backdrop.webp` alt=ep style="aspect-ratio: 16/9; object-fit: cover;")
                                 .col-8.col-md-9
                                     .card-body.p-3
                                         .d-flex.justify-content-between.align-items-start
                                             div
                                                 .fw-bold.mb-1= ep
-                                                .text-muted.small 55 min • 15 Ene 2023
+                                                .text-muted.small 55 min • Jan 15, 2023
                                             button.btn.btn-sm.btn-primary.rounded-circle(style="width: 32px; height: 32px; padding: 0;")
                                                 i.bi.bi-play-fill
+                                        
 
             //- Season 2 Content
             .tab-pane.fade#season-2(role="tabpanel")
-                h5.fw-bold.mb-3 Temporada 2 (Proximamente)
+                h5.fw-bold.mb-3 Season 2 (Coming Soon)
                 .d-grid.gap-3
-                    each ep, index in ['Episodio 01', 'Episodio 02', 'Episodio 03', 'Episodio 04']
+                    each ep, index in ['Episode 01', 'Episode 02', 'Episode 03', 'Episode 04']
                         .card.overflow-hidden.opacity-75
                             .row.g-0.align-items-center
                                 .col-4.col-md-3
@@ -83,11 +85,11 @@ block content
                                 .col-8.col-md-9
                                     .card-body.p-3
                                         .fw-bold.mb-1= ep
-                                        .text-muted.small 60 min • Fecha Pendiente
+                                        .text-muted.small 60 min • Date Pending
 
         hr.my-5.opacity-10
         
-        h3.fw-bold.mb-4 Reparto Principal
+        h3.fw-bold.mb-4 Main Cast
         .row.g-3
             each actor in ['Pedro Pascal', 'Bella Ramsey', 'Anna Torv', 'Gabriel Luna', 'Nick Offerman', 'Murray Bartlett']
                 .col-6.col-md-4
@@ -99,36 +101,34 @@ block content
       
       .col-lg-4
         .card.p-4
-            h5.fw-bold.mb-4 Información
+            h5.fw-bold.mb-4 Information
             ul.list-unstyled.d-grid.gap-3.mb-0
                 li.d-flex.justify-content-between.small
-                    span.text-muted Creadores
+                    span.text-muted Creators
                     span.fw-medium Craig Mazin, Neil Druckmann
                 li.d-flex.justify-content-between.small
-                    span.text-muted Red
+                    span.text-muted Network
                     span.fw-medium HBO
                 li.d-flex.justify-content-between.small
-                    span.text-muted Temporadas
+                    span.text-muted Seasons
                     span.fw-medium 2
                 li.d-flex.justify-content-between.small
-                    span.text-muted Episodios
+                    span.text-muted Episodes
                     span.fw-medium 18
                 li.d-flex.justify-content-between.small
-                    span.text-muted Estado
-                    span.badge.bg-primary.fw-normal Renovada
+                    span.text-muted Status
+                    span.badge.bg-primary.fw-normal Renewed
 
     hr.my-5.opacity-10
     
     //- Related Series
-    h3.fw-bold.mb-4 Series Similares
+    h3.fw-bold.mb-4 Similar Series
     .row.g-4
         - var listSeries = ['Chernobyl', 'Succession', 'House of the Dragon', 'The White Lotus']
         each s in listSeries
             .col-6.col-md-3
                 a.text-decoration-none(href="#")
                     .card.overflow-hidden
-                        img.card-img-top(src=`https://dummyimage.com/400x600/181818/ffffff&text=${s}` alt=s style="aspect-ratio: 2/3; object-fit: cover;")
+                        img.card-img-top(src=`${assets}img/serie/poster.webp` alt=s style="aspect-ratio: 2/3; object-fit: cover;")
                         .card-body.p-3
                             h6.fw-bold.mb-0.text-body= s
-
-

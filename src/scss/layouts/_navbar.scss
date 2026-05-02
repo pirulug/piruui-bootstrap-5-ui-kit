@@ -184,6 +184,12 @@
   .piru-nav-dropdown {
     position: relative;
 
+    &.has-megamenu {
+      @media (min-width: 992px) {
+        position: static;
+      }
+    }
+
     @media (min-width: 992px) {
       &:hover {
         .piru-dropdown-panel {
@@ -212,17 +218,67 @@
       transition: all 0.3s ease;
       z-index: 1100;
 
+      // MegaMenu Variant (Relative to .piru-nav-container)
+      &.piru-megamenu {
+        @media (min-width: 992px) {
+          margin-top: 0;
+          left: 1.5rem; // Alignment with .piru-nav-container padding
+          right: 1.5rem;
+          width: auto;
+          transform: translateY(0); // Closer by default
+          padding: 1rem;
+          
+          .piru-megamenu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+          }
+        }
+      }
+
       @media (max-width: 991px) {
         position: static;
         opacity: 1;
         visibility: visible;
         transform: none;
-        display: none; 
-        padding: 0 0 0 1.5rem;
+        width: 100%;
+        padding: 0;
         background-color: transparent;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
         &.is-visible {
-          display: block;
+          display: block; // Keep for accessibility/compatibility but animation handles visibility
+          max-height: 1000px; // Large enough value
+        }
+
+        &.piru-megamenu {
+          .piru-megamenu-grid {
+             display: flex;
+             flex-direction: column;
+             gap: 0.5rem;
+             padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+
+    .piru-megamenu-column {
+      @media (max-width: 991px) {
+        padding: 0.5rem 0;
+      }
+      h6 {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        color: var(--#{$prefix}primary);
+        margin-bottom: 1.25rem;
+
+        @media (max-width: 991px) {
+          margin-bottom: 0.75rem;
+          font-size: 0.7rem;
         }
       }
     }
@@ -239,8 +295,10 @@
       transition: all 0.2s;
 
       @media (max-width: 991px) {
-        font-size: 1.15rem;
-        padding: 0.7rem 0;
+        font-size: 1.1rem;
+        padding: 0.85rem 1rem;
+        width: 100%;
+        border-radius: 0;
       }
 
       i {
@@ -251,6 +309,17 @@
       &:hover {
         background-color: var(--#{$prefix}secondary-bg);
         color: var(--#{$prefix}primary);
+      }
+      
+      &.featured-item {
+        background: var(--#{$prefix}primary-bg-subtle);
+        border: 1px solid var(--#{$prefix}primary-border-subtle);
+        
+        &:hover {
+          background: var(--#{$prefix}primary);
+          color: white;
+          i { color: white; }
+        }
       }
     }
   }

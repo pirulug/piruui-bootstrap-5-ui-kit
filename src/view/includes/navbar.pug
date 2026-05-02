@@ -29,21 +29,56 @@ nav.piru-nav-main
 
     //- Main Menu
     ul.piru-nav-menu
-      li.piru-nav-dropdown
+      li.piru-nav-dropdown.has-megamenu
         a.piru-nav-link
           i.bi.bi-grid-1x2
           span Explore
           i.bi.bi-chevron-down
-        .piru-dropdown-panel
-          a.piru-dropdown-item(href=`${baseUrl}movies/movies.html`)
-            i.bi.bi-film
-            span Movies
-          a.piru-dropdown-item(href=`${baseUrl}movies/series-details.html`)
-            i.bi.bi-tv
-            span Series
-          a.piru-dropdown-item(href=`${baseUrl}blog/blog.html`)
-            i.bi.bi-newspaper
-            span Blog
+        .piru-dropdown-panel.piru-megamenu
+          .piru-megamenu-grid
+            .piru-megamenu-column
+              h6 Media & Content
+              a.piru-dropdown-item(href=`${baseUrl}movies/movies.html`)
+                i.bi.bi-film
+                span Movies
+              a.piru-dropdown-item(href=`${baseUrl}movies/series-details.html`)
+                i.bi.bi-tv
+                span Series
+              a.piru-dropdown-item(href=`${baseUrl}blog/blog.html`)
+                i.bi.bi-newspaper
+                span Blog
+              a.piru-dropdown-item(href=`${baseUrl}colors.html`)
+                i.bi.bi-palette
+                span Color Palette
+            
+            .piru-megamenu-column
+              h6 UI Components
+              a.piru-dropdown-item(href=`${baseUrl}index.html#buttons`)
+                i.bi.bi-toggle-on
+                span Buttons
+              a.piru-dropdown-item(href=`${baseUrl}index.html#forms`)
+                i.bi.bi-input-cursor-text
+                span Forms
+              a.piru-dropdown-item(href="#")
+                i.bi.bi-window-stack
+                span Modals & Tabs
+              a.piru-dropdown-item(href="#")
+                i.bi.bi-exclamation-triangle
+                span Alerts & Badges
+
+            .piru-megamenu-column
+              h6 Resources & Shop
+              a.piru-dropdown-item(href="#")
+                i.bi.bi-book
+                span Documentation
+              a.piru-dropdown-item(href="#")
+                i.bi.bi-patch-check
+                span License
+              hr.my-3.opacity-10
+              a.piru-dropdown-item.featured-item(href=`${baseUrl}shop/index.html`)
+                .d-flex.flex-column
+                  .fw-bold.mb-1 Visit Our Shop
+                  .small.opacity-75 Premium templates & UI kits
       
       li.piru-nav-dropdown
         a.piru-nav-link
