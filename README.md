@@ -1,96 +1,116 @@
-# PiruUI - Bootstrap 5 UI Kit
+<div align="center">
+  <img src="src/img/logo/piruui-white-logo.png" alt="PiruUI Logo" width="120">
+  <h1>PiruUI Bootstrap 5 UI Kit</h1>
+  <p><strong>A modern, premium, and highly customizable UI Kit built with Bootstrap 5, Pug, and Sass.</strong></p>
 
-PiruUI is a set of UI components and utilities built on top of Bootstrap 5, designed to help create modern, responsive user interfaces. This kit is perfect for designers and developers looking for a solid, customizable foundation for their web projects.
+  [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/pirulug/piruui-bootstrap-5-ui-kit)
+  [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+  [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952b3.svg)](https://getbootstrap.com/)
+  [![Sass](https://img.shields.io/badge/Sass-v1.99-cf649a.svg)](https://sass-lang.com/)
 
-[Demo](https://pirulug.github.io/piruui-bootstrap-5-ui-kit/)
+  [Live Demo](https://pirulug.github.io/piruui-bootstrap-5-ui-kit/) | [Download Release](https://github.com/pirulug/piruui-bootstrap-5-ui-kit/releases)
+</div>
+
+---
+
+![Hero Preview](src/img/preview.png)
+
+## Overview
+
+**PiruUI** is a premium set of UI components and utilities designed to accelerate the development of stunning, responsive web interfaces. It combines the power of **Bootstrap 5** with the flexibility of **Pug** templates and **Sass** modularity, providing a solid foundation for any modern web project.
 
 ## Features
 
-- **Compatibility**: Based on Bootstrap 5, ensuring compatibility and support with most modern browsers.
-- **Custom Components**: Includes a series of custom components and extensions that enhance Bootstrap's functionality.
-- **Easy to Use**: Ready to use in your projects with no additional configuration required.
-- **Customizable**: Easily modify and extend the kit to fit the needs of your project.
-- **Themes**: Supports light and dark themes, with the possibility to extend to more themes.
+- **Premium Aesthetics**: Borderless design, vibrant color palettes, and modern typography by default.
+- **Dynamic Dark/Light Mode**: Full support for system-aware and manual theme switching with Bootstrap 5.3 standards.
+- **Responsive Brand System**: Advanced navbar brand support for multiple styles (Image, Image + Title, or Text/Icon).
+- **Pug Powered**: Modular and clean templating system for faster development and maintenance.
+- **Sass Modularity**: Custom components organized in professional SCSS structures.
+- **Webpack Build System**: Optimized build process with CSS extraction, minification, and live reload.
+- **Mobile First**: Fully responsive layouts optimized for all device sizes.
+
+## Tech Stack
+
+- **Core**: HTML5, JavaScript (ES6+), CSS3
+- **Framework**: [Bootstrap 5.3+](https://getbootstrap.com/)
+- **Templating**: [Pug](https://pugjs.org/)
+- **Styling**: [Sass (SCSS)](https://sass-lang.com/) & [PostCSS](https://postcss.org/)
+- **Build Tool**: [Webpack 5](https://webpack.js.org/)
 
 ## Installation
 
-To use PiruUI in your project, you can clone this repository or download the necessary files.
-
-### Clone the Repository
+To start using PiruUI, clone the repository and install the dependencies:
 
 ```bash
+# Clone the repository
 git clone https://github.com/pirulug/piruui-bootstrap-5-ui-kit.git
+
+# Enter the directory
+cd piruui-bootstrap-5-ui-kit
+
+# Install dependencies
+pnpm install # or npm install
 ```
 
-### Usage 
+## Usage
 
-After cloning or downloading the files, simply include the CSS and JS resources in your project: html Copiar código 
-
-```html
-<link rel="stylesheet" href="dist/css/app.css"> 
-<script src="dist/js/app.js"></script>
+### Development
+Run the development server with live reload:
+```bash
+pnpm run start
 ```
 
-### Basic Example
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PiruUI Example</title>
-    <link rel="stylesheet" href="dist/css/app.css">
-</head>
-<body>
-    <div class="container">
-        <h1 class="text-center">Welcome to PiruUI</h1>
-        <button class="btn btn-primary">Primary Button</button>
-    </div>
-    <script src="dist/js/app.js"></script>
-</body>
-</html>
+### Production Build
+Generate optimized files in the `dist/` directory:
+```bash
+pnpm run build
 ```
 
-### Development 
-
-If you want to contribute or modify PiruUI, follow these steps to set up the development environment: 
-
-### Requirements 
-
-* Node.js 
-* npm or yarn 
-
-### Install Dependencies 
-
-```bash  
-npm install
+### Deployment
+Deploy the `dist` folder to GitHub Pages:
+```bash
+pnpm run deploy
 ```
 
-### Build Files 
+### Export to ZIP
+Create a versioned distribution package:
+```bash
+pnpm run zip
+```
 
-```bash  
-npm run build
-``` 
+## Configuration
 
-This will generate the minified CSS and JS files in the `dist` folder.
+Site-wide variables are managed centrally in `webpack.config.js` via `templateParameters`:
 
-### Live Development
+```javascript
+// webpack.config.js
+templateParameters: {
+  siteName: 'PiruUI',
+  navLogoStyle: 'text', // Options: 'image', 'image-title', 'text'
+  logoLight: 'img/logo/piruui-dark-logo.png',
+  logoDark: 'img/logo/piruui-white-logo.png'
+}
+```
 
-To see changes in real-time, you can use the following command:
+## Contributing
 
-```bash  
-npm start
-``` 
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### Contributing
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Contributions are welcome. If you find any issues or have suggestions, please open an issue or submit a pull request.
+## License
 
-### License
+Distributed under the MIT License. See `LICENSE` for more information.
 
-This project is licensed under the MIT License. You can see more details in the LICENSE file.
+## Author
 
-### Author
+Developed by **[Pirulug](https://github.com/pirulug)**.
 
-Developed by [Pirulug](https://github.com/pirulug).
+---
+<div align="center">
+  <p>© 2026 PiruUI. Built for developers by developers.</p>
+</div>
