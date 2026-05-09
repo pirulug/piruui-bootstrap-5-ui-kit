@@ -121,6 +121,7 @@ module.exports = {
 
     // Beautify
     new PrettifyWebpackPlugin({
+      extensions: [".html"],
       printWidth: 100,
       tabWidth: 2,
       useTabs: false,

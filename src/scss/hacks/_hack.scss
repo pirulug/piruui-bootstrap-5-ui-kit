@@ -3,6 +3,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 @if $enable-dark-mode {
   @include color-mode(dark) {
     body {
@@ -21,7 +25,7 @@ body {
     --#{$prefix}body-bg-rgb: #{to-rgb($body-bg-dark)};
     --#{$prefix}secondary-bg: #{$body-secondary-bg-dark};
     --#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg-dark)};
-    
+
     @each $color, $value in $theme-colors-dark {
       --#{$prefix}#{$color}: #{$value};
       --#{$prefix}#{$color}-rgb: #{to-rgb($value)};
@@ -80,11 +84,13 @@ body {
 .piru-theme-switching *::after {
   transition: none !important;
 }
+
 // Responsive Typography
 .display-1 {
   @media (max-width: 768px) {
     font-size: calc(1.625rem + 4.5vw);
   }
+
   @media (max-width: 576px) {
     font-size: 3rem;
   }
@@ -95,4 +101,3 @@ body {
     font-size: 1.5rem !important;
   }
 }
-

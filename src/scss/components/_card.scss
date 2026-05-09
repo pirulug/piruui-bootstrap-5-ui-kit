@@ -14,13 +14,12 @@
   --#{$prefix}card-img-overlay-padding: #{$card-img-overlay-padding};
   --#{$prefix}card-group-margin: #{$card-group-margin};
 
-  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   height: $card-height;
   word-wrap: break-word;
-
+  
   background-color: var(--#{$prefix}card-bg);
   background-clip: border-box;
   border: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
