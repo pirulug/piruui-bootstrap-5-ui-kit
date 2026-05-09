@@ -72,20 +72,30 @@
         if (e.key === "Escape") searchOverlay.classList.remove("is-active");
       });
     }
+    
+    // --- Announcement Bar Close ---
+    const announcementBar = document.getElementById("announcementBar");
+    const closeAnnouncement = document.getElementById("closeAnnouncement");
+    
+    if (announcementBar && closeAnnouncement) {
+      closeAnnouncement.addEventListener("click", () => {
+        announcementBar.classList.add("is-hidden");
+        // Remove from DOM after animation
+        setTimeout(() => {
+          announcementBar.style.display = "none";
+        }, 300);
+      });
+    }
 
     // --- Scroll Logic (Sticky Navbar) ---
     const navMain = document.querySelector(".piru-nav-main");
-    const topBar = document.querySelector(".piru-nav-topbar");
     
     const handleScroll = () => {
       if (navMain) {
-        // Only consider top bar height on desktop where it is visible
-        const isDesktop = window.innerWidth >= 992;
-        const topBarHeight = (topBar && isDesktop) ? topBar.offsetHeight : 0;
-        
-        if (window.scrollY > topBarHeight) {
+        const threshold = 50;
+        if (window.scrollY > threshold) {
           navMain.classList.add("nav-scrolled");
-        } else {
+        } else if (window.scrollY < threshold - 10) {
           navMain.classList.remove("nav-scrolled");
         }
       }

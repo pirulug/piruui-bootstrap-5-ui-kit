@@ -1,0 +1,67 @@
+// _announcement.scss - Simplified Announcement Bar using Bootstrap Classes
+
+.piru-announcement-bar {
+  position: relative;
+  z-index: 1060;
+  transition: transform 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+  overflow: hidden;
+
+  // Shine effect overlay
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    animation: shine 5s infinite;
+    pointer-events: none;
+  }
+
+  // Ensure internal container handles spacing if not using Bootstrap py-*
+  &:not([class*="py-"]) {
+    padding: 0.25rem 0;
+  }
+
+  &.is-hidden {
+    margin-top: -5rem; // Collapse effect
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .announcement-close {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    @media (max-width: 575px) {
+      right: 0.5rem;
+      padding: 0.25rem;
+    }
+  }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  20% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}

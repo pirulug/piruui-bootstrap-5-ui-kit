@@ -7,53 +7,34 @@
 
 // Helper Container (Width only)
 .piru-nav-container {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  @extend .container;
+  // width: 100%;
+  // max-width: 1240px;
+  // margin: 0 auto;
+  // padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+
   
   @media (max-width: 575px) {
     padding: 0 1rem;
   }
 }
 
-// 1. TOP BAR
-.piru-nav-topbar {
-  background-color: var(--#{$prefix}secondary-bg);
-  padding: 0.6rem 0;
-  font-size: 0.75rem;
-  transition: all 0.3s ease;
+// 0. WRAPPER (Sticky)
+.piru-nav-wrapper {
+  position: sticky;
+  top: 0;
   width: 100%;
-
+  z-index: 999;
+  transition: all 0.3s ease;
+  
   @media (max-width: 991px) {
-    display: none; // Hidden on mobile via SCSS
-  }
-
-  .top-link {
-    color: var(--#{$prefix}secondary-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    transition: color 0.2s;
-
-    &:hover {
-      color: var(--#{$prefix}primary);
-    }
-  }
-
-  .top-social {
-    color: var(--#{$prefix}secondary-color);
-    font-size: 0.85rem;
-    transition: all 0.2s;
-
-    &:hover {
-      color: var(--#{$prefix}primary);
-      transform: translateY(-1px);
-    }
+    position: fixed;
+    background-color: var(--#{$prefix}body-bg);
+    backdrop-filter: blur(12px);
   }
 }
 
@@ -62,10 +43,7 @@
   --nav-padding-y: 1.25rem;
   --nav-padding-scrolled: 0.75rem;
   
-  position: sticky;
-  top: 0;
   width: 100%;
-  z-index: 1050; // Increased z-index
   background-color: var(--#{$prefix}body-bg);
   backdrop-filter: blur(12px);
   display: flex;
@@ -76,14 +54,11 @@
 
   &.nav-scrolled {
     padding: var(--nav-padding-scrolled) 0;
-    background-color: rgba(var(--#{$prefix}body-bg-rgb), 0.9);
+    background-color: var(--#{$prefix}body-bg);
   }
 
   @media (max-width: 991px) {
     padding: var(--piru-nav-mobile-py) 0;
-    position: fixed;
-    top: 0;
-    left: 0;
   }
 
   // --- BRAND ---
@@ -117,8 +92,9 @@
       background-color: var(--#{$prefix}body-bg);
       flex-direction: column;
       justify-content: flex-start;
+      align-items: stretch; // Full width items
       padding: 6rem 2rem 2rem;
-      gap: 2rem;
+      gap: 0; // Remove gap to use padding on items for better touch area
       transform: translateX(-100%);
       transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
       overflow-y: auto;
@@ -141,20 +117,15 @@
       cursor: pointer;
 
       @media (max-width: 991px) {
-        font-size: 1.4rem;
+        font-size: 1.25rem; // Slightly smaller for better fit
         width: 100%;
+        padding: 0.85rem 0; // Consistent vertical height
         justify-content: space-between;
+        border-bottom: 1px solid var(--#{$prefix}border-color-translucent);
       }
 
       &:hover {
         color: var(--#{$prefix}primary);
-      }
-
-      i:not(.bi-chevron-down) {
-        font-size: 1.15rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
       }
 
       i.bi-chevron-down {
@@ -202,6 +173,16 @@
       transform: translateY(10px);
       transition: all 0.3s ease;
       z-index: 1100;
+
+      // Bridge to prevent losing hover when moving mouse from nav to panel
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        right: 0;
+        height: 1.5rem;
+      }
 
       // MegaMenu Variant (Relative to .piru-nav-container)
       &.piru-megamenu {
@@ -286,10 +267,7 @@
         border-radius: 0;
       }
 
-      i {
-        font-size: 1.15rem;
-        opacity: 0.8;
-      }
+
 
       &:hover {
         background-color: var(--#{$prefix}secondary-bg);
@@ -303,7 +281,6 @@
         &:hover {
           background: var(--#{$prefix}primary);
           color: white;
-          i { color: white; }
         }
       }
     }

@@ -1,172 +1,161 @@
-//- Top Bar (Scrolls away)
-.piru-nav-topbar
-  .piru-nav-container
-    .d-flex.justify-content-between.align-items-center.w-100
-      .d-flex.gap-3
-        a.top-link(href="mailto:hello@pirulug.com")
-          i.bi.bi-envelope.me-1
-          span hello@pirulug.com
-        a.top-link(href="#")
-          i.bi.bi-telephone.me-1
-          span +51 999 888 777
+header.piru-nav-wrapper
+  //- Announcement Bar
+  .piru-announcement-bar.bg-primary.text-dark#announcementBar
+    .container.position-relative
+      .d-flex.align-items-center.justify-content-center.gap-3.flex-wrap.text-center.py-2
+        .fw-bold.small
+          | Llegó un nuevo curso 👉 
+          a.text-reset.text-decoration-underline(href="#" target="_blank") Skills y rules de IA para programadores
+          |  ¡Cómpralo con descuento! Solo quedan:
+        
+        .d-flex.align-items-center.gap-1
+          span.badge.bg-dark.bg-opacity-10.text-dark.fw-bold.px-2.py-1
+            span.font-monospace 05
+            span.small.ms-1 D
+          span.badge.bg-dark.bg-opacity-10.text-dark.fw-bold.px-2.py-1
+            span.font-monospace 18
+            span.small.ms-1 H
+          span.badge.bg-dark.bg-opacity-10.text-dark.fw-bold.px-2.py-1
+            span.font-monospace 05
+            span.small.ms-1 M
+          span.badge.bg-dark.bg-opacity-10.text-dark.fw-bold.px-2.py-1
+            span.font-monospace 06
+            span.small.ms-1 S
       
-      .d-flex.align-items-center.gap-3
-        a.top-link(href="#") Terms & Conditions
-        .vr.bg-body-secondary(style="height: 12px; width: 1px;")
-        .d-flex.gap-2
-          a.top-social(href="#" title="Facebook"): i.bi.bi-facebook
-          a.top-social(href="#" title="Twitter"): i.bi.bi-twitter-x
-          a.top-social(href="#" title="Instagram"): i.bi.bi-instagram
-          a.top-social(href="#" title="LinkedIn"): i.bi.bi-linkedin
+      button.announcement-close#closeAnnouncement(type="button" aria-label="Cerrar aviso")
+        i.bi.bi-x-lg
 
-//- Main Navigation (Sticky)
-nav.piru-nav-main
-  .piru-nav-container
-    //- Logo
-    a.piru-nav-brand(href=`${baseUrl}index.html`)
-      //- 1. Images logo
-      if navLogoStyle === 'image'
-        .piru-nav-logo-images
-          img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
-          img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
-      else
-        | <!--
-        .piru-nav-logo-images
-          img.piru-logo.logo-light(src=`${assets}img/logo/piruui-dark-logo.png` alt=siteName)
-          img.piru-logo.logo-dark(src=`${assets}img/logo/piruui-white-logo.png` alt=siteName)
-        | -->
+  //- Main Navigation
+  nav.piru-nav-main
+    .piru-nav-container
+      //- Logo
+      a.piru-nav-brand(href=`${baseUrl}index.html`)
+        //- 1. Images logo
+        if navLogoStyle === 'image'
+          .piru-nav-logo-images
+            img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
+            img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
+        else
+          | <!--
+          .piru-nav-logo-images
+            img.piru-logo.logo-light(src=`${assets}img/logo/piruui-dark-logo.png` alt=siteName)
+            img.piru-logo.logo-dark(src=`${assets}img/logo/piruui-white-logo.png` alt=siteName)
+          | -->
 
-      //- 2. Images with title
-      if navLogoStyle === 'image-title'
-        .piru-nav-logo-image-title
-          img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
-          img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
-          span= siteName
-      else
-        | <!--
-        .piru-nav-logo-image-title
-          img.piru-logo.logo-light(src=`${assets}img/logo/logo-dark.png` alt=siteName)
-          img.piru-logo.logo-dark(src=`${assets}img/logo/logo-light.png` alt=siteName)
-          span #{siteName}
-        | -->
-      
-      //- 3. Default logo (Text/Icon)
-      if navLogoStyle === 'text' || !navLogoStyle
-        .piru-nav-logo-text
-          i.bi.bi-lightning-charge-fill
-          span= siteName
-      else
-        | <!--
-        .piru-nav-logo-text
-          i.bi.bi-lightning-charge-fill
-          span #{siteName}
-        | -->
+        //- 2. Images with title
+        if navLogoStyle === 'image-title'
+          .piru-nav-logo-image-title
+            img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
+            img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
+            span= siteName
+        else
+          | <!--
+          .piru-nav-logo-image-title
+            img.piru-logo.logo-light(src=`${assets}img/logo/logo-dark.png` alt=siteName)
+            img.piru-logo.logo-dark(src=`${assets}img/logo/logo-light.png` alt=siteName)
+            span #{siteName}
+          | -->
+        
+        //- 3. Default logo (Text/Icon)
+        if navLogoStyle === 'text' || !navLogoStyle
+          .piru-nav-logo-text
+            i.bi.bi-lightning-charge-fill
+            span= siteName
+        else
+          | <!--
+          .piru-nav-logo-text
+            i.bi.bi-lightning-charge-fill
+            span #{siteName}
+          | -->
 
-    //- Main Menu
-    ul.piru-nav-menu
-      li.piru-nav-dropdown.has-megamenu
-        a.piru-nav-link
-          i.bi.bi-grid-1x2
-          span Explore
-          i.bi.bi-chevron-down
-        .piru-dropdown-panel.piru-megamenu
-          .piru-megamenu-grid
-            .piru-megamenu-column
-              h6 Media & Content
-              a.piru-dropdown-item(href=`${baseUrl}movies/movies.html`)
-                i.bi.bi-film
-                span Movies
-              a.piru-dropdown-item(href=`${baseUrl}movies/series-details.html`)
-                i.bi.bi-tv
-                span Series
-              a.piru-dropdown-item(href=`${baseUrl}blog/blog.html`)
-                i.bi.bi-newspaper
-                span Blog
-              a.piru-dropdown-item(href=`${baseUrl}colors.html`)
-                i.bi.bi-palette
-                span Color Palette
-            
-            .piru-megamenu-column
-              h6 UI Components
-              a.piru-dropdown-item(href=`${baseUrl}index.html#buttons`)
-                i.bi.bi-toggle-on
-                span Buttons
-              a.piru-dropdown-item(href=`${baseUrl}index.html#forms`)
-                i.bi.bi-input-cursor-text
-                span Forms
-              a.piru-dropdown-item(href="#")
-                i.bi.bi-window-stack
-                span Modals & Tabs
-              a.piru-dropdown-item(href="#")
-                i.bi.bi-exclamation-triangle
-                span Alerts & Badges
+      //- Main Menu
+      ul.piru-nav-menu
+        li.piru-nav-dropdown.has-megamenu
+          a.piru-nav-link
+            span Explore
+            i.bi.bi-chevron-down
+          .piru-dropdown-panel.piru-megamenu
+            .piru-megamenu-grid
+              .piru-megamenu-column
+                h6 Media & Content
+                a.piru-dropdown-item(href=`${baseUrl}movies/movies.html`)
+                  span Movies
+                a.piru-dropdown-item(href=`${baseUrl}movies/series-details.html`)
+                  span Series
+                a.piru-dropdown-item(href=`${baseUrl}blog/blog.html`)
+                  span Blog
+                a.piru-dropdown-item(href=`${baseUrl}colors.html`)
+                  span Color Palette
+              
+              .piru-megamenu-column
+                h6 UI Components
+                a.piru-dropdown-item(href=`${baseUrl}index.html#buttons`)
+                  span Buttons
+                a.piru-dropdown-item(href=`${baseUrl}index.html#forms`)
+                  span Forms
+                a.piru-dropdown-item(href="#")
+                  span Modals & Tabs
+                a.piru-dropdown-item(href="#")
+                  span Alerts & Badges
 
-            .piru-megamenu-column
-              h6 Resources & Shop
-              a.piru-dropdown-item(href="#")
-                i.bi.bi-book
-                span Documentation
-              a.piru-dropdown-item(href="#")
-                i.bi.bi-patch-check
-                span License
-              hr.my-3.opacity-10
-              a.piru-dropdown-item.featured-item(href=`${baseUrl}shop/index.html`)
-                .d-flex.flex-column
-                  .fw-bold.mb-1 Visit Our Shop
-                  .small.opacity-75 Premium templates & UI kits
-      
-      li.piru-nav-dropdown
-        a.piru-nav-link
-          i.bi.bi-bag
-          span Shop
-          i.bi.bi-chevron-down
-        .piru-dropdown-panel
-          a.piru-dropdown-item(href=`${baseUrl}shop/index.html`)
-            i.bi.bi-grid
-            span Catalog
-          a.piru-dropdown-item(href=`${baseUrl}shop/cart.html`)
-            i.bi.bi-cart
-            span Cart
-          a.piru-dropdown-item(href=`${baseUrl}shop/checkout.html`)
-            i.bi.bi-credit-card
-            span Checkout
+              .piru-megamenu-column
+                h6 Resources & Shop
+                a.piru-dropdown-item(href="#")
+                  span Documentation
+                a.piru-dropdown-item(href="#")
+                  span License
+                hr.my-3.opacity-10
+                a.piru-dropdown-item.featured-item(href=`${baseUrl}shop/index.html`)
+                  .d-flex.flex-column
+                    .fw-bold.mb-1 Visit Our Shop
+                    .small.opacity-75 Premium templates & UI kits
+        
+        li.piru-nav-dropdown
+          a.piru-nav-link
+            span Shop
+            i.bi.bi-chevron-down
+          .piru-dropdown-panel
+            a.piru-dropdown-item(href=`${baseUrl}shop/index.html`)
+              span Catalog
+            a.piru-dropdown-item(href=`${baseUrl}shop/cart.html`)
+              span Cart
+            a.piru-dropdown-item(href=`${baseUrl}shop/checkout.html`)
+              span Checkout
 
-      li
-        a.piru-nav-link(href=`${baseUrl}colors.html`)
-          i.bi.bi-palette
-          span Colors
+        li
+          a.piru-nav-link(href=`${baseUrl}colors.html`)
+            span Colors
 
-      li
-        a.piru-nav-link(href=`${baseUrl}pages/sticky-footer-navbar.html`)
-          i.bi.bi-file
-          span Sticky Footer Navbar
+        li
+          a.piru-nav-link(href=`${baseUrl}pages/sticky-footer-navbar.html`)
+            span Sticky Footer Navbar
 
-      li.piru-mobile-auth
-        .d-grid.gap-2
-          a.btn.btn-primary.py-3.fw-bold(href=`${baseUrl}auth/signup.html`) Get Started
-          a.btn.btn-link.text-body.fw-bold(href=`${baseUrl}auth/signin.html`) Login
+        li.piru-mobile-auth
+          .d-grid.gap-2
+            a.btn.btn-primary.py-3.fw-bold(href=`${baseUrl}auth/signup.html`) Get Started
+            a.btn.btn-link.text-body.fw-bold(href=`${baseUrl}auth/signin.html`) Login
 
-    //- Actions
-    .piru-nav-actions
-      button#openSearch.piru-action-btn(type="button" title="Search")
-        i.bi.bi-search
+      //- Actions
+      .piru-nav-actions
+        button#openSearch.piru-action-btn(type="button" title="Search")
+          i.bi.bi-search
 
-      button#bd-theme-toggle.piru-action-btn.desktop-only(type="button" title="Theme")
-        span.theme-icon-active
-          i.bi.bi-sun
+        button#bd-theme-toggle.piru-action-btn.desktop-only(type="button" title="Theme")
+          span.theme-icon-active
+            i.bi.bi-sun
 
-      .desktop-auth
-        a.btn.btn-sm.btn-link.text-body.text-decoration-none.fw-bold(href=`${baseUrl}auth/signin.html`) Login
-        a.btn.btn-sm.btn-primary.px-3.fw-bold(href=`${baseUrl}auth/signup.html`) Sign Up
+        .desktop-auth
+          a.btn.btn-sm.btn-link.text-body.text-decoration-none.fw-bold(href=`${baseUrl}auth/signin.html`) Login
+          a.btn.btn-sm.btn-primary.px-3.fw-bold(href=`${baseUrl}auth/signup.html`) Sign Up
 
-      button#bd-theme-toggle-mobile.piru-action-btn.mobile-only(type="button")
-        span.theme-icon-active
-          i.bi.bi-sun
-      
-      button.piru-nav-toggle(aria-label="Menu")
-        span
-        span
-        span
+        button#bd-theme-toggle-mobile.piru-action-btn.mobile-only(type="button")
+          span.theme-icon-active
+            i.bi.bi-sun
+        
+        button.piru-nav-toggle(aria-label="Menu")
+          span
+          span
+          span
 
   //- Search Overlay
   #piruSearchOverlay.piru-search-overlay
