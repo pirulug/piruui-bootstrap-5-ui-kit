@@ -37,6 +37,7 @@ const jsonData = {};
 module.exports = {
   entry: {
     piruui: "./src/js/piruui.js",
+    "piruui-fonts": "./src/scss/piruui-fonts.scss",
     extra: "./src/plugins/extra/extra.js",
     bootstrapicons: "./src/plugins/bootstrapicons/bootstrapicons.js",
     feathericons: "./src/plugins/feathericons/feathericons.js",
