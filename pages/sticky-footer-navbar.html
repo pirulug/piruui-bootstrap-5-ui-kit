@@ -5,10 +5,29 @@
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
     <title>PiruUI | Home</title>
-    <!-- Favicon-->
+    <meta name="title" content="PiruUI | Home" />
+    <meta name="description" />
+    <meta name="keywords" />
+    <meta name="author" />
+    <meta name="robots" />
+    <meta
+      name="theme-color"
+      content="#ff0055"
+      media="(prefers-color-scheme: light)" />
+    <meta
+      name="theme-color"
+      content="#111111"
+      media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" />
+    <meta property="og:site_name" content="PiruUI" />
+    <meta property="og:title" content="PiruUI | Home" />
+    <meta property="og:description" />
+    <meta property="og:image" content="../assets/undefined" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PiruUI | Home" />
+    <meta name="twitter:description" />
+    <meta name="twitter:image" content="../assets/undefined" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -24,20 +43,35 @@
       sizes="16x16"
       href="../assets/img/favicon/favicon-16x16.png" />
     <link rel="manifest" href="../assets/img/favicon/site.webmanifest" />
-    <!-- Css-->
-    <link rel="stylesheet" href="../assets/css/prism.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PiruUI",
+        "applicationCategory": "DesignSystem",
+        "operatingSystem": "All",
+        "description": "Modern, borderless, and lightweight Bootstrap 5 UI Kit for developers.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css" />
     <link
       rel="stylesheet"
-      href="../assets/css/bootstrapicons.css"
+      href="../assets/plugins/bootstrapicons/bootstrapicons.css"
       media="print"
       onload="this.media = 'all'" />
     <link
       rel="stylesheet"
-      href="../assets/css/fontawesome.css"
+      href="../assets/plugins/fontawesome/fontawesome.css"
       media="print"
       onload="this.media = 'all'" />
+    <link rel="stylesheet" href="../assets/css/piruui-fonts.css" />
     <link rel="stylesheet" href="../assets/css/piruui.css" />
-    <link rel="stylesheet" href="../assets/css/extra.css" />
+    <link rel="stylesheet" href="../assets/plugins/extra/extra.css" />
     <script>
       (function () {
         const storedTheme = localStorage.getItem("theme");
@@ -51,227 +85,258 @@
   </head>
   <body>
     <div class="piru-wrapper">
-      <div class="piru-nav-topbar">
-        <div class="piru-nav-container">
-          <div class="d-flex justify-content-between align-items-center w-100">
-            <div class="d-flex gap-3">
-              <a class="top-link" href="mailto:hello@pirulug.com">
-                <i class="bi bi-envelope me-1"></i>
-                <span>hello@pirulug.com</span>
-              </a>
-              <a class="top-link" href="#">
-                <i class="bi bi-telephone me-1"></i>
-                <span>+51 999 888 777</span>
-              </a>
-            </div>
-            <div class="d-flex align-items-center gap-3">
-              <a class="top-link" href="#">Terms & Conditions</a>
-              <div
-                class="vr bg-body-secondary"
-                style="height: 12px; width: 1px"></div>
-              <div class="d-flex gap-2">
-                <a class="top-social" href="#" title="Facebook">
-                  <i class="bi bi-facebook"></i>
+      <header class="piru-nav-wrapper">
+        <div
+          class="piru-announcement-bar bg-primary text-dark"
+          id="announcementBar">
+          <div class="container position-relative">
+            <div
+              class="d-flex align-items-center justify-content-center gap-2 gap-md-3 flex-wrap text-center py-2 pe-4 pe-md-0">
+              <div class="fw-bold small">
+                Nuevo curso disponible
+                <i class="bi bi-arrow-right mx-1"></i>
+                <a
+                  class="text-reset text-decoration-underline"
+                  href="#"
+                  target="_blank">
+                  Skills y rules de IA para programadores
                 </a>
-                <a class="top-social" href="#" title="Twitter">
-                  <i class="bi bi-twitter-x"></i>
-                </a>
-                <a class="top-social" href="#" title="Instagram">
-                  <i class="bi bi-instagram"></i>
-                </a>
-                <a class="top-social" href="#" title="LinkedIn">
-                  <i class="bi bi-linkedin"></i>
-                </a>
+                ¡Cómpralo con descuento! Solo quedan:
+              </div>
+              <div class="d-flex align-items-center gap-1">
+                <span
+                  class="badge bg-dark bg-opacity-10 text-dark fw-bold px-2 py-1">
+                  <span class="font-monospace">05</span>
+                  <span class="small ms-1">D</span>
+                </span>
+                <span
+                  class="badge bg-dark bg-opacity-10 text-dark fw-bold px-2 py-1">
+                  <span class="font-monospace">18</span>
+                  <span class="small ms-1">H</span>
+                </span>
+                <span
+                  class="badge bg-dark bg-opacity-10 text-dark fw-bold px-2 py-1">
+                  <span class="font-monospace">05</span>
+                  <span class="small ms-1">M</span>
+                </span>
+                <span
+                  class="badge bg-dark bg-opacity-10 text-dark fw-bold px-2 py-1">
+                  <span class="font-monospace">06</span>
+                  <span class="small ms-1">S</span>
+                </span>
               </div>
             </div>
+            <button
+              class="announcement-close"
+              id="closeAnnouncement"
+              type="button"
+              aria-label="Cerrar aviso">
+              <i class="bi bi-x-lg"></i>
+            </button>
           </div>
         </div>
-      </div>
-      <nav class="piru-nav-main">
-        <div class="piru-nav-container">
-          <a class="piru-nav-brand" href="../index.html">
-            <!--
-      <div class="piru-nav-logo-images"><img class="piru-logo logo-light" src="../assets/img/logo/piruui-dark-logo.png" alt="PiruUI"><img class="piru-logo logo-dark" src="../assets/img/logo/piruui-white-logo.png" alt="PiruUI"></div>-->
-            <!--
-      <div class="piru-nav-logo-image-title"><img class="piru-logo logo-light" src="../assets/img/logo/logo-dark.png" alt="PiruUI"><img class="piru-logo logo-dark" src="../assets/img/logo/logo-light.png" alt="PiruUI"><span>PiruUI</span></div>-->
-            <div class="piru-nav-logo-text">
-              <i class="bi bi-lightning-charge-fill"></i>
-              <span>PiruUI</span>
-            </div>
-          </a>
-          <ul class="piru-nav-menu">
-            <li class="piru-nav-dropdown has-megamenu">
-              <a class="piru-nav-link">
-                <i class="bi bi-grid-1x2"></i>
-                <span>Explore</span>
-                <i class="bi bi-chevron-down"></i>
-              </a>
-              <div class="piru-dropdown-panel piru-megamenu">
-                <div class="piru-megamenu-grid">
-                  <div class="piru-megamenu-column">
-                    <h6>Media & Content</h6>
-                    <a class="piru-dropdown-item" href="../movies/movies.html">
-                      <i class="bi bi-film"></i>
-                      <span>Movies</span>
-                    </a>
-                    <a
-                      class="piru-dropdown-item"
-                      href="../movies/series-details.html">
-                      <i class="bi bi-tv"></i>
-                      <span>Series</span>
-                    </a>
-                    <a class="piru-dropdown-item" href="../blog/blog.html">
-                      <i class="bi bi-newspaper"></i>
-                      <span>Blog</span>
-                    </a>
-                    <a class="piru-dropdown-item" href="../colors.html">
-                      <i class="bi bi-palette"></i>
-                      <span>Color Palette</span>
-                    </a>
-                  </div>
-                  <div class="piru-megamenu-column">
-                    <h6>UI Components</h6>
-                    <a class="piru-dropdown-item" href="../index.html#buttons">
-                      <i class="bi bi-toggle-on"></i>
-                      <span>Buttons</span>
-                    </a>
-                    <a class="piru-dropdown-item" href="../index.html#forms">
-                      <i class="bi bi-input-cursor-text"></i>
-                      <span>Forms</span>
-                    </a>
-                    <a class="piru-dropdown-item" href="#">
-                      <i class="bi bi-window-stack"></i>
-                      <span>Modals & Tabs</span>
-                    </a>
-                    <a class="piru-dropdown-item" href="#">
-                      <i class="bi bi-exclamation-triangle"></i>
-                      <span>Alerts & Badges</span>
-                    </a>
-                  </div>
-                  <div class="piru-megamenu-column">
-                    <h6>Resources & Shop</h6>
-                    <a class="piru-dropdown-item" href="#">
-                      <i class="bi bi-book"></i>
-                      <span>Documentation</span>
-                    </a>
-                    <a class="piru-dropdown-item" href="#">
-                      <i class="bi bi-patch-check"></i>
-                      <span>License</span>
-                    </a>
-                    <hr class="my-3 opacity-10" />
-                    <a
-                      class="piru-dropdown-item featured-item"
-                      href="../shop/index.html">
-                      <div class="d-flex flex-column">
-                        <div class="fw-bold mb-1">Visit Our Shop</div>
-                        <div class="small opacity-75">
-                          Premium templates & UI kits
+        <nav class="piru-nav-main">
+          <div class="piru-nav-container">
+            <a class="piru-nav-brand" href="../index.html" aria-label="PiruUI">
+              <div class="piru-nav-logo-text">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>PiruUI</span>
+              </div>
+            </a>
+            <ul class="piru-nav-menu">
+              <li class="piru-nav-dropdown has-megamenu">
+                <a
+                  class="piru-nav-link"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-haspopup="true">
+                  <span>Explore</span>
+                  <i class="bi bi-chevron-down"></i>
+                </a>
+                <div class="piru-dropdown-panel piru-megamenu">
+                  <div class="piru-megamenu-grid">
+                    <div class="piru-megamenu-column">
+                      <h6>Media & Content</h6>
+                      <a
+                        class="piru-dropdown-item"
+                        href="../movies/movies.html">
+                        <span>Movies</span>
+                      </a>
+                      <a
+                        class="piru-dropdown-item"
+                        href="../movies/series-details.html">
+                        <span>Series</span>
+                      </a>
+                      <a class="piru-dropdown-item" href="../blog/blog.html">
+                        <span>Blog</span>
+                      </a>
+                      <a class="piru-dropdown-item" href="../colors.html">
+                        <span>Color Palette</span>
+                      </a>
+                    </div>
+                    <div class="piru-megamenu-column">
+                      <h6>UI Components</h6>
+                      <a
+                        class="piru-dropdown-item"
+                        href="../index.html#buttons">
+                        <span>Buttons</span>
+                      </a>
+                      <a class="piru-dropdown-item" href="../index.html#forms">
+                        <span>Forms</span>
+                      </a>
+                      <a class="piru-dropdown-item" href="../index.html#modals">
+                        <span>Modals & Tabs</span>
+                      </a>
+                      <a class="piru-dropdown-item" href="../index.html#alerts">
+                        <span>Alerts & Badges</span>
+                      </a>
+                    </div>
+                    <div class="piru-megamenu-column">
+                      <h6>Resources & Shop</h6>
+                      <a
+                        class="piru-dropdown-item"
+                        href="../pages/sticky-footer-navbar.html">
+                        <span>Sticky Footer Navbar</span>
+                      </a>
+                      <a class="piru-dropdown-item" href="../colors.html">
+                        <span>Colors & Tokens</span>
+                      </a>
+                      <hr class="my-2 opacity-10" />
+                      <a
+                        class="piru-dropdown-item featured-item"
+                        href="../shop/index.html">
+                        <div class="d-flex flex-column">
+                          <div class="fw-bold mb-1">Visit Our Shop</div>
+                          <div class="small opacity-75">
+                            Premium templates & UI kits
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="piru-nav-dropdown">
-              <a class="piru-nav-link">
-                <i class="bi bi-bag"></i>
-                <span>Shop</span>
-                <i class="bi bi-chevron-down"></i>
-              </a>
-              <div class="piru-dropdown-panel">
-                <a class="piru-dropdown-item" href="../shop/index.html">
-                  <i class="bi bi-grid"></i>
-                  <span>Catalog</span>
-                </a>
-                <a class="piru-dropdown-item" href="../shop/cart.html">
-                  <i class="bi bi-cart"></i>
-                  <span>Cart</span>
-                </a>
-                <a class="piru-dropdown-item" href="../shop/checkout.html">
-                  <i class="bi bi-credit-card"></i>
-                  <span>Checkout</span>
-                </a>
-              </div>
-            </li>
-            <li>
-              <a class="piru-nav-link" href="../colors.html">
-                <i class="bi bi-palette"></i>
-                <span>Colors</span>
-              </a>
-            </li>
-            <li class="piru-mobile-auth">
-              <div class="d-grid gap-2">
+              </li>
+              <li class="piru-nav-dropdown">
                 <a
-                  class="btn btn-primary py-3 fw-bold"
-                  href="../auth/signup.html">
-                  Get Started
+                  class="piru-nav-link"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-haspopup="true">
+                  <span>Shop</span>
+                  <i class="bi bi-chevron-down"></i>
                 </a>
+                <div class="piru-dropdown-panel">
+                  <a class="piru-dropdown-item" href="../shop/index.html">
+                    <span>Catalog</span>
+                  </a>
+                  <a class="piru-dropdown-item" href="../shop/cart.html">
+                    <span>Cart</span>
+                  </a>
+                  <a class="piru-dropdown-item" href="../shop/checkout.html">
+                    <span>Checkout</span>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <a class="piru-nav-link" href="../colors.html">
+                  <span>Colors</span>
+                </a>
+              </li>
+              <li>
                 <a
-                  class="btn btn-link text-body fw-bold"
+                  class="piru-nav-link"
+                  href="../pages/sticky-footer-navbar.html">
+                  <span>Sticky Footer</span>
+                </a>
+              </li>
+              <li class="piru-mobile-auth">
+                <div class="d-grid gap-2 pt-3">
+                  <a class="btn btn-primary fw-bold" href="../auth/signup.html">
+                    Get Started
+                  </a>
+                  <a
+                    class="btn btn-outline-secondary fw-bold"
+                    href="../auth/signin.html">
+                    Login
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="piru-nav-actions">
+              <button
+                class="piru-action-btn"
+                id="openSearch"
+                type="button"
+                title="Search"
+                aria-label="Buscar">
+                <i class="bi bi-search"></i>
+              </button>
+              <button
+                class="piru-action-btn desktop-only"
+                id="bd-theme-toggle"
+                type="button"
+                title="Cambiar tema"
+                aria-label="Cambiar tema">
+                <span class="theme-icon-active"><i class="bi bi-sun"></i></span>
+              </button>
+              <div class="desktop-auth">
+                <a
+                  class="btn btn-sm btn-link text-body text-decoration-none fw-bold"
                   href="../auth/signin.html">
                   Login
                 </a>
+                <a
+                  class="btn btn-sm btn-primary px-3 fw-bold"
+                  href="../auth/signup.html">
+                  Sign Up
+                </a>
               </div>
-            </li>
-          </ul>
-          <div class="piru-nav-actions">
-            <button
-              class="piru-action-btn"
-              id="openSearch"
-              type="button"
-              title="Search">
-              <i class="bi bi-search"></i>
-            </button>
-            <button
-              class="piru-action-btn desktop-only"
-              id="bd-theme-toggle"
-              type="button"
-              title="Theme">
-              <span class="theme-icon-active"><i class="bi bi-sun"></i></span>
-            </button>
-            <div class="desktop-auth">
-              <a
-                class="btn btn-sm btn-link text-body text-decoration-none fw-bold"
-                href="../auth/signin.html">
-                Login
-              </a>
-              <a
-                class="btn btn-sm btn-primary px-3 fw-bold"
-                href="../auth/signup.html">
-                Sign Up
-              </a>
+              <button
+                class="piru-action-btn mobile-only"
+                id="bd-theme-toggle-mobile"
+                type="button"
+                title="Cambiar tema"
+                aria-label="Cambiar tema">
+                <span class="theme-icon-active"><i class="bi bi-sun"></i></span>
+              </button>
+              <button
+                class="piru-nav-toggle"
+                type="button"
+                aria-label="Alternar menú"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
             </div>
-            <button
-              class="piru-action-btn mobile-only"
-              id="bd-theme-toggle-mobile"
-              type="button">
-              <span class="theme-icon-active"><i class="bi bi-sun"></i></span>
-            </button>
-            <button class="piru-nav-toggle" aria-label="Menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
           </div>
-        </div>
+        </nav>
         <div class="piru-search-overlay" id="piruSearchOverlay">
           <div class="piru-nav-container">
             <div class="d-flex align-items-center gap-3 w-100">
-              <i class="bi bi-search text-primary h4 mb-0"></i>
+              <i class="bi bi-search text-primary h5 mb-0"></i>
               <input
                 class="form-control form-control-lg bg-transparent border-0 ps-0 shadow-none"
                 id="piruSearchInput"
                 type="text"
-                placeholder="Search..." />
-              <button class="btn btn-link text-body p-0" id="closeSearch">
-                <i class="bi bi-x-lg h4"></i>
+                placeholder="Buscar componentes, páginas, recursos..."
+                aria-label="Buscar" />
+              <button
+                class="btn btn-link text-body p-0"
+                id="closeSearch"
+                type="button"
+                aria-label="Cerrar búsqueda">
+                <i class="bi bi-x-lg h5 mb-0"></i>
               </button>
             </div>
           </div>
         </div>
-      </nav>
-      <main class="piru-main-content"></main>
+      </header>
+      <main class="piru-main-content">
+        <div class="container my-3"></div>
+      </main>
       <footer class="footer py-5 mt-3 bg-body">
         <div class="container">
           <div class="row gy-4">
@@ -289,16 +354,18 @@
                 <a
                   class="text-body-secondary"
                   href="https://github.com/pirulug/"
-                  target="_blank">
+                  target="_blank"
+                  aria-label="GitHub">
                   <i class="bi bi-github fs-5"></i>
                 </a>
                 <a
                   class="text-body-secondary"
                   href="https://x.com/pirulug"
-                  target="_blank">
+                  target="_blank"
+                  aria-label="X (Twitter)">
                   <i class="bi bi-twitter-x fs-5"></i>
                 </a>
-                <a class="text-body-secondary" href="#!">
+                <a class="text-body-secondary" href="#!" aria-label="Instagram">
                   <i class="bi bi-instagram fs-5"></i>
                 </a>
               </div>
@@ -394,9 +461,7 @@
         </div>
       </footer>
     </div>
-    <!-- Js Bootstrap-->
     <script src="../assets/js/piruui.js"></script>
-    <script src="../assets/js/extra.js"></script>
-    <script src="../assets/js/prism.js"></script>
+    <script src="../assets/plugins/prism/prism.js"></script>
   </body>
 </html>
