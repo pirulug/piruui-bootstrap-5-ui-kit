@@ -1,76 +1,69 @@
-// --- PiruUI Premium Hero ---
+// --- PiruUI Developer Summit Hero ---
 .piru-hero {
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: #000;
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background-color: #0b0b0f;
-  
-  .piru-hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.6;
-    transform: scale(1.05);
-    animation: hero-zoom 20s infinite alternate ease-in-out;
-  }
-
-  .piru-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(11, 11, 15, 0.2) 0%, rgba(11, 11, 15, 0.8) 100%);
-  }
+  background-color: #ff0055;
 }
 
 .piru-hero-content {
   position: relative;
   z-index: 5;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
-  @media (min-width: 992px) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
 }
 
-.piru-glass-badge {
+.piru-hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 2rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  gap: 0.65rem;
+  padding: 0.35rem 0.85rem;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 0.06em;
+  font-family: "Space Mono", monospace;
+  font-size: 0.825rem;
 }
 
 .piru-hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 900;
-  margin-bottom: 1rem;
+  font-family: "Space Mono", monospace;
+  font-size: clamp(2.25rem, 6.5vw, 4.75rem);
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.025em;
-  line-height: 1.1;
+  line-height: 1.12;
 }
 
 .piru-hero-text {
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 3rem;
-  max-width: 600px;
+  font-family: "Google Sans Code", "Space Mono", monospace;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  max-width: 780px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+.piru-hero-tags {
+  .piru-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.85rem;
+    background: rgba(0, 0, 0, 0.12);
+    color: #000;
+    font-family: "Google Sans Code", monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
 }
 
 .piru-hero-actions {
@@ -82,32 +75,9 @@
   @media (min-width: 576px) {
     flex-direction: row;
   }
-}
 
-// Utilities
-.backdrop-blur-sm {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.text-gradient-primary {
-  background: linear-gradient(135deg, #0d6efd 0%, #6f42c1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.shadow-lg-primary {
-  box-shadow: 0 10px 30px -10px rgba(13, 110, 253, 0.5);
-}
-
-// Animations
-@keyframes hero-zoom {
-  from { transform: scale(1.05); }
-  to { transform: scale(1.2); }
-}
-
-@keyframes scroll-dot {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
+  .btn {
+    font-family: "Space Mono", monospace;
+    letter-spacing: 0.05em;
+  }
 }

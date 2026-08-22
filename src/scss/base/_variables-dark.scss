@@ -2,43 +2,42 @@
 // ==========================================
 
 // 1. Dark Palette (Vibrant)
-$primary-dark:   #ff0055; // Magenta vibrante
+$primary-dark: #ff0055; // Magenta vibrante
 $secondary-dark: #ffaa00; // Ámbar / Naranja
-$success-dark:   #00ffaa; // Turquesa / Verde azulado
-$info-dark:      #00b4d8; // Azul claro / Cian
-$warning-dark:   #ffea00; // Amarillo brillante
-$danger-dark:    #ff3333; // Rojo vibrante
-$light-dark:     #f8f9fa; // Blanco suave contrastes
-$dark-dark:      #000000; // Negro puro para utilidades .bg-dark
+$success-dark: #00ffaa; // Turquesa / Verde azulado
+$info-dark: #00b4d8; // Azul claro / Cian
+$warning-dark: #ffea00; // Amarillo brillante
+$danger-dark: #ff3333; // Rojo vibrante
+$light-dark: #f8f9fa; // Blanco suave contrastes
+$dark-dark: #000000; // Negro puro para utilidades .bg-dark
 
 // 2. Global Dark Mode Overrides
-$body-color-dark:           $light-dark !default; // #f8f9fa
+$body-color-dark: #e0e0e0 !default; // #f8f9fa
 $body-color-secondary-dark: rgba($light-dark, 0.7) !default;
-$body-color-tertiary-dark:  rgba($light-dark, 0.5) !default;
-$body-bg-dark:              #000000 !default; // Fondo para cards, modals, etc. (.bg-body)
-$body-bg-alt-dark: #121212 !default; // Fondo para body/html
+$body-color-tertiary-dark: rgba($light-dark, 0.5) !default;
+$body-bg-dark: #1a1a1a !default; // Fondo para cards, modals, etc. (.bg-body)
+$body-bg-alt-dark: #2a2a2a !default; // Fondo para body/html
 $body-secondary-bg-dark: #090909 !default; // .bg-body-secondary
 
 // 3. Theme Colors Map for Dark Mode
 $theme-colors-dark: (
-  "primary":   $primary-dark,
+  "primary": $primary-dark,
   "secondary": $secondary-dark,
-  "success":   $success-dark,
-  "info":      $info-dark,
-  "warning":   $warning-dark,
-  "danger":    $danger-dark,
-  "light":     $light-dark,
-  "dark":      $dark-dark
-) !default;
+  "success": $success-dark,
+  "info": $info-dark,
+  "warning": $warning-dark,
+  "danger": $danger-dark,
+  "light": $light-dark,
+  "dark": $dark-dark) !default;
 
 // 4. Link & Code
-$link-color-dark:       scale-color($primary-dark, $lightness: 30%) !default;
+$link-color-dark: scale-color($primary-dark, $lightness: 30%) !default;
 $link-hover-color-dark: scale-color($primary-dark, $lightness: 50%) !default;
-$code-color-dark:       $info-dark !default;
+$code-color-dark: $info-dark !default;
 
 // 5. Component Specific (Dark)
-$sidebar-link-color-dark:   $body-color-dark !default;
-$sidebar-link-bg-dark:      $body-bg-dark !default;
-$sidebar-brand-color-dark:  $body-color-dark !default;
-$navtop-bg-dark:            $body-bg-dark !default;
-$footer-bg-dark:            $body-bg-dark !default;
+$sidebar-link-color-dark: $body-color-dark !default;
+$sidebar-link-bg-dark: $body-bg-dark !default;
+$sidebar-brand-color-dark: $body-color-dark !default;
+$navtop-bg-dark: $body-bg-dark !default;
+$footer-bg-dark: $body-bg-dark !default;

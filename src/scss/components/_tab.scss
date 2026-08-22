@@ -36,8 +36,7 @@
 
   .tab-content {
     background: var(--#{$prefix}tab-bg);
-    border-radius: 0 0 0.2rem 0.2rem;
-    box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.05);
+    border-radius: 0;
     padding: 1.25rem;
 
     p:last-child {
@@ -53,10 +52,7 @@
     border: 0;
 
     .nav-link {
-      border-bottom-left-radius: 0.2rem;
-      border-bottom-right-radius: 0;
-      border-top-left-radius: 0.2rem;
-      border-top-right-radius: 0;
+      border-radius: 0;
     }
   }
 

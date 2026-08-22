@@ -25,6 +25,7 @@
   border: var(--#{$prefix}card-border-width) solid var(--#{$prefix}card-border-color);
   border-radius: var(--#{$prefix}card-border-radius);
   box-shadow: var(--#{$prefix}card-box-shadow);
+  overflow: hidden;
 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
