@@ -1,7 +1,10 @@
 extends ../layouts/home
 
 append config
-  -pageName = 'Home'
+  - pageName = "Home"
+  - pageTitle = "PiruUI | Modern & Lightweight Bootstrap 5 UI Kit"
+  - pageDescription = "PiruUI is a modern, borderless, and lightweight Bootstrap 5 UI Kit built for developers. Includes rich components, dark mode, and admin patterns."
+  - pageKeywords = "bootstrap 5, ui kit, flat design, responsive ui, developer tools, admin components"
 
 block styles
   link(rel="stylesheet" href=`${assets}plugins/custom/custom.css`)
@@ -12,35 +15,44 @@ block scripts
 
 block content
   header.piru-hero
-    //- Background Image with Overlay
-    .piru-hero-bg(style=`background-image: url('${assets}img/hero-bg.png');`)
-    .piru-hero-overlay
-
     .container.piru-hero-content
       .row.justify-content-center
-        .col-lg-8.text-center
-          //- Glass Badge
-          .piru-glass-badge.rounded
-            span.badge.bg-primary v2.0
-            span.small.fw-medium New version available
+        .col-lg-10.text-center
+          //- Tech Badge
+          .piru-hero-badge.rounded.mb-3
+            span.badge.bg-dark.text-light 3DITION 2026
+            span.small.fw-bold.text-uppercase V2.0 ST4BL3
           
           //- Main Title
-          h1.piru-hero-title
-            | Design the future with 
-            span.text-gradient-primary PiruUI
+          h1.piru-hero-title.text-uppercase
+            | D3SIGN TH3 FUTUR3
+            br
+            span.text-white FOR D3V3LOP3RS
           
           //- Description
           p.piru-hero-text
-            | A premium UI kit based on Bootstrap 5 for creating modern, fast, and fully customizable interfaces.
+            | TH3 N3W MOD3RN D3SIGN SYST3M B4S3D ON BOOTSTR4P 5. F4ST, FL3XIBL3, 4ND BUILT TO CR34T3 STUNNING INT3RF4C3S.
+          
+          //- Tech Features Bar
+          .piru-hero-tags.d-flex.flex-wrap.justify-content-center.gap-2.mb-4
+            span.piru-tag.text-uppercase
+              i.bi.bi-code-slash.me-1
+              | 100% OP3N SOURC3
+            span.piru-tag.text-uppercase
+              i.bi.bi-lightning-charge.me-1
+              | BOOTSTR4P 5.3
+            span.piru-tag.text-uppercase
+              i.bi.bi-palette.me-1
+              | D4RK & LIGHT MOD3
           
           //- CTAs
           .piru-hero-actions
-            a.btn.btn-primary.btn-lg.px-5.py-3.fw-bold.shadow-lg-primary(href='#buttons')
-              i.bi.bi-rocket-takeoff-fill.me-2
-              | Get Started
-            a.btn.btn-outline-light.btn-lg.px-5.py-3.fw-bold.backdrop-blur-sm(href='https://github.com' target='_blank')
+            a.btn.btn-dark.btn-lg.px-5.py-3.fw-bold.text-uppercase(href='#buttons')
+              i.bi.bi-rocket-takeoff.me-2
+              | G3T ST4RT3D
+            a.btn.btn-outline-dark.btn-lg.px-5.py-3.fw-bold.text-uppercase(href='https://github.com' target='_blank')
               i.bi.bi-github.me-2
-              | View on GitHub
+              | VI3W ON GITHUB
 
   .container
     //

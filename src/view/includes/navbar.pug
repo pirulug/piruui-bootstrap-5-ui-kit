@@ -2,9 +2,10 @@ header.piru-nav-wrapper
   //- Announcement Bar
   .piru-announcement-bar.bg-primary.text-dark#announcementBar
     .container.position-relative
-      .d-flex.align-items-center.justify-content-center.gap-3.flex-wrap.text-center.py-2
+      .d-flex.align-items-center.justify-content-center.gap-2.gap-md-3.flex-wrap.text-center.py-2.pe-4.pe-md-0
         .fw-bold.small
-          | Llegó un nuevo curso 👉 
+          | Nuevo curso disponible
+          i.bi.bi-arrow-right.mx-1
           a.text-reset.text-decoration-underline(href="#" target="_blank") Skills y rules de IA para programadores
           |  ¡Cómpralo con descuento! Solo quedan:
         
@@ -29,49 +30,25 @@ header.piru-nav-wrapper
   nav.piru-nav-main
     .piru-nav-container
       //- Logo
-      a.piru-nav-brand(href=`${baseUrl}index.html`)
-        //- 1. Images logo
+      a.piru-nav-brand(href=`${baseUrl}index.html` aria-label=siteName)
         if navLogoStyle === 'image'
           .piru-nav-logo-images
-            img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
-            img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
-        else
-          | <!--
-          .piru-nav-logo-images
-            img.piru-logo.logo-light(src=`${assets}img/logo/piruui-dark-logo.png` alt=siteName)
-            img.piru-logo.logo-dark(src=`${assets}img/logo/piruui-white-logo.png` alt=siteName)
-          | -->
-
-        //- 2. Images with title
-        if navLogoStyle === 'image-title'
+            img.piru-logo.logo-light(src=`${assets}${logoLight || 'img/logo/piruui-dark-logo.png'}` alt=siteName)
+            img.piru-logo.logo-dark(src=`${assets}${logoDark || 'img/logo/piruui-white-logo.png'}` alt=siteName)
+        else if navLogoStyle === 'image-title'
           .piru-nav-logo-image-title
-            img.piru-logo.logo-light(src=`${assets}${logoLight}` alt=siteName)
-            img.piru-logo.logo-dark(src=`${assets}${logoDark}` alt=siteName)
+            img.piru-logo.logo-light(src=`${assets}${logoLight || 'img/logo/logo-dark.png'}` alt=siteName)
+            img.piru-logo.logo-dark(src=`${assets}${logoDark || 'img/logo/logo-light.png'}` alt=siteName)
             span= siteName
         else
-          | <!--
-          .piru-nav-logo-image-title
-            img.piru-logo.logo-light(src=`${assets}img/logo/logo-dark.png` alt=siteName)
-            img.piru-logo.logo-dark(src=`${assets}img/logo/logo-light.png` alt=siteName)
-            span #{siteName}
-          | -->
-        
-        //- 3. Default logo (Text/Icon)
-        if navLogoStyle === 'text' || !navLogoStyle
           .piru-nav-logo-text
             i.bi.bi-lightning-charge-fill
             span= siteName
-        else
-          | <!--
-          .piru-nav-logo-text
-            i.bi.bi-lightning-charge-fill
-            span #{siteName}
-          | -->
 
       //- Main Menu
       ul.piru-nav-menu
         li.piru-nav-dropdown.has-megamenu
-          a.piru-nav-link
+          a.piru-nav-link(href="#" role="button" aria-expanded="false" aria-haspopup="true")
             span Explore
             i.bi.bi-chevron-down
           .piru-dropdown-panel.piru-megamenu
@@ -93,25 +70,25 @@ header.piru-nav-wrapper
                   span Buttons
                 a.piru-dropdown-item(href=`${baseUrl}index.html#forms`)
                   span Forms
-                a.piru-dropdown-item(href="#")
+                a.piru-dropdown-item(href=`${baseUrl}index.html#modals`)
                   span Modals & Tabs
-                a.piru-dropdown-item(href="#")
+                a.piru-dropdown-item(href=`${baseUrl}index.html#alerts`)
                   span Alerts & Badges
 
               .piru-megamenu-column
                 h6 Resources & Shop
-                a.piru-dropdown-item(href="#")
-                  span Documentation
-                a.piru-dropdown-item(href="#")
-                  span License
-                hr.my-3.opacity-10
+                a.piru-dropdown-item(href=`${baseUrl}pages/sticky-footer-navbar.html`)
+                  span Sticky Footer Navbar
+                a.piru-dropdown-item(href=`${baseUrl}colors.html`)
+                  span Colors & Tokens
+                hr.my-2.opacity-10
                 a.piru-dropdown-item.featured-item(href=`${baseUrl}shop/index.html`)
                   .d-flex.flex-column
                     .fw-bold.mb-1 Visit Our Shop
                     .small.opacity-75 Premium templates & UI kits
         
         li.piru-nav-dropdown
-          a.piru-nav-link
+          a.piru-nav-link(href="#" role="button" aria-expanded="false" aria-haspopup="true")
             span Shop
             i.bi.bi-chevron-down
           .piru-dropdown-panel
@@ -128,19 +105,19 @@ header.piru-nav-wrapper
 
         li
           a.piru-nav-link(href=`${baseUrl}pages/sticky-footer-navbar.html`)
-            span Sticky Footer Navbar
+            span Sticky Footer
 
         li.piru-mobile-auth
-          .d-grid.gap-2
-            a.btn.btn-primary.py-3.fw-bold(href=`${baseUrl}auth/signup.html`) Get Started
-            a.btn.btn-link.text-body.fw-bold(href=`${baseUrl}auth/signin.html`) Login
+          .d-grid.gap-2.pt-3
+            a.btn.btn-primary.fw-bold(href=`${baseUrl}auth/signup.html`) Get Started
+            a.btn.btn-outline-secondary.fw-bold(href=`${baseUrl}auth/signin.html`) Login
 
       //- Actions
       .piru-nav-actions
-        button#openSearch.piru-action-btn(type="button" title="Search")
+        button#openSearch.piru-action-btn(type="button" title="Search" aria-label="Buscar")
           i.bi.bi-search
 
-        button#bd-theme-toggle.piru-action-btn.desktop-only(type="button" title="Theme")
+        button#bd-theme-toggle.piru-action-btn.desktop-only(type="button" title="Cambiar tema" aria-label="Cambiar tema")
           span.theme-icon-active
             i.bi.bi-sun
 
@@ -148,11 +125,11 @@ header.piru-nav-wrapper
           a.btn.btn-sm.btn-link.text-body.text-decoration-none.fw-bold(href=`${baseUrl}auth/signin.html`) Login
           a.btn.btn-sm.btn-primary.px-3.fw-bold(href=`${baseUrl}auth/signup.html`) Sign Up
 
-        button#bd-theme-toggle-mobile.piru-action-btn.mobile-only(type="button")
+        button#bd-theme-toggle-mobile.piru-action-btn.mobile-only(type="button" title="Cambiar tema" aria-label="Cambiar tema")
           span.theme-icon-active
             i.bi.bi-sun
         
-        button.piru-nav-toggle(aria-label="Menu")
+        button.piru-nav-toggle(type="button" aria-label="Alternar menú" aria-expanded="false")
           span
           span
           span
@@ -161,7 +138,7 @@ header.piru-nav-wrapper
   #piruSearchOverlay.piru-search-overlay
     .piru-nav-container
       .d-flex.align-items-center.gap-3.w-100
-        i.bi.bi-search.text-primary.h4.mb-0
-        input#piruSearchInput.form-control.form-control-lg.bg-transparent.border-0.ps-0.shadow-none(type="text" placeholder="Search...")
-        button#closeSearch.btn.btn-link.text-body.p-0
-          i.bi.bi-x-lg.h4
+        i.bi.bi-search.text-primary.h5.mb-0
+        input#piruSearchInput.form-control.form-control-lg.bg-transparent.border-0.ps-0.shadow-none(type="text" placeholder="Buscar componentes, páginas, recursos..." aria-label="Buscar")
+        button#closeSearch.btn.btn-link.text-body.p-0(type="button" aria-label="Cerrar búsqueda")
+          i.bi.bi-x-lg.h5.mb-0

@@ -9,9 +9,10 @@
     if (navToggle && navMenu) {
       // Main Menu Toggle
       navToggle.addEventListener("click", () => {
-        navToggle.classList.toggle("is-active");
-        navMenu.classList.toggle("is-active");
-        body.classList.toggle("overflow-hidden");
+        const isActive = navToggle.classList.toggle("is-active");
+        navMenu.classList.toggle("is-active", isActive);
+        navToggle.setAttribute("aria-expanded", isActive ? "true" : "false");
+        body.classList.toggle("overflow-hidden", isActive);
       });
 
       // Close menu on link click (Mobile)
@@ -20,13 +21,14 @@
         if (target && !target.closest(".piru-nav-dropdown") && window.innerWidth < 992) {
           navToggle.classList.remove("is-active");
           navMenu.classList.remove("is-active");
+          navToggle.setAttribute("aria-expanded", "false");
           body.classList.remove("overflow-hidden");
         }
       });
 
       // Dropdown Toggle (Mobile)
       const dropdowns = navMenu.querySelectorAll(".piru-nav-dropdown");
-      dropdowns.forEach(dropdown => {
+      dropdowns.forEach((dropdown) => {
         const link = dropdown.querySelector(".piru-nav-link");
         const panel = dropdown.querySelector(".piru-dropdown-panel");
 
@@ -35,17 +37,27 @@
             if (window.innerWidth < 992) {
               e.preventDefault();
               e.stopPropagation();
-              
+
+              const isCurrentlyOpen = panel.classList.contains("is-visible");
+
               // Close other dropdowns
-              dropdowns.forEach(other => {
+              dropdowns.forEach((other) => {
                 if (other !== dropdown) {
                   other.querySelector(".piru-dropdown-panel")?.classList.remove("is-visible");
                   other.querySelector(".bi-chevron-down")?.classList.remove("rotate-180");
+                  other.querySelector(".piru-nav-link")?.setAttribute("aria-expanded", "false");
                 }
               });
 
-              panel.classList.toggle("is-visible");
-              link.querySelector(".bi-chevron-down")?.classList.toggle("rotate-180");
+              if (isCurrentlyOpen) {
+                panel.classList.remove("is-visible");
+                link.querySelector(".bi-chevron-down")?.classList.remove("rotate-180");
+                link.setAttribute("aria-expanded", "false");
+              } else {
+                panel.classList.add("is-visible");
+                link.querySelector(".bi-chevron-down")?.classList.add("rotate-180");
+                link.setAttribute("aria-expanded", "true");
+              }
             }
           });
         }
@@ -101,7 +113,7 @@
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     // Reset state on window resize
@@ -110,7 +122,7 @@
         navToggle?.classList.remove("is-active");
         navMenu?.classList.remove("is-active");
         body.classList.remove("overflow-hidden");
-        navMenu?.querySelectorAll(".piru-dropdown-panel").forEach(p => p.classList.remove("is-visible"));
+        navMenu?.querySelectorAll(".piru-dropdown-panel").forEach((p) => p.classList.remove("is-visible"));
       }
     });
   });
