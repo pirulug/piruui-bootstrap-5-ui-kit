@@ -8,7 +8,7 @@ trigger: always_on
 
 ### 1. Contenedor Principal Independiente
 Toda tabla de listado debe estar envuelta directamente en un contenedor independiente con las clases:
-`<div class="bg-body p-3 rounded mb-3">`
+`<div class="bg-body p-3 mb-3">`
 
 ### 2. Responsividad y Clases de Tabla
 - **Contenedor Responsivo**: La tabla debe estar envuelta dentro de `<div class="table-responsive">`.
@@ -27,7 +27,7 @@ Toda tabla de listado debe estar envuelta directamente en un contenedor independ
 ## Código HTML Estándar
 
 ```html
-<div class="bg-body p-3 rounded mb-3">
+<div class="bg-body p-3 mb-3">
   <div class="table-responsive">
     <table class="table table-hover align-middle table-sm m-0">
       <thead>

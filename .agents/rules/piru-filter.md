@@ -8,7 +8,7 @@ trigger: always_on
 
 ### 1. Contenedor Principal Independiente
 Los filtros y acciones superiores deben estar contenidos directamente en:
-`<div class="bg-body p-3 rounded mb-3 text-end">`
+`<div class="bg-body p-3 mb-3 text-end">`
 
 ### 2. Botón de Acción Principal y Separador
 - **Botón Superior**: Botón de acción principal alineado a la derecha con clase `btn btn-primary text-uppercase fw-bold` e icono Bootstrap a la izquierda (`<i class="bi bi-plus me-1"></i>`).
@@ -28,7 +28,7 @@ Los filtros y acciones superiores deben estar contenidos directamente en:
 
 ### 1. Estado Inicial (Sin Búsqueda Activa)
 ```html
-<div class="bg-body p-3 rounded mb-3 text-end">
+<div class="bg-body p-3 mb-3 text-end">
   <a href="/panel/products/new.php" class="btn btn-primary text-uppercase fw-bold">
     <i class="bi bi-plus me-1"></i>
     <span>Nuevo Producto</span>
@@ -72,7 +72,7 @@ Los filtros y acciones superiores deben estar contenidos directamente en:
 
 ### 2. Con Búsqueda o Filtros Aplicados (Botón Limpiar Activo)
 ```html
-<div class="bg-body p-3 rounded mb-3 text-end">
+<div class="bg-body p-3 mb-3 text-end">
   <a href="/panel/products/new.php" class="btn btn-primary text-uppercase fw-bold">
     <i class="bi bi-plus me-1"></i>
     <span>Nuevo Producto</span>

@@ -5,7 +5,7 @@ trigger: always_on
 # Paginación (PiruAdmin)
 
 ## Estructura Estándar de Paginación
-La paginación debe ubicarse en un contenedor independiente fuera de la tabla con las clases `bg-body p-3 rounded d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 sticky-bottom` y una distribución flexible entre la leyenda informativa y los controles numéricos.
+La paginación debe ubicarse en un contenedor independiente fuera de la tabla con las clases `bg-body p-3 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 sticky-bottom` y una distribución flexible entre la leyenda informativa y los controles numéricos.
 
 ### Elementos de Navegación Obligatorios:
 1. **Primera Página (`<<`)**: `<i class="bi bi-chevron-double-left small"></i>`
@@ -19,7 +19,7 @@ La paginación debe ubicarse en un contenedor independiente fuera de la tabla co
 ## Código HTML Estándar
 
 ```html
-<div class="bg-body p-3 rounded d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 sticky-bottom">
+<div class="bg-body p-3 d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 sticky-bottom">
   <div class="legend">
     <span class="fw-bold">
       Mostrando 1 - 10 de 20 productos

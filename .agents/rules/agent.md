@@ -28,7 +28,7 @@ This file documents the essential constraints and style guidelines for building 
 
 - **Prefix Enforcement**: ALL custom components and specific utility classes created for this project MUST use the `piru-` prefix (e.g., `.piru-movie-card`, `.piru-hero`, `.piru-nav-main`).
 
-- **Rounded Corners**: Use only `.rounded` for custom containers. DO NOT use numbered variants like `.rounded-4`, `.rounded-3`, etc.
+- **Container Wrappers (No Rounded)**: Envoltorios y contenedores principales (`bg-body p-3`) NO deben usar `.rounded` ni clases de border-radius. Tienen esquinas rectas para un diseño limpio y plano.
 - **Card Integrity**: 
     - DO NOT add `.rounded` or any border-radius utility to `.card`. The border-radius is already defined in the SCSS.
     - DO NOT add `.bg-body` to `.card`. The card background is already defined in the SCSS. Adding background utilities to cards can cause visual artifacts or "square off" the internal corners.

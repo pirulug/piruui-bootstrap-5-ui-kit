@@ -54,7 +54,7 @@ Cuando los botones de acción se envuelven en formularios para guardar o cancela
 
 #### Al Final del Formulario (`sticky-bottom`)
 ```html
-<div class="bg-body p-3 rounded d-flex justify-content-end gap-2 sticky-bottom mt-3">
+<div class="bg-body p-3 d-flex justify-content-end gap-2 sticky-bottom mt-3">
   <a href="/panel/products/index.php" class="btn btn-outline-secondary px-4 text-uppercase small fw-bold">
     <i class="bi bi-x-lg me-2"></i>
     <span>Cancelar</span>
@@ -68,7 +68,7 @@ Cuando los botones de acción se envuelven en formularios para guardar o cancela
 
 #### En la Parte Superior (`sticky-top`)
 ```html
-<div class="bg-body p-3 rounded d-flex justify-content-end gap-2 sticky-top mb-3">
+<div class="bg-body p-3 d-flex justify-content-end gap-2 sticky-top mb-3">
   <a href="/panel/products/index.php" class="btn btn-outline-secondary px-4 text-uppercase small fw-bold">
     <i class="bi bi-x-lg me-2"></i>
     <span>Cancelar</span>
