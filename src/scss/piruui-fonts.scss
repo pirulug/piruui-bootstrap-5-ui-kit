@@ -1,205 +1,57 @@
 $font-path: "../fonts" !default;
-$font-path-firacode: $font-path + "/firacode" !default;
-$font-path-nunito: $font-path + "/nunito" !default;
+$font-path-googlesanscode: $font-path + "/google-sans-code" !default;
+$font-path-spacemono: $font-path + "/spacemono" !default;
 
-// FIRA CODE
-
-@font-face {
-  font-family: "Fira Code";
-  src: url("#{$font-path-firacode}/FiraCode-Light.woff2") format("woff2"),
-  url("#{$font-path-firacode}/FiraCode-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+// SPACE MONO
 
 @font-face {
-  font-family: "Fira Code";
-  src: url("#{$font-path-firacode}/FiraCode-Regular.woff2") format("woff2"),
-  url("#{$font-path-firacode}/FiraCode-Regular.woff") format("woff");
+  font-family: "Space Mono";
+  src: url("#{$font-path-spacemono}/SpaceMono-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fira Code";
-  src: url("#{$font-path-firacode}/FiraCode-Medium.woff2") format("woff2"),
-  url("#{$font-path-firacode}/FiraCode-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
+  font-family: "Space Mono";
+  src: url("#{$font-path-spacemono}/SpaceMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fira Code";
-  src: url("#{$font-path-firacode}/FiraCode-SemiBold.woff2") format("woff2"),
-  url("#{$font-path-firacode}/FiraCode-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Fira Code";
-  src: url("#{$font-path-firacode}/FiraCode-Bold.woff2") format("woff2"),
-  url("#{$font-path-firacode}/FiraCode-Bold.woff") format("woff");
+  font-family: "Space Mono";
+  src: url("#{$font-path-spacemono}/SpaceMono-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fira Code VF";
-  src: url("#{$font-path-firacode}/FiraCode-VF.woff2") format("woff2-variations"),
-  url("#{$font-path-firacode}/FiraCode-VF.woff") format("woff-variations");
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-// Nunito
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-Black.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-Bold.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-BlackItalic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-BlackItalic.woff") format("woff");
-  font-weight: 900;
+  font-family: "Space Mono";
+  src: url("#{$font-path-spacemono}/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-BoldItalic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
+// GOOGLE SANS CODE
 
 @font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-ExtraBold.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-ExtraBold.woff") format("woff");
-  font-weight: bold;
+  font-family: "Google Sans Code";
+  src: url("#{$font-path-googlesanscode}/GoogleSansCode[MONO,wght].ttf") format("truetype-variations"),
+       url("#{$font-path-googlesanscode}/GoogleSansCode[MONO,wght].ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-ExtraLightItalic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-ExtraLightItalic.woff") format("woff");
-  font-weight: 200;
+  font-family: "Google Sans Code";
+  src: url("#{$font-path-googlesanscode}/GoogleSansCode-Italic[MONO,wght].ttf") format("truetype-variations"),
+       url("#{$font-path-googlesanscode}/GoogleSansCode-Italic[MONO,wght].ttf") format("truetype");
+  font-weight: 100 900;
   font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-ExtraLight.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-Italic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-LightItalic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-LightItalic.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-Medium.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-ExtraBoldItalic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-ExtraBoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-Light.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-MediumItalic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-MediumItalic.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-SemiBoldItalic.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-SemiBoldItalic.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-Regular.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("#{$font-path-nunito}/Nunito-SemiBold.woff2") format("woff2"),
-  url("#{$font-path-nunito}/Nunito-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
   font-display: swap;
 }
