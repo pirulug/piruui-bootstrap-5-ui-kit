@@ -1,149 +1,110 @@
 .bs-docs-section
-  .row
-    .col-lg-12
-      .page-header
-        h1#indicators Indicators
+  .page-header
+    .row
+      .col-lg-12
+        h1#indicators.mb-3 Indicators, Badges & Alerts
 
   //- ==========================
   //- ALERTS SECTION
   //- ==========================
   .row
     .col-lg-12
-      h2 Alerts
-      
-      //- 1. HEADLINE ALERT (Con contenido extra)
+      h2.h4.mb-3 Alerts
+
+  .row.g-3.mb-3
+    .col-lg-12
       .bs-component
         .alert.alert-dismissible.alert-warning
           button.btn-close(type='button' data-bs-dismiss='alert')
-          h4.alert-heading Warning!
+          h4.alert-heading Warning Alert
           p.mb-0
-            | Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, 
-            a.alert-link(href='#') vel scelerisque nisl consectetur et
+            | Please review your security settings. You have 2 pending updates in your repository. 
+            a.alert-link(href='#') View security report
             | .
 
-  //- 2. GRID OF STANDARD ALERTS
-  .row
+  .row.g-3.mb-3
     .col-lg-4
       .bs-component
-        .alert.alert-dismissible.alert-danger
+        .alert.alert-dismissible.alert-danger.d-flex.align-items-center
           button.btn-close(type='button' data-bs-dismiss='alert')
-          strong Oh snap! 
-          a.alert-link(href='#') Change a few things up
-          |  and try submitting again.
-    .col-lg-4
-      .bs-component
-        .alert.alert-dismissible.alert-success
-          button.btn-close(type='button' data-bs-dismiss='alert')
-          strong Well done! 
-          | You successfully read 
-          a.alert-link(href='#') this important alert message
-          | .
-    .col-lg-4
-      .bs-component
-        .alert.alert-dismissible.alert-info
-          button.btn-close(type='button' data-bs-dismiss='alert')
-          strong Heads up! 
-          | This 
-          a.alert-link(href='#') alert needs your attention
-          | , but it's not super important.
-  
-  .row
-    .col-lg-4
-      .bs-component
-        .alert.alert-dismissible.alert-primary
-          button.btn-close(type='button' data-bs-dismiss='alert')
-          strong Primary! 
-          a.alert-link(href='#') Check this link
-          |  it's important.
-    .col-lg-4
-      .bs-component
-        .alert.alert-dismissible.alert-secondary
-          button.btn-close(type='button' data-bs-dismiss='alert')
-          strong Secondary! 
-          | Just a normal message.
-    .col-lg-4
-      .bs-component
-        .alert.alert-dismissible.alert-light
-          button.btn-close(type='button' data-bs-dismiss='alert')
-          strong Light! 
-          | Keep it clean and simple.
-
-  //- 3. ALERTS WITH ICONS (NUEVO - Requiere Bootstrap Icons)
-  .row 
-    .col-lg-12 
-      h3.h5.text-muted.mt-3 Alerts with Icons
-      .bs-component
-        .alert.alert-success.d-flex.align-items-center(role='alert')
-          i.bi.bi-check-circle-fill.me-2
+          i.bi.bi-exclamation-octagon-fill.fs-4.me-2
           div
-            | An example success alert with an icon
+            strong Error! 
+            | Failed to process request.
+    .col-lg-4
       .bs-component
-        .alert.alert-danger.d-flex.align-items-center(role='alert')
-          i.bi.bi-exclamation-triangle-fill.me-2
+        .alert.alert-dismissible.alert-success.d-flex.align-items-center
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          i.bi.bi-check-circle-fill.fs-4.me-2
           div
-            | An example danger alert with an icon
+            strong Success! 
+            | Profile updated correctly.
+    .col-lg-4
+      .bs-component
+        .alert.alert-dismissible.alert-info.d-flex.align-items-center
+          button.btn-close(type='button' data-bs-dismiss='alert')
+          i.bi.bi-info-circle-fill.fs-4.me-2
+          div
+            strong Info! 
+            | Maintenance scheduled tonight.
 
   //- ==========================
   //- BADGES SECTION
   //- ==========================
   .row
     .col-lg-12
-      h2.mt-4 Badges
+      h2.h4.mb-3 Badges & Status Indicators
 
-      //- 4. BASIC BADGES
-      .bs-component.mb-4
-        h3.h5.text-muted Standard
-        .d-flex.flex-wrap.gap-2
-          span.badge.bg-primary Primary
-          span.badge.bg-secondary Secondary
-          span.badge.bg-success Success
-          span.badge.bg-danger Danger
-          span.badge.bg-warning.text-dark Warning
-          span.badge.bg-info.text-dark Info
-          span.badge.bg-light.text-dark Light
-          span.badge.bg-dark Dark
+  .row.g-3.mb-3
+    //- Standard Badges
+    .col-lg-6
+      .bs-component.mb-3
+        .bg-body.p-3
+          h3.h5.text-muted.mb-2 Solid Badges
+          .d-flex.flex-wrap.gap-2.mb-3
+            span.badge.bg-primary Primary
+            span.badge.bg-secondary Secondary
+            span.badge.bg-success Success
+            span.badge.bg-danger Danger
+            span.badge.bg-warning.text-dark Warning
+            span.badge.bg-info.text-dark Info
+            span.badge.bg-dark Dark
 
-      //- 5. PILL BADGES
-      .bs-component.mb-4
-        h3.h5.text-muted Rounded Pills
-        .d-flex.flex-wrap.gap-2
-          span.badge.bg-primary Primary
-          span.badge.bg-secondary Secondary
-          span.badge.bg-success Success
-          span.badge.bg-danger Danger
-          span.badge.bg-warning.text-dark Warning
-          span.badge.bg-info.text-dark Info
-          span.badge.bg-light.text-dark Light
-          span.badge.bg-dark Dark
+          h3.h5.text-muted.mb-2 Subtle Badges (Theme Subtles)
+          .d-flex.flex-wrap.gap-2
+            span.badge.bg-primary-subtle.text-primary Primary Subtle
+            span.badge.bg-secondary-subtle.text-secondary Secondary Subtle
+            span.badge.bg-success-subtle.text-success Success Subtle
+            span.badge.bg-danger-subtle.text-danger Danger Subtle
+            span.badge.bg-warning-subtle.text-warning Warning Subtle
+            span.badge.bg-info-subtle.text-info Info Subtle
 
-      //- 6. BADGES INSIDE BUTTONS (NUEVO)
-      .bs-component.mb-4
-        h3.h5.text-muted Badges in Buttons
-        .d-flex.flex-wrap.gap-2
-          button.btn.btn-primary(type='button')
-            | Notifications 
-            span.badge.bg-light.text-dark.ms-1 4
-          
-          button.btn.btn-dark(type='button')
-            | Profile 
-            span.badge.bg-danger.ms-1 99+
+    //- Interactive & Positioned Badges
+    .col-lg-6
+      .bs-component.mb-3
+        .bg-body.p-3
+          h3.h5.text-muted.mb-2 Badges in Buttons & Counters
+          .d-flex.flex-wrap.align-items-center.gap-3.mb-3
+            button.btn.btn-primary(type='button')
+              | Mensajes 
+              span.badge.bg-light.text-dark.ms-1 4
             
-          //- Positioned Badge (Notification dot)
-          button.btn.btn-primary.position-relative(type='button')
-            | Inbox
-            span.position-absolute.top-0.start-100.translate-middle.badge.bg-danger
-              | 99+
-              span.visually-hidden unread messages
+            button.btn.btn-outline-primary.position-relative(type='button')
+              i.bi.bi-bell.me-1
+              | Notificaciones
+              span.position-absolute.top-0.start-100.translate-middle.badge.bg-danger 99+
 
-      //- 7. HEADINGS WITH BADGES (NUEVO)
-      .bs-component
-        h3.h5.text-muted Contextual Sizing
-        h1
-          | Example heading 
-          span.badge.bg-secondary New 
-        h2
-          | Example heading 
-          span.badge.bg-secondary New
-        h3
-          | Example heading 
-          span.badge.bg-secondary New
+          h3.h5.text-muted.mb-2 Status Dots
+          .d-flex.flex-wrap.align-items-center.gap-3
+            .d-flex.align-items-center.gap-1
+              span.badge.rounded-circle.p-1.bg-success
+              span.small.fw-bold Online
+            .d-flex.align-items-center.gap-1
+              span.badge.rounded-circle.p-1.bg-warning
+              span.small.fw-bold Away
+            .d-flex.align-items-center.gap-1
+              span.badge.rounded-circle.p-1.bg-danger
+              span.small.fw-bold Busy
+            .d-flex.align-items-center.gap-1
+              span.badge.rounded-circle.p-1.bg-secondary
+              span.small.fw-bold Offline

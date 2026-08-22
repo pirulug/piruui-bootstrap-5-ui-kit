@@ -1,139 +1,113 @@
 .bs-docs-section
+  .page-header
+    .row
+      .col-lg-12
+        h1#containers.mb-3 Containers & Cards
+
+  //- ==========================
+  //- STATS / METRIC CARDS (PiruUI Dashboard Suite)
+  //- ==========================
   .row
     .col-lg-12
-      .page-header
-        h1#containers Containers
+      h2.h4.mb-3 Dashboard Metric Cards
+
+  .row.g-3.mb-3
+    .col-sm-6.col-xl-3
+      .bs-component
+        .card
+          .card-body
+            .d-flex.align-items-center.justify-content-between.mb-2
+              span.text-uppercase.small.fw-bold.text-muted Ingresos Totales
+              .rounded.bg-primary.text-white.p-2.d-flex.align-items-center.justify-content-center(style='width: 38px; height: 38px;')
+                i.bi.bi-currency-dollar.fs-5
+            h3.fw-bold.mb-1 $48,250.00
+            .d-flex.align-items-center.small
+              span.badge.bg-success.me-2
+                i.bi.bi-arrow-up-right.me-1
+                | +12.5%
+              span.text-muted vs mes anterior
+
+    .col-sm-6.col-xl-3
+      .bs-component
+        .card
+          .card-body
+            .d-flex.align-items-center.justify-content-between.mb-2
+              span.text-uppercase.small.fw-bold.text-muted Nuevos Clientes
+              .rounded.bg-info.text-white.p-2.d-flex.align-items-center.justify-content-center(style='width: 38px; height: 38px;')
+                i.bi.bi-people-fill.fs-5
+            h3.fw-bold.mb-1 1,420
+            .d-flex.align-items-center.small
+              span.badge.bg-success.me-2
+                i.bi.bi-arrow-up-right.me-1
+                | +8.2%
+              span.text-muted vs mes anterior
+
+    .col-sm-6.col-xl-3
+      .bs-component
+        .card
+          .card-body
+            .d-flex.align-items-center.justify-content-between.mb-2
+              span.text-uppercase.small.fw-bold.text-muted Pedidos Activos
+              .rounded.bg-warning.text-dark.p-2.d-flex.align-items-center.justify-content-center(style='width: 38px; height: 38px;')
+                i.bi.bi-bag-check-fill.fs-5
+            h3.fw-bold.mb-1 328
+            .d-flex.align-items-center.small
+              span.badge.bg-danger.me-2
+                i.bi.bi-arrow-down-right.me-1
+                | -2.4%
+              span.text-muted vs mes anterior
+
+    .col-sm-6.col-xl-3
+      .bs-component
+        .card
+          .card-body
+            .d-flex.align-items-center.justify-content-between.mb-2
+              span.text-uppercase.small.fw-bold.text-muted Tasa Conversion
+              .rounded.bg-success.text-white.p-2.d-flex.align-items-center.justify-content-center(style='width: 38px; height: 38px;')
+                i.bi.bi-graph-up-arrow.fs-5
+            h3.fw-bold.mb-1 4.85%
+            .d-flex.align-items-center.small
+              span.badge.bg-success.me-2
+                i.bi.bi-arrow-up-right.me-1
+                | +1.2%
+              span.text-muted vs promedio
 
   //- ==========================
-  //- LIST GROUPS
+  //- CARDS EXAMPLES
   //- ==========================
   .row
     .col-lg-12
-      h2 List groups
-  
-  .row
-    //- 1. BASIC & BADGES
+      h2.h4.mb-3 Card Variants
+
+  .row.g-3.mb-3
+    //- 1. KITCHEN SINK
     .col-md-6.col-lg-4
       .bs-component
-        h3.h5.text-muted Basic & Badges
-        ul.list-group
-          li.list-group-item.d-flex.justify-content-between.align-items-center
-            | Cras justo odio
-            span.badge.bg-primary 14
-          li.list-group-item.d-flex.justify-content-between.align-items-center
-            | Dapibus ac facilisis in
-            span.badge.bg-primary 2
-          li.list-group-item.d-flex.justify-content-between.align-items-center
-            | Morbi leo risus
-            span.badge.bg-primary 1
-    
-    //- 2. ACTIVE & ACTIONS
-    .col-md-6.col-lg-4
-      .bs-component
-        h3.h5.text-muted Active & Actions
-        .list-group
-          a.list-group-item.list-group-item-action.active(href='#') Cras justo odio (Active)
-          a.list-group-item.list-group-item-action(href='#') Dapibus ac facilisis in
-          button.list-group-item.list-group-item-action(type='button') Button item
-          a.list-group-item.list-group-item-action.disabled(href='#') Morbi leo risus (Disabled)
-
-    //- 3. FLUSH & NUMBERED (NUEVO)
-    .col-md-6.col-lg-4
-      .bs-component
-        h3.h5.text-muted Flush & Numbered
-        //- Flush: sin bordes externos
-        ul.list-group.list-group-flush.mb-3
-          li.list-group-item An item
-          li.list-group-item A second item
-          li.list-group-item A third item
-        
-        //- Numbered: enumera automáticamente
-        ol.list-group.list-group-numbered
-          li.list-group-item Cras justo odio
-          li.list-group-item Dapibus ac facilisis in
-
-  //- 4. CONTEXTUAL CLASSES (Grid Layout para ahorrar espacio vertical)
-  .row.mt-4
-    .col-lg-6
-      .bs-component
-        h3.h5.text-muted Contextual Classes
-        ul.list-group
-          li.list-group-item.list-group-item-primary Primary item
-          li.list-group-item.list-group-item-secondary Secondary item
-          li.list-group-item.list-group-item-success Success item
-          li.list-group-item.list-group-item-danger Danger item
-          li.list-group-item.list-group-item-warning Warning item
-          li.list-group-item.list-group-item-info Info item
-          li.list-group-item.list-group-item-light Light item
-          li.list-group-item.list-group-item-dark Dark item
-
-    //- 5. CUSTOM CONTENT (Complex)
-    .col-lg-6
-      .bs-component
-        h3.h5.text-muted Custom Content
-        .list-group
-          a.list-group-item.list-group-item-action.flex-column.align-items-start.active(href='#')
-            .d-flex.w-100.justify-content-between
-              h5.mb-1 List group item heading
-              small 3 days ago
-            p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-            small Donec id elit non mi porta.
-          a.list-group-item.list-group-item-action.flex-column.align-items-start(href='#')
-            .d-flex.w-100.justify-content-between
-              h5.mb-1 List group item heading
-              small.text-muted 3 days ago
-            p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-            small.text-muted Donec id elit non mi porta.
-
-  //- 6. CHECKBOXES AND RADIOS (NUEVO)
-  .row.mt-4 
-    .col-lg-6 
-      .bs-component 
-        h3.h5.text-muted With Checkboxes
-        ul.list-group
-          li.list-group-item
-            input.form-check-input.me-1(type='checkbox' value='' id='firstCheckboxStretched')
-            label.form-check-label.stretched-link(for='firstCheckboxStretched') First checkbox
-          li.list-group-item
-            input.form-check-input.me-1(type='checkbox' value='' id='secondCheckboxStretched')
-            label.form-check-label.stretched-link(for='secondCheckboxStretched') Second checkbox
-
-  //- ==========================
-  //- CARDS
-  //- ==========================
-  .row.mt-5
-    .col-lg-12
-      h2 Cards 
-
-  .row
-    //- 1. KITCHEN SINK (Ejemplo Completo)
-    .col-md-6.col-lg-4
-      .bs-component
-        h3.h5.text-muted Kitchen Sink
-        .card.mb-3
-          h3.card-header Card header
+        h3.h5.text-muted.mb-2 Kitchen Sink
+        .card
+          .card-header
+            h5.card-title.m-0 Card Header
           .card-body
             h5.card-title Special title treatment
             h6.card-subtitle.text-muted Support card subtitle
-          svg.d-block.user-select-none(xmlns='http://www.w3.org/2000/svg' width='100%' height='200' aria-label='Placeholder: Image cap' focusable='false' role='img' preserveaspectratio='xMidYMid slice' viewbox='0 0 318 180' style='font-size:1.125rem;text-anchor:middle')
+          svg.d-block.user-select-none(xmlns='http://www.w3.org/2000/svg' width='100%' height='180' aria-label='Placeholder: Image cap' focusable='false' role='img' preserveaspectratio='xMidYMid slice' viewbox='0 0 318 180' style='font-size:1.125rem;text-anchor:middle')
             rect(width='100%' height='100%' fill='#868e96')
             text(x='50%' y='50%' fill='#dee2e6' dy='.3em') Image cap
           .card-body
-            p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+            p.card-text Some quick example text to build on the card title and make up the bulk of the card content.
           ul.list-group.list-group-flush
             li.list-group-item Cras justo odio
             li.list-group-item Dapibus ac facilisis in
-            li.list-group-item Vestibulum at eros
           .card-body
             a.card-link(href='#') Card link
             a.card-link(href='#') Another link
           .card-footer.text-muted 2 days ago
 
-    //- 2. CARD WITH NAVIGATION (NUEVO)
+    //- 2. CARD WITH NAVIGATION TABS
     .col-md-6.col-lg-4
       .bs-component
-        h3.h5.text-muted Header Navigation
-        .card.text-center.mb-3
+        h3.h5.text-muted.mb-2 Header Navigation
+        .card.text-center
           .card-header
             ul.nav.nav-tabs.card-header-tabs
               li.nav-item
@@ -147,80 +121,85 @@
             p.card-text With supporting text below as a natural lead-in to additional content.
             a.btn.btn-primary(href='#') Go somewhere
 
-        h3.h5.text-muted.mt-4 Image Overlay
+        h3.h5.text-muted.mt-3.mb-2 Image Overlay
         .card.text-white
-          svg.bd-placeholder-img.card-img(width='100%' height='250' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Card image' preserveAspectRatio='xMidYMid slice' focusable='false')
-             title Placeholder
-             rect(width='100%' height='100%' fill='#868e96')
-             text(x='50%' y='50%' fill='#dee2e6' dy='.3em') Card image
+          svg.bd-placeholder-img.card-img(width='100%' height='220' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Card image' preserveAspectRatio='xMidYMid slice' focusable='false')
+            title Placeholder
+            rect(width='100%' height='100%' fill='#343a40')
+            text(x='50%' y='50%' fill='#dee2e6' dy='.3em') Overlay Image
           .card-img-overlay
             h5.card-title Card title
-            p.card-text This is a wider card with supporting text below as a natural lead-in to additional content.
-            p.card-text Last updated 3 mins ago
+            p.card-text This is a wider card with supporting text below.
+            p.card-text
+              small Last updated 3 mins ago
 
-    //- 3. HORIZONTAL CARD (NUEVO)
+    //- 3. HORIZONTAL CARD
     .col-md-6.col-lg-4
       .bs-component
-        h3.h5.text-muted Horizontal
-        .card.mb-3(style='max-width: 540px;')
+        h3.h5.text-muted.mb-2 Horizontal Card
+        .card.mb-3
           .row.g-0
             .col-md-4
-              svg.bd-placeholder-img.img-fluid.rounded-start(width='100%' height='250' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Image' preserveAspectRatio='xMidYMid slice' focusable='false')
+              svg.bd-placeholder-img.img-fluid(width='100%' height='100%' style='min-height: 140px;' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Placeholder: Image' preserveAspectRatio='xMidYMid slice' focusable='false')
                 rect(width='100%' height='100%' fill='#868e96')
             .col-md-8
               .card-body
-                h5.card-title Card title
-                p.card-text This is a wider card with supporting text below as a natural lead-in to additional content.
+                h5.card-title Horizontal title
+                p.card-text Supporting text for horizontal card.
                 p.card-text
-                  small.text-body-secondary Last updated 3 mins ago
-  
-  //- 4. COLORED & BORDERED CARDS (Grid Layout)
-  .row.mt-3
-    h3.h5.text-muted.mb-3 Background & Border Variants
-    .col-lg-12
-      .bs-component
-        .d-flex.flex-wrap.gap-3
-          //- Primary BG
-          .card.text-white.bg-primary(style='max-width: 18rem;')
-            .card-header Header
-            .card-body
-              h4.card-title Primary
-              p.card-text Some quick example text.
-          
-          //- Secondary BG
-          .card.text-white.bg-secondary(style='max-width: 18rem;')
-            .card-header Header
-            .card-body
-              h4.card-title Secondary
-              p.card-text Some quick example text.
-          
-          //- Success Border (Sin fondo)
-          .card(style='max-width: 18rem;')
-            .card-header.bg-success.bg-opacity-10.text-success Header
-            .card-body.text-success
-              h4.card-title Success Style
-              p.card-text Some quick example text.
-          
-          //- Danger Border (Sin fondo)
-          .card(style='max-width: 18rem;')
-            .card-header.bg-danger.bg-opacity-10.text-danger Header
-            .card-body.text-danger
-              h4.card-title Danger Style
-              p.card-text Some quick example text.
+                  small.text-body-secondary 3 mins ago
 
+        h3.h5.text-muted.mb-2 Solid Accent Cards
+        .d-flex.flex-column.gap-2
+          .card.text-white.bg-primary
+            .card-body.p-3
+              h5.card-title.m-0 Primary Accent Card
+              small.text-white-50 Highlighted summary block
+          .card.text-white.bg-dark
+            .card-body.p-3
+              h5.card-title.m-0 Dark Accent Card
+              small.text-white-50 High contrast container
 
   //- ==========================
-  //- ACCORDIONS
+  //- LIST GROUPS & ACCORDIONS
   //- ==========================
-  .row.mt-5
-    .col-lg-12
-      h2 Accordions
-
-  .row
-    //- 1. STANDARD ACCORDION
+  .row.g-3.mb-3
     .col-lg-6
-      .bs-component
-        h3.h5.text-muted Standard
+      h2.h4.mb-3 List Groups
+      .bs-component.mb-3
+        h3.h5.text-muted.mb-2 Actionable List Group
+        .list-group
+          a.list-group-item.list-group-item-action.active(href='#')
+            .d-flex.w-100.justify-content-between
+              h5.mb-1 List group active item
+              small.text-white-50 3 days ago
+            p.mb-1 Donec id elit non mi porta gravida at eget metus.
+            small.text-white-50 Donec id elit non mi porta.
+          a.list-group-item.list-group-item-action(href='#')
+            .d-flex.w-100.justify-content-between
+              h5.mb-1 Standard item heading
+              small.text-muted 1 week ago
+            p.mb-1 Maecenas sed diam eget risus varius blandit.
+            small.text-muted Subtitle and details.
+
+      .bs-component.mb-3
+        h3.h5.text-muted.mb-2 With Badges & Checkboxes
+        ul.list-group
+          li.list-group-item.d-flex.justify-content-between.align-items-center
+            .d-flex.align-items-center
+              input#check1.form-check-input.me-2(type='checkbox' checked)
+              label.form-check-label(for='check1') Bandeja de Entrada
+            span.badge.bg-primary 14
+          li.list-group-item.d-flex.justify-content-between.align-items-center
+            .d-flex.align-items-center
+              input#check2.form-check-input.me-2(type='checkbox')
+              label.form-check-label(for='check2') Notificaciones
+            span.badge.bg-warning.text-dark 3
+
+    .col-lg-6
+      h2.h4.mb-3 Accordions
+      .bs-component.mb-3
+        h3.h5.text-muted.mb-2 Standard Accordion
         #accordionExample.accordion
           .accordion-item
             h2#headingOne.accordion-header
@@ -229,7 +208,7 @@
             #collapseOne.accordion-collapse.collapse.show(aria-labelledby='headingOne' data-bs-parent='#accordionExample')
               .accordion-body
                 strong This is the first item's accordion body.
-                |  It is shown by default.
+                |  It is shown by default with clean borderless styling.
           .accordion-item
             h2#headingTwo.accordion-header
               button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
@@ -245,33 +224,4 @@
             #collapseThree.accordion-collapse.collapse(aria-labelledby='headingThree' data-bs-parent='#accordionExample')
               .accordion-body
                 strong This is the third item's accordion body.
-                |  It is hidden by default.
-
-    //- 2. FLUSH ACCORDION (NUEVO)
-    .col-lg-6
-      .bs-component
-        h3.h5.text-muted Flush (No borders)
-        #accordionFlushExample.accordion.accordion-flush
-          .accordion-item
-            h2#flush-headingOne.accordion-header
-              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
-                | Accordion Item #1
-            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne' data-bs-parent='#accordionFlushExample')
-              .accordion-body
-                | Placeholder content for this accordion, which is intended to demonstrate the 
-                code .accordion-flush
-                |  class.
-          .accordion-item
-            h2#flush-headingTwo.accordion-header
-              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo')
-                | Accordion Item #2
-            #flush-collapseTwo.accordion-collapse.collapse(aria-labelledby='flush-headingTwo' data-bs-parent='#accordionFlushExample')
-              .accordion-body
-                | Placeholder content for this accordion.
-          .accordion-item
-            h2#flush-headingThree.accordion-header
-              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
-                | Accordion Item #3
-            #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
-              .accordion-body
-                | Placeholder content for this accordion.
+                |  Clean tone-shift container.

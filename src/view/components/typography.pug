@@ -1,207 +1,123 @@
 .bs-docs-section
-  .row
-    .col-lg-12
-      .page-header
-        h1#typography Typography
+  .page-header
+    .row
+      .col-lg-12
+        h1#typography.mb-3 Typography & Monospace Suite
 
   //- PRIMERA FILA: Headings, Body Text y Colores
-  .row
+  .row.g-3.mb-3
     //- COL 1: Headings & Display
     .col-lg-4
-      .bs-component
-        h3.h5.text-muted Standard Headings
-        h1 Heading 1
-        h2 Heading 2
-        h3 Heading 3
-        h4 Heading 4
-        h5 Heading 5
-        h6 Heading 6
-        
-        h3.mt-4
-          | Fancy Heading
-          small.text-body-secondary.ms-2 with faded text
-        
-        p.lead.mt-4 Lead text: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+      .bs-component.mb-3
+        .bg-body.p-3
+          h3.h5.text-muted.mb-3 Standard Headings
+          h1 Heading 1
+          h2 Heading 2
+          h3 Heading 3
+          h4 Heading 4
+          h5 Heading 5
+          h6 Heading 6
+          
+          h3.h5.mt-3.mb-1
+            | Fancy Heading
+            small.text-body-secondary.ms-2 with faded text
+          
+          p.lead.mt-2 Lead text: Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
 
-      .bs-component.mt-4
-        h3.h5.text-muted Display Headings
-        h1.display-1 Display 1
-        h1.display-3 Display 3
-        h1.display-5 Display 5
-        h1.display-6 Display 6
+      .bs-component.mb-3
+        .bg-body.p-3
+          h3.h5.text-muted.mb-3 Display Headings
+          h1.display-1 Display 1
+          h1.display-4 Display 4
+          h1.display-6 Display 6
 
     //- COL 2: Body Text & Inline Elements
     .col-lg-4
-      .bs-component
-        h3.h5.text-muted Example body text
-        p
-          | Nullam quis risus eget 
-          a(href='#') urna mollis ornare
-          |  vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        
-        p
-          small This line of text is meant to be treated as fine print.
-        p
-          strong Bold text.
-        p
-          em Italicized text.
-        
-        h3.h5.text-muted.mt-4 Inline Styles
-        p
-          | You can use the mark tag to 
-          mark highlight
-          |  text.
-        p
-          del This line of text is meant to be treated as deleted text.
-        p
-          s This line of text is meant to be treated as no longer accurate.
-        p
-          ins This line of text is meant to be treated as an addition to the document.
-        p
-          u This line of text will render as underlined.
-        p
-          | An abbreviation of the word attribute is 
-          abbr(title='attribute') attr
-          | .
-
-        h3.h5.text-muted.mt-4 Alignment classes
-        p.text-start Start aligned text on all viewport sizes.
-        p.text-center Center aligned text on all viewport sizes.
-        p.text-end End aligned text on all viewport sizes.
-
-    //- COL 3: Colors & Emphasis
-    .col-lg-4
-      .bs-component
-        h3.h5.text-muted Emphasis classes
-        p.text-primary .text-primary
-        p.text-primary-emphasis .text-primary-emphasis
-        p.text-secondary .text-secondary
-        p.text-secondary-emphasis .text-secondary-emphasis
-        p.text-success .text-success
-        p.text-success-emphasis .text-success-emphasis
-        p.text-danger .text-danger
-        p.text-danger-emphasis .text-danger-emphasis
-        p.text-warning .text-warning
-        p.text-warning-emphasis .text-warning-emphasis
-        p.text-info .text-info
-        p.text-info-emphasis .text-info-emphasis
-        p.text-light.bg-dark .text-light
-        p.text-light-emphasis .text-light-emphasis
-        p.text-dark .text-dark
-        p.text-dark-emphasis .text-dark-emphasis
-        p.text-body .text-body
-        p.text-body-emphasis .text-body-emphasis
-        p.text-body-secondary .text-body-secondary
-        p.text-body-tertiary .text-body-tertiary
-
-  //- SEGUNDA FILA: Blockquotes
-  .row
-    .col-lg-12
-      h2#type-blockquotes.mt-4 Blockquotes
-  .row
-    .col-lg-4
-      .bs-component
-        figure
-          blockquote.blockquote
-            p.mb-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-          figcaption.blockquote-footer
-            | Someone famous in 
-            cite(title='Source Title') Source Title
-    .col-lg-4
-      .bs-component
-        figure.text-center
-          blockquote.blockquote
-            p.mb-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-          figcaption.blockquote-footer
-            | Someone famous in 
-            cite(title='Source Title') Source Title
-    .col-lg-4
-      .bs-component
-        figure.text-end
-          blockquote.blockquote
-            p.mb-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-          figcaption.blockquote-footer
-            | Someone famous in 
-            cite(title='Source Title') Source Title
-
-  //- TERCERA FILA: Listas y Código (NUEVO)
-  .row
-    .col-lg-12
-      h2#type-lists.mt-4 Lists & Code
-
-    //- Listas Básicas
-    .col-lg-4
-      .bs-component
-        h3.h5.text-muted Unordered & Ordered
-        ul
-          li Lorem ipsum dolor sit amet
-          li Consectetur adipiscing elit
-          li Integer molestie lorem at massa
-          li Facilisis in pretium nisl aliquet
-          li
-            | Nullacommodo luctus
-            ul
-              li Phasellus iaculis neque
-              li Purus sodales ultricies
-        
-        ol
-          li Lorem ipsum dolor sit amet
-          li Consectetur adipiscing elit
-          li Integer molestie lorem at massa
-
-    //- Listas Especiales
-    .col-lg-4
-      .bs-component
-        h3.h5.text-muted Unstyled & Inline
-        ul.list-unstyled
-          li Lorem ipsum dolor sit amet
-          li Consectetur adipiscing elit
-          li Integer molestie lorem at massa
-          li Facilisis in pretium nisl aliquet
-          li Nulla volutpat aliquam velit
-            ul
-              li Phasellus iaculis neque
-              li Purus sodales ultricies
-
-        h5.mt-4 Inline List
-        ul.list-inline
-          li.list-inline-item: a(href="#") Home
-          li.list-inline-item: a(href="#") Library
-          li.list-inline-item: a(href="#") Data
-
-        h5.mt-4 Code Blocks
-        p
-          | For example, 
-          code &lt;section&gt;
-          |  should be wrapped as inline.
-        pre: code &lt;p&gt;Sample text here...&lt;/p&gt;
-        
-        p
-          | To switch directories, type 
-          kbd cd
-          |  followed by the name of the directory.
-
-    //- Listas de Descripción
-    .col-lg-4
-      .bs-component
-        h3.h5.text-muted Description Lists
-        dl.row
-          dt.col-sm-3 Description lists
-          dd.col-sm-9 A description list is perfect for defining terms.
+      .bs-component.mb-3
+        .bg-body.p-3
+          h3.h5.text-muted.mb-3 Example Body Text
+          p
+            | Nullam quis risus eget 
+            a(href='#') urna mollis ornare
+            |  vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
           
-          dt.col-sm-3 Term
-          dd.col-sm-9
-            p Definition for the term.
-            p And some more placeholder definition text.
+          p
+            small This line of text is meant to be treated as fine print.
+          p
+            strong Bold text in Space Mono.
+          p
+            em Italicized text emphasis.
           
-          dt.col-sm-3 Another term
-          dd.col-sm-9 This definition is short, so no extra paragraphs or anything.
+          h3.h5.text-muted.mt-3.mb-2 Inline Styles
+          p
+            | You can use the mark tag to 
+            mark highlight
+            |  text.
+          p
+            del Deleted text style.
+          p
+            ins Addition to the document.
+          p
+            u Underlined text.
+          p
+            | Abbreviation: 
+            abbr(title='HyperText Markup Language') HTML
+            | .
+
+    //- COL 3: Code & Monospace Fonts
+    .col-lg-4
+      .bs-component.mb-3
+        .bg-body.p-3
+          h3.h5.text-muted.mb-3 Monospace & Code Snippets
+          p
+            | Inline code with Google Sans Code: 
+            code &lt;section class="piru-hero"&gt;
           
-          dt.col-sm-3 Truncated term is truncated
-          dd.col-sm-9 This can be useful when space is tight. Adds an ellipsis at the end.
+          pre.p-2.bg-dark.text-light
+            code.font-monospace
+              | function initTheme() {
+              |   const mode = "dark";
+              |   console.log(`Theme: ${mode}`);
+              | }
           
-          dt.col-sm-3 Nesting
-          dd.col-sm-9
-            dl.row
-              dt.col-sm-4 Nested definition list
-              dd.col-sm-8 I heard you like definition lists.
+          p.mt-2
+            | Keyboard shortcut: 
+            kbd Ctrl
+            |  + 
+            kbd Shift
+            |  + 
+            kbd P
+
+          h3.h5.text-muted.mt-3.mb-2 Emphasis Colors
+          .d-flex.flex-column.gap-1
+            p.text-primary.m-0 .text-primary
+            p.text-success.m-0 .text-success
+            p.text-danger.m-0 .text-danger
+            p.text-warning.m-0 .text-warning
+            p.text-info.m-0 .text-info
+            p.text-body-secondary.m-0 .text-body-secondary
+
+  //- SEGUNDA FILA: Blockquotes & Lists
+  .row.g-3.mb-3
+    .col-lg-6
+      .bs-component.mb-3
+        .bg-body.p-3
+          h2.h4.mb-3 Blockquotes
+          figure.mb-0
+            blockquote.blockquote
+              p.mb-1 "The details are not the details. They make the design."
+            figcaption.blockquote-footer
+              | Charles Eames in 
+              cite(title='Source Title') Design Philosophy
+
+    .col-lg-6
+      .bs-component.mb-3
+        .bg-body.p-3
+          h2.h4.mb-3 Description Lists
+          dl.row.mb-0
+            dt.col-sm-4 Space Mono
+            dd.col-sm-8 Monospaced sans-serif for high-impact tech typography.
+            dt.col-sm-4 Google Sans Code
+            dd.col-sm-8 Flexible variable code font for editors and terminal blocks.
+            dt.col-sm-4 Bootstrap 5.3
+            dd.col-sm-8 Responsive core grid and accessibility foundation.
