@@ -7,7 +7,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const DeleteEmptyFilesPlugin = require("pirulug-delete-empty-files-webpack-plugin");
 const PluginsManager = require("./scripts/plugins-manager");
 const JsonManager = require("./scripts/json-manager");
@@ -80,8 +79,6 @@ module.exports = (env = {}, argv = {}) => {
       runtimeChunk: false,
     },
     plugins: [
-      // DELETE
-      // new CleanWebpackPlugin(),
       new JsonManager(),
       // Extract css files to seperate bundle
       new MiniCssExtractPlugin({
@@ -243,11 +240,23 @@ module.exports = (env = {}, argv = {}) => {
         "src/scss/**/*.scss",
         "src/view/**/*.pug",
       ],
-      compress: true,
+      compress: false,
       port: 8989,
       open: true,
       hot: false,
       liveReload: true,
+      client: {
+        overlay: {
+          errors: true,
+          warnings: false,
+          runtimeErrors: (error) => {
+            if (error && error.message && error.message.includes("ERR_STREAM_PREMATURE_CLOSE")) {
+              return false;
+            }
+            return true;
+          },
+        },
+      },
     },
     stats: {
       assets: true,
